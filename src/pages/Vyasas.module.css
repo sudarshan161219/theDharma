@@ -1,0 +1,128 @@
+.grid {
+  list-style: none;
+  margin: 0 0 32px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 8px;
+}
+
+.grid li {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.n {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.name {
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.note {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.grid li.current {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+
+.grid li.current .n,
+.grid li.current .note {
+  color: inherit;
+  opacity: 0.9;
+}
+
+.grid li.next {
+  border: 2px dashed var(--indigo);
+  background: var(--indigo-soft);
+}
+
+.grid li.next .n {
+  color: var(--indigo);
+}
+
+.callout {
+  padding: 24px;
+  margin-bottom: 48px;
+  border-radius: var(--radius);
+  background: var(--indigo-soft);
+}
+
+.callout p {
+  margin-bottom: 0.5em;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.help {
+  color: var(--muted);
+}
+
+.tree {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.root {
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+}
+
+.tree ul {
+  list-style: none;
+  margin: 0 0 0 24px;
+  padding: 8px 0 0 20px;
+  border-left: 2px solid var(--line);
+  display: grid;
+  gap: 8px;
+}
+
+.tree li {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  align-items: baseline;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.tree li::before {
+  content: '';
+  position: absolute;
+  left: -22px;
+  top: 50%;
+  width: 20px;
+  border-top: 2px solid var(--line);
+}
+
+.veda {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold);
+  min-width: 130px;
+}

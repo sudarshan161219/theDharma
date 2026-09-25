@@ -1,0 +1,159 @@
+import { manvantaras, vyasas, yugas } from '../data/cosmos';
+import { acharyas, darshanas } from '../data/acharyas';
+import { dashavatara } from '../data/avatars';
+import { mahavidyas, navadurga } from '../data/devi';
+import { allPlaces } from '../data/places';
+import { kuladevatas } from '../data/kuladevata';
+import { gotras } from '../data/gotra';
+import { flatten, lunar, solar } from '../data/dynasties';
+import { glossary } from '../data/glossary';
+import { people } from '../data/people';
+import { scriptures } from '../data/scriptures';
+import { href } from './router';
+
+export interface Hit {
+  kind: string;
+  title: string;
+  subtitle: string;
+  to: string;
+}
+
+interface Entry extends Hit {
+  haystack: string;
+}
+
+const norm = (s: string) =>
+  s
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    // common transliteration variants: sh/s, aa/a, ee/i …
+    .replace(/sh/g, 's')
+    .replace(/aa/g, 'a')
+    .replace(/ee/g, 'i')
+    .replace(/oo/g, 'u')
+    .replace(/w/g, 'v');
+
+const index: Entry[] = [
+  ...scriptures.map((s) => ({
+    kind: s.category,
+    title: s.name,
+    subtitle: s.verses ? `${s.composer} · ${s.verses.toLocaleString('en-IN')} verses` : s.composer,
+    to: href('scriptures', s.id),
+    haystack: [s.name, s.deity, s.composer, s.summary, s.note ?? '', ...(s.furtherReading ?? []).map((f) => f.label), ...(s.structure ?? []), ...s.highlights, ...s.narration.map((n) => `${n.speaker} ${n.listener} ${n.context}`)].join(' '),
+  })),
+  ...people.map((p) => ({
+    kind: p.kind,
+    title: p.name,
+    subtitle: p.short,
+    to: href('people', p.id),
+    haystack: [p.name, p.short, p.about ?? '', ...(p.facts ?? []).map((f) => f.value)].join(' '),
+  })),
+  ...manvantaras.map((m) => ({
+    kind: 'Manvantara',
+    title: `${m.n}. ${m.manu} Manu`,
+    subtitle: `Indra: ${m.indra}`,
+    to: href('manvantaras') + `?n=${m.n}`,
+    haystack: [m.manu, m.indra, ...m.saptarishi, m.avatara ?? '', m.note ?? '', 'manu manvantara'].join(' '),
+  })),
+  ...vyasas.map((v) => ({
+    kind: 'Vyasa',
+    title: `${v.n}. ${v.name}`,
+    subtitle: `Vyasa of the ${v.n}th Dvapara`,
+    to: href('vyasas'),
+    haystack: `${v.name} ${v.note ?? ''} vyasa`,
+  })),
+  ...yugas.map((y) => ({
+    kind: 'Yuga',
+    title: y.name,
+    subtitle: `${y.humanYears.toLocaleString('en-IN')} human years`,
+    to: href('time') + `?yuga=${y.id}`,
+    haystack: [y.name, y.practice, ...y.notable, 'yuga'].join(' '),
+  })),
+  ...dashavatara.map((a) => ({
+    kind: 'Avatara',
+    title: a.name,
+    subtitle: `${a.form} · ${a.yuga} — ${a.purpose}`,
+    to: `#/avatars?a=${a.id}`,
+    haystack: [a.name, a.form, a.yuga, a.purpose, a.story, 'avatar avatara dashavatara vishnu'].join(' '),
+  })),
+  ...[...navadurga.map((f) => ({ f, group: 'Navadurga' })), ...mahavidyas.map((f) => ({ f, group: 'Mahavidya' }))].map(({ f, group }) => ({
+    kind: group,
+    title: f.name,
+    subtitle: f.meaning,
+    to: `#/avatars?g=devi&a=devi-${f.id}`,
+    haystack: [f.name, f.meaning, f.form, f.story, f.aside ?? '', group, 'devi goddess durga shakti avatar'].join(' '),
+  })),
+  ...allPlaces.map((p) => ({
+    kind: p.kind === 'jyotirlinga' ? 'Jyotirlinga' : 'Shakti Peetha',
+    title: p.name,
+    subtitle: `${p.today} · ${p.state}`,
+    to: `#/places?p=${p.id}`,
+    haystack: [p.name, p.today, p.state, p.scriptureSays, p.story, p.bodyPart ?? '', ...(p.alternates ?? []).map((a) => a.place), 'tirtha pilgrimage temple place location'].join(' '),
+  })),
+  ...kuladevatas.map((d) => ({
+    kind: 'Kuladevata',
+    title: d.name,
+    subtitle: `${d.place}, ${d.state} · ${d.form}`,
+    to: `#/kuladevata?k=${d.id}`,
+    haystack: [d.name, d.form, d.place, d.state, d.heldBy, d.text, 'kuladevata kuladevi kuldevi kul devta family deity'].join(' '),
+  })),
+  ...([
+    ['solar', solar],
+    ['lunar', lunar],
+  ] as const).flatMap(([d, line]) =>
+    flatten(line)
+      .filter((n) => !n.person)
+      .map((n) => ({
+        kind: d === 'solar' ? 'Solar dynasty' : 'Lunar dynasty',
+        title: n.name,
+        subtitle: n.note ?? (n.spouse ? `married ${n.spouse}` : 'King of the line'),
+        to: `#/dynasties?d=${d}`,
+        haystack: [n.name, n.note ?? '', n.spouse ?? '', 'king dynasty vamsha lineage', d === 'solar' ? 'surya ikshvaku ayodhya' : 'chandra soma kuru puru yadu'].join(' '),
+      })),
+  ),
+  ...gotras.map((g) => ({
+    kind: 'Gotra',
+    title: `${g.name} gotra`,
+    subtitle: `${g.gana} gana · pravara: ${g.pravara.join(', ')}`,
+    to: `#/gotra?g=${g.id}`,
+    haystack: [g.name, ...(g.aka ?? []), g.gana, ...g.pravara, g.note ?? '', 'gotra pravara lineage rishi'].join(' '),
+  })),
+  ...acharyas.map((a) => ({
+    kind: 'Acharya',
+    title: a.name,
+    subtitle: `${a.dates} · ${darshanas.find((d) => d.id === a.darshana)?.name ?? ''}`,
+    to: `#/acharyas?a=${a.id}`,
+    haystack: [a.name, a.summary, a.born, a.sampradaya ?? '', ...a.works, ...a.facts.map((f) => f.value), 'acharya teacher'].join(' '),
+  })),
+  ...darshanas.map((d) => ({
+    kind: 'School',
+    title: d.name,
+    subtitle: d.inBrief,
+    to: `#/acharyas?d=${d.id}`,
+    haystack: [d.name, d.inBrief, d.jivaBrahman, d.world, d.liberation, 'vedanta darshana philosophy school'].join(' '),
+  })),
+  ...glossary.map((t) => ({
+    kind: 'Definition',
+    title: t.term,
+    subtitle: t.meaning,
+    to: `#/glossary?t=${t.id}`,
+    haystack: [t.term, t.meaning, t.body, ...(t.list ?? []).map((x) => `${x.name} ${x.text}`), 'definition meaning what is'].join(' '),
+  })),
+].map((e) => ({ ...e, haystack: norm(e.title + ' ' + e.haystack) }));
+
+export function search(q: string, limit = 30): Hit[] {
+  const terms = norm(q).split(/\s+/).filter(Boolean);
+  if (!terms.length) return [];
+  return index
+    .map((e) => {
+      if (!terms.every((t) => e.haystack.includes(t))) return null;
+      const title = norm(e.title);
+      const score = terms.reduce((s, t) => s + (title.includes(t) ? 10 : 1), 0);
+      return { e, score };
+    })
+    .filter((x): x is { e: Entry; score: number } => x !== null)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map(({ e }) => ({ kind: e.kind, title: e.title, subtitle: e.subtitle, to: e.to }));
+}

@@ -1,0 +1,340 @@
+.section {
+  margin-bottom: 48px;
+}
+
+.help {
+  color: var(--muted);
+  max-width: 780px;
+}
+
+.kinds {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+}
+
+.kind {
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.kind:first-child {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px var(--gold);
+}
+
+.whose {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.kind h3 {
+  margin: 4px 0 0;
+  font-size: 1.45rem;
+}
+
+.kind :global(.deva) {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.kind p {
+  margin: 8px 0;
+  font-size: 0.93rem;
+}
+
+.kind small {
+  margin-top: auto;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 0 32px;
+}
+
+.steps {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.steps li {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.steps li span {
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.numbered {
+  counter-reset: step;
+}
+
+.numbered li {
+  position: relative;
+  padding-left: 48px;
+  counter-increment: step;
+}
+
+.numbered li::before {
+  content: counter(step);
+  position: absolute;
+  left: 14px;
+  top: 10px;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.mapRow {
+  scroll-margin-top: 120px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  margin: 16px 0 8px;
+}
+
+.side {
+  max-height: min(62vh, 560px);
+  overflow-y: auto;
+}
+
+.hint {
+  padding: 20px;
+  border-radius: var(--radius);
+  border: 1px dashed var(--line);
+  color: var(--muted);
+}
+
+.hint strong {
+  color: var(--text);
+}
+
+.detail {
+  padding: 20px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.detail h2 {
+  margin: 8px 0 4px;
+  font-size: 1.7rem;
+}
+
+.where {
+  font-weight: 500;
+}
+
+.where a {
+  font-size: 0.82rem;
+  font-weight: 400;
+}
+
+.held {
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--gold-soft);
+  font-size: 0.93rem;
+}
+
+.detail > p {
+  font-size: 0.95rem;
+}
+
+.link a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.srcs {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.region {
+  margin: 28px 0 10px;
+  font-size: 1.35rem;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 8px;
+}
+
+.list a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.list a:hover,
+.list a.on {
+  border-color: var(--gold);
+}
+
+.list small {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.form {
+  color: var(--gold) !important;
+}
+
+@media (max-width: 860px) {
+  .mapRow {
+    grid-template-columns: 1fr;
+  }
+  .side {
+    max-height: none;
+  }
+}
+
+.rootBox {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 12px 0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+}
+
+.rootBox small {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.rootLink {
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.chain {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+
+.chain li {
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--gold-soft);
+  font-size: 0.82rem;
+}
+
+.chain li:first-child {
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+}
+
+.chain li:not(:last-child)::after {
+  content: '→';
+  margin-left: 6px;
+  color: var(--gold);
+}
+
+.tree {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.branch {
+  padding: 16px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--gold);
+}
+
+.bShiva {
+  border-top-color: var(--indigo);
+}
+.bVishnu {
+  border-top-color: var(--gold);
+}
+.bSkanda {
+  border-top-color: var(--muted);
+}
+.bDevi {
+  border-top-color: var(--accent);
+  grid-column: 1 / -1;
+}
+
+.branch h3 {
+  margin: 0 0 4px;
+  font-size: 1.35rem;
+}
+
+.branch > p {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.branch ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 6px;
+}
+
+.branch li {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: var(--surface-2);
+}
+
+.branch li a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.branch li span {
+  font-size: 0.78rem;
+  color: var(--muted);
+}

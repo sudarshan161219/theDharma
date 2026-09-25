@@ -1,0 +1,83 @@
+.back {
+  display: inline-block;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.deva {
+  font-size: 1.3rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+.apps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.apps li {
+  padding: 14px 18px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.appHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.apps p {
+  margin: 6px 0 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.gotras {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 8px;
+}
+
+.gotras li {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.gotras a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.gotras small {
+  font-size: 0.8rem;
+  color: var(--muted);
+}

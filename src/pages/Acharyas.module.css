@@ -1,0 +1,212 @@
+.section {
+  margin-bottom: 56px;
+}
+
+.help {
+  color: var(--muted);
+  max-width: 760px;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+}
+
+.table {
+  width: 100%;
+  min-width: 860px;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.table th,
+.table td {
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+.table thead th {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: var(--surface-2);
+}
+
+.table tbody th {
+  width: 170px;
+  background: var(--surface);
+}
+
+.table tbody th button {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: left;
+  cursor: pointer;
+}
+
+.table tbody th :global(.deva) {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.table td {
+  color: var(--muted);
+}
+
+.table td:nth-child(2) {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.rowOn th,
+.rowOn td {
+  background: var(--accent-soft) !important;
+}
+
+.samp {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.sampCard {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 18px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.sampCard:hover {
+  border-color: var(--accent);
+}
+
+.sampName {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.sampFrom {
+  font-size: 0.82rem;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+.sampCard small {
+  color: var(--muted);
+}
+
+.listHead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.clear {
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.timeline {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0 0 0 20px;
+  border-left: 2px solid var(--line);
+  display: grid;
+  gap: 18px;
+}
+
+.timeline > li {
+  position: relative;
+  min-width: 0;
+  scroll-margin-top: 130px;
+}
+
+.timeline > li::before {
+  content: '';
+  position: absolute;
+  left: -27px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid var(--bg);
+}
+
+.when {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.card {
+  padding: 20px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.focus .card {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+.card h3 {
+  font-size: 1.7rem;
+  margin-bottom: 8px;
+}
+
+.card h3 :global(.deva) {
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+/* Birthplace chips can be long; let them wrap on narrow screens. */
+.chips > span {
+  white-space: normal;
+}
+
+.card > p {
+  font-size: 0.95rem;
+}
+
+.works {
+  margin-top: 14px;
+}
+
+.srcs {
+  margin: 8px 0 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+}

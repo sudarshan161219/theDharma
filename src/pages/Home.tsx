@@ -1,0 +1,113 @@
+import type { CSSProperties } from 'react';
+import { NEXT_VYASA } from '../data/cosmos';
+import { href } from '../lib/router';
+import { fmt, kaliElapsed, kalpaElapsed } from '../lib/time';
+import styles from './Home.module.css';
+
+const QUICK: { q: string; a: string; to: string }[] = [
+  { q: 'Who composed the Shiva Purana?', a: 'Krishna Dvaipayana Vyasa, abridging a 1,00,000-verse original to 24,000 verses in 7 samhitas.', to: href('scriptures', 'shiva-purana') },
+  { q: 'Who tells the Shiva Purana, and to whom?', a: 'Suta Romaharshana, to Shaunaka and the sages of Naimisharanya. Inside it, Brahma tells Narada, Vayu tells the sages…', to: href('scriptures', 'shiva-purana') },
+  { q: 'Which manvantara are we in?', a: 'The 7th — Vaivasvata, ruled by Manu the son of Vivasvan (the Sun). Indra is Purandara.', to: href('manvantaras') + '?n=7' },
+  { q: 'Who will be the next Veda-Vyasa?', a: `${NEXT_VYASA.name}, in the 29th Dvapara.`, to: href('vyasas') },
+  { q: 'Who are the present Saptarishis?', a: 'Vasishtha, Kashyapa, Atri, Jamadagni, Gautama, Vishvamitra, Bharadvaja.', to: href('people') },
+  { q: 'How long is Kali-yuga?', a: `4,32,000 years, of which about ${fmt(kaliElapsed())} have passed.`, to: href('time') + '?yuga=kali' },
+  { q: 'Who narrates the Vishnu Purana?', a: 'Parashara (Vyasa’s father) to his disciple Maitreya.', to: href('scriptures', 'vishnu-purana') },
+  { q: 'Who tells the Devi Bhagavata?', a: 'Vyasa, to King Janamejaya after the snake sacrifice, retold by Suta at Naimisharanya.', to: href('scriptures', 'devi-bhagavata') },
+  { q: 'What is the difference between a Purana and an Upapurana?', a: 'The 18 Mahapuranas are the “great” Puranas. Upapuranas are secondary ones, often the chief text of a single tradition.', to: '#/glossary?t=upapurana' },
+  { q: 'What is the difference between Advaita and Dvaita?', a: 'Advaita (Shankara): the Self is Brahman. Dvaita (Madhva): the soul is eternally distinct from and dependent on Vishnu.', to: '#/acharyas' },
+  { q: 'Who are the nine Durgas of Navaratri?', a: 'Shailaputri, Brahmacharini, Chandraghanta, Kushmanda, Skandamata, Katyayani, Kalaratri, Mahagauri, Siddhidatri.', to: '#/avatars?g=devi&a=devi-navadurga' },
+  { q: 'Where are the 12 Jyotirlingas?', a: 'From Somnath in Gujarat to Rameswaram in Tamil Nadu. See them on a map, with the Shiva Purana’s story of each.', to: '#/places?show=jyotirlinga' },
+  { q: 'What is a kuladevata, and how do I find mine?', a: 'The guardian deity of your family line. Ask elders and the family priest, check pilgrimage-priest registers, and look to your ancestral village.', to: '#/kuladevata' },
+  { q: 'When did Rama live, in cosmic time?', a: 'At the close of the Treta of the 24th mahayuga by tradition: about 1.8 crore years ago. Try any date in the calculator.', to: '#/time' },
+  { q: 'Which rishi does my gotra come from?', a: 'Every gotra traces to one of eight founders: the seven sages plus Agastya. Look up yours and its pravara.', to: '#/gotra' },
+  { q: 'Who was Lopamudra?', a: 'Wife of Agastya and a Vedic seer herself. Rig Veda 1.179 is her dialogue with him.', to: '#/people/lopamudra' },
+  { q: 'Who heard the Bhagavata first?', a: 'King Parikshit, from Shuka, over seven days by the Ganga.', to: href('scriptures', 'bhagavata-purana') },
+];
+
+const SECTIONS = [
+  { key: 'scriptures', title: 'Scriptures', text: '18 Mahapuranas, the Itihasas and key Upapuranas like the Devi Bhagavata: author, size, and who tells whom.' },
+  { key: 'time', title: 'Cosmic Time', text: 'From a blink of the eye to the life of Brahma. The four yugas side by side.' },
+  { key: 'dynasties', title: 'Dynasties', text: 'The Solar and Lunar royal lines as a family tree: from the Sun and Moon to Rama, Krishna and the Pandavas.' },
+  { key: 'manvantaras', title: 'Manvantaras', text: 'The 14 Manus of this kalpa, with their Indras, Saptarishis and avataras.' },
+  { key: 'vyasas', title: 'Vyasas', text: 'The 28 Vyasas who arranged the Veda, one in each Dvapara — and the next one.' },
+  { key: 'people', title: 'Rishis & narrators', text: 'Sages, and every text in which each one speaks or listens.' },
+  { key: 'avatars', title: 'Avatars', text: 'Vishnu’s Dashavatara, Shiva’s incarnations, and the Goddess: Navadurga, Mahavidyas and the Devi Mahatmya.' },
+  { key: 'acharyas', title: 'Acharyas', text: 'Shankara, Ramanuja, Madhva, Nimbarka, Vallabha, Chaitanya… and how their schools differ.' },
+  { key: 'places', title: 'Sacred Places', text: 'The 12 Jyotirlingas and the Shakti Peethas on a map, with where scripture places them and where they are today.' },
+  { key: 'gotra', title: 'Gotras', text: 'The rishi behind your gotra, its pravara, the eight founders, and a same-family check.' },
+  { key: 'kuladevata', title: 'Kuladevata', text: 'Your family deity: what it is, how it is honoured, how to find it, and 30 great family shrines on a map.' },
+  { key: 'glossary', title: 'Definitions', text: 'Purana, Upapurana, Itihasa, pancha-lakshana, manvantara, rishi… explained with sources.' },
+];
+
+export default function Home() {
+  const kalpaYears = kalpaElapsed();
+  const steps = [
+    { label: 'Life of Brahma', value: '51st year, 1st day', note: '50 years have passed — the first half (Parardha)' },
+    { label: 'Kalpa', value: 'Shveta-Varaha', note: `${fmt(kalpaYears)} years into this day of Brahma` },
+    { label: 'Manvantara', value: '7th · Vaivasvata', note: '6 Manus have passed, 7 are to come' },
+    { label: 'Mahayuga', value: '28th', note: 'of 71 in this manvantara' },
+    { label: 'Yuga', value: 'Kali', note: `Year ${fmt(kaliElapsed() + 1)}, since 3102 BCE` },
+  ];
+
+  return (
+    <>
+      <section className={styles.hero}>
+        <p className={styles.eyebrow}>Hindu scriptures, made easy to grasp</p>
+        <h1>
+          Who wrote it, who is <em>telling</em>, who is <em>listening</em> — and when are we?
+        </h1>
+        <p className={styles.lede}>
+          A friendly map of the Puranas and Itihasas, the ages of time, the Manus, the Vyasas and the rishis. Each fact links back to its chapter on wisdomlib.org.
+        </p>
+      </section>
+
+      <section aria-labelledby="now" className={styles.now}>
+        <h2 id="now">Where are we in time right now?</h2>
+        <ol className={styles.steps}>
+          {steps.map((s, i) => (
+            <li key={s.label} style={{ '--i': i } as CSSProperties}>
+              <span className={styles.stepLabel}>{s.label}</span>
+              <strong>{s.value}</strong>
+              <span className={styles.stepNote}>{s.note}</span>
+            </li>
+          ))}
+        </ol>
+        <a href={href('time')} className={styles.more}>
+          See the full scale of time →
+        </a>
+        <span className={styles.sep}> · </span>
+        <a
+          href={href('time')}
+          className={styles.more}
+          onClick={() => setTimeout(() => document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' }), 60)}
+        >
+          Calculate any date →
+        </a>
+      </section>
+
+      <section aria-labelledby="quick">
+        <h2 id="quick">Quick answers</h2>
+        <div className={styles.quick}>
+          {QUICK.map((x) => (
+            <a key={x.q} href={x.to} className={styles.qa}>
+              <span className={styles.q}>{x.q}</span>
+              <span className={styles.a}>{x.a}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section aria-labelledby="explore" className={styles.explore}>
+        <h2 id="explore">Explore</h2>
+        <div className={styles.tiles}>
+          {SECTIONS.map((s) => (
+            <a key={s.key} href={href(s.key)} className={styles.tile}>
+              <h3>{s.title}</h3>
+              <p>{s.text}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    </>
+  );
+}

@@ -1,0 +1,178 @@
+.calc {
+  padding: 22px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.modes,
+.presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.modes button,
+.presets button {
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.modes button:hover,
+.presets button:hover {
+  border-color: var(--accent);
+}
+
+.modes button.on,
+.presets button.on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+
+.inputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 16px 0 20px;
+}
+
+.inputs label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.inputs input,
+.inputs select {
+  padding: 9px 12px;
+  min-width: 140px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.inputs input:focus,
+.inputs select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.presetNote {
+  flex-basis: 100%;
+  margin: 6px 0 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.result {
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+
+.when {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.headline {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  margin: 4px 0 18px;
+}
+
+.bars {
+  display: grid;
+  gap: 12px;
+}
+
+.barHead {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2px 12px;
+  font-size: 0.9rem;
+}
+
+.barLabel {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.track {
+  margin-top: 4px;
+  height: 10px;
+  border-radius: 5px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.fill {
+  display: block;
+  height: 100%;
+}
+
+.gold {
+  background: var(--gold);
+}
+.accent {
+  background: var(--accent);
+}
+.indigo {
+  background: var(--indigo);
+}
+
+.facts,
+.eras {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 18px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.facts strong,
+.eras strong {
+  color: var(--text);
+}
+
+.facts a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.eras {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--surface-2);
+}
+
+.eras small {
+  flex-basis: 100%;
+  font-size: 0.78rem;
+}
+
+.error {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px dashed var(--line);
+  color: var(--muted);
+}
