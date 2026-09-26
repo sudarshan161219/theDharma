@@ -555,6 +555,8 @@ export const src = {
   lalitopakhyana: { label: 'Lalitopakhyana (Brahmanda Purana)', url: `${WL}/hinduism/book/lalitopakhyana-lalita-mahatmya` },
   defSahasranama: { label: 'Sahasranama — definitions', url: `${WL}/definition/sahasranama` },
   defAshtottara: { label: 'Ashtottara — definitions', url: `${WL}/definition/ashtottara` },
+  agniTwentyFour: { label: 'Agni Purana 48 — Adoration of the twenty-four forms of Vishnu', url: `${WL}/hinduism/book/the-agni-purana/d/doc1083136.html` },
+  agniVyuha: { label: 'Agni Purana 25 — Worship of Vasudeva, Sankarshana, Pradyumna and Aniruddha', url: `${WL}/hinduism/book/the-agni-purana/d/doc1083113.html` },
   // ——— Pilgrimage ———
   defSaptapuri: { label: 'Saptapuri — definitions', url: `${WL}/definition/saptapuri` },
   conceptSaptapuri: { label: 'Saptapuri — concept', url: `${WL}/concept/saptapuri` },
