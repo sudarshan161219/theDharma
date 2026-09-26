@@ -20,6 +20,7 @@ const NAV = [
   { key: "vyasas", label: "Vyasas" },
   { key: "people", label: "Rishis" },
   { key: "devas", label: "Devas" },
+  { key: "forms", label: "Divine Forms" },
   { key: "gotra", label: "Gotras" },
   { key: "avatars", label: "Avatars" },
   { key: "acharyas", label: "Acharyas" },

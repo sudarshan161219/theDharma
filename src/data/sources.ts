@@ -535,6 +535,18 @@ export const src = {
   conceptSixteenSamskaras: { label: 'Sixteen samskaras — concept', url: `${WL}/concept/sixteen-samskaras` },
   defSamskara: { label: 'Samskara — definitions', url: `${WL}/definition/samskara` },
   manu6_92: { label: 'Manusmriti 6.92 — the ten marks of dharma', url: `${WL}/hinduism/book/manusmriti-with-the-commentary-of-medhatithi/d/doc200653.html` },
+  // ——— Divine forms ———
+  rv1_164_46: { label: 'Rig Veda 1.164.46 — “the one Being the wise call by many names”', url: `${WL}/hinduism/book/rig-veda-english-translation/d/doc830789.html` },
+  vyuhaEssay: { label: 'The concepts of Vyuha and Vyuhantara (Diksha in Pancharatra)', url: `${WL}/hinduism/essay/diksha-initiation-in-pancharatra/d/doc1458639.html` },
+  bhagavataPancaratra: { label: 'The Bhagavata Purana and Pancharatra', url: `${WL}/hinduism/book/the-bhagavata-purana/d/doc1113124.html` },
+  conceptFiveManifestations: { label: 'Five manifestations — concept', url: `${WL}/concept/five-manifestations` },
+  agniConsecration: { label: 'Agni Purana 66 — Mode of consecration of the gods', url: `${WL}/hinduism/book/the-agni-purana/d/doc1083178.html` },
+  defMurti: { label: 'Murti — definitions', url: `${WL}/definition/murti` },
+  defPratima: { label: 'Pratima — definitions', url: `${WL}/definition/pratima` },
+  defArca: { label: 'Arca — definitions', url: `${WL}/definition/arca` },
+  defVyuha: { label: 'Vyuha — definitions', url: `${WL}/definition/vyuha` },
+  defAntaryamin: { label: 'Antaryamin — definitions', url: `${WL}/definition/antaryamin` },
+  defPranapratishtha: { label: 'Pranapratishtha — definitions', url: `${WL}/definition/pranapratishtha` },
   // ——— Pilgrimage ———
   defSaptapuri: { label: 'Saptapuri — definitions', url: `${WL}/definition/saptapuri` },
   conceptSaptapuri: { label: 'Saptapuri — concept', url: `${WL}/concept/saptapuri` },

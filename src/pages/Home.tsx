@@ -37,6 +37,7 @@ const SECTIONS = [
   { key: 'vyasas', title: 'Vyasas', text: 'The 28 Vyasas who arranged the Veda, one in each Dvapara — and the next one.' },
   { key: 'people', title: 'Rishis & narrators', text: 'Sages, and every text in which each one speaks or listens.' },
   { key: 'devas', title: 'Devas', text: 'The Trimurti, the 33 gods of the Veda, the Navagrahas and the guardians of the eight directions.' },
+  { key: 'forms', title: 'How the Divine Appears', text: 'Formless, aniconic, animal, part-animal, human, many-armed and cosmic forms, with museum sculptures and paintings.' },
   { key: 'avatars', title: 'Avatars', text: 'Vishnu’s Dashavatara, Shiva’s incarnations, and the Goddess: Navadurga, Mahavidyas and the Devi Mahatmya.' },
   { key: 'acharyas', title: 'Acharyas', text: 'Shankara, Ramanuja, Madhva, Nimbarka, Vallabha, Chaitanya… and how their schools differ.' },
   { key: 'darshanas', title: 'Darshanas & Sampradayas', text: 'The six schools of philosophy and the four that reject the Veda, the pramanas, and the living lineages: Vaishnava, Shaiva, Shakta, Smarta and more.' },

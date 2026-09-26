@@ -44,7 +44,8 @@ export default function Devas() {
         <h2>The Trimurti and their Shaktis</h2>
         <p className={styles.help}>
           Three forms of the one Supreme for the three works of the cosmos. Each sampradaya sees its own deity as the Supreme above all three: see{' '}
-          <a href="#/darshanas?t=vaishnava">the sampradayas</a>.
+          <a href="#/darshanas?t=vaishnava">the sampradayas</a>. For the many shapes the gods take, from the linga to the lion-man, see{' '}
+          <a href="#/forms">How the Divine Appears</a>.
         </p>
         <div className={styles.trimurti}>
           {trimurti.map((t, i) => (

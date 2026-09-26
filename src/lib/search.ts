@@ -5,6 +5,7 @@ import { dharmashastras, gitaChapters, upanishads, vedangas, vedas } from '../da
 import { festivals } from '../data/calendar';
 import { dikpalas, navagrahas, trimurti, vedicGods } from '../data/devas';
 import { ashramas, purusharthas, samskaras } from '../data/dharma';
+import { spectrum, terms } from '../data/forms';
 import { dashavatara } from '../data/avatars';
 import { mahavidyas, navadurga } from '../data/devi';
 import { allPlaces } from '../data/places';
@@ -214,6 +215,20 @@ const index: Entry[] = [
     subtitle: `Guardian of the ${d.dir.toLowerCase()}`,
     to: '#/devas',
     haystack: [d.name, d.dir, d.weapon, d.vahana, d.consort, 'dikpala lokapala direction guardian'].join(' '),
+  })),
+  ...spectrum.map((f) => ({
+    kind: 'Divine form',
+    title: `${f.name} (${f.label})`,
+    subtitle: f.about.slice(0, 110) + '…',
+    to: '#/forms',
+    haystack: [f.name, f.label, f.about, ...f.examples, ...f.art.map((a) => a.title), 'form murti image icon avatar'].join(' '),
+  })),
+  ...terms.map((t) => ({
+    kind: 'Divine form',
+    title: t.term,
+    subtitle: t.meaning,
+    to: '#/forms',
+    haystack: [t.term, t.meaning, t.examples, 'anthropomorphism zoomorphism therianthropy aniconism'].join(' '),
   })),
   ...samskaras.map((x) => ({
     kind: 'Samskara',
