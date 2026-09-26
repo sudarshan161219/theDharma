@@ -36,7 +36,7 @@ export default function Devas() {
       <PageHeader
         eyebrow="Devas — the shining ones"
         title="Devas"
-        sub="The Trimurti, the thirty-three gods of the Veda, the gods the Rig Veda praises most, the nine grahas and the guardians of the eight directions."
+        sub="The Trimurti, the thirty-three devas of the Veda, the devas the Rig Veda praises most, the nine grahas and the guardians of the eight directions."
       />
 
       {/* ——— Trimurti ——— */}
@@ -44,14 +44,14 @@ export default function Devas() {
         <h2>The Trimurti and their Shaktis</h2>
         <p className={styles.help}>
           Three forms of the one Supreme for the three works of the cosmos. Each sampradaya sees its own deity as the Supreme above all three: see{' '}
-          <a href="#/darshanas?t=vaishnava">the sampradayas</a>. For the many shapes the gods take, from the linga to the lion-man, see{' '}
+          <a href="#/darshanas?t=vaishnava">the sampradayas</a>. For the many shapes the deities take, from the linga to the lion-man, see{' '}
           <a href="#/forms">How the Divine Appears</a>.
         </p>
         <div className={styles.trimurti}>
           {trimurti.map((t, i) => (
-            <article key={t.god} className={`${styles.tm} ${styles['tm' + i]}`}>
+            <article key={t.deva} className={`${styles.tm} ${styles['tm' + i]}`}>
               <span className={styles.role}>{t.role}</span>
-              <h3>{t.to ? <a href={t.to}>{t.god}</a> : t.god}</h3>
+              <h3>{t.to ? <a href={t.to}>{t.deva}</a> : t.deva}</h3>
               <p className={styles.shakti}>with {t.goddess}</p>
               <dl>
                 <div>
@@ -75,9 +75,9 @@ export default function Devas() {
 
       {/* ——— 33 ——— */}
       <section className={styles.section}>
-        <h2>How many gods are there? The thirty-three</h2>
+        <h2>How many devas are there? The thirty-three</h2>
         <p className={styles.help}>
-          At King Janaka’s court, Vidagdha Shakalya asks Yajnavalkya how many gods there are. Each time, Yajnavalkya gives a smaller number (Brihadaranyaka Upanishad 3.9).
+          At King Janaka’s court, Vidagdha Shakalya asks Yajnavalkya how many devas there are. Each time, Yajnavalkya gives a smaller number (Brihadaranyaka Upanishad 3.9).
         </p>
         <ol className={styles.countdown}>
           {godsCountdown.map((c, i) => (
@@ -89,7 +89,7 @@ export default function Devas() {
         </ol>
 
         <h3 className={styles.sub}>The thirty-three</h3>
-        <div className={styles.dots} role="group" aria-label="The 33 gods; tap a group">
+        <div className={styles.dots} role="group" aria-label="The 33 devas; tap a group">
           {thirtyThree.map((t) => (
             <button
               key={t.group}
@@ -129,16 +129,16 @@ export default function Devas() {
             ))}
         </div>
         <p className={styles.help}>
-          “Thirty-three crore gods” is a later reading: <i>koṭi</i> means both “ten million” and “kind”, so the phrase first meant thirty-three kinds.
+          “Thirty-three crore devatas” (tetis koti) is a later reading: <i>koṭi</i> means both “ten million” and “kind”, so the phrase first meant thirty-three kinds.
         </p>
         <SourceLine items={[src.brihadThirtyThree, src.conceptThirtyThree, src.vpAdityas, src.vpRudras]} />
       </section>
 
-      {/* ——— Vedic gods ——— */}
+      {/* ——— Vedic devas ——— */}
       <section className={styles.section}>
-        <h2>The gods of the Rig Veda</h2>
+        <h2>The devas of the Rig Veda</h2>
         <p className={styles.help}>
-          How many of the Rig Veda’s 1,028 hymns address each god, roughly (hymns shared by two gods are counted for both). Indra and Agni together have nearly half. Vishnu
+          How many of the Rig Veda’s 1,028 hymns address each deva, roughly (hymns shared by two devas are counted for both). Indra and Agni together have nearly half. Vishnu
           and Rudra, supreme in later Hinduism, have only a few.
         </p>
         <ul className={styles.hymns}>
@@ -208,7 +208,7 @@ export default function Devas() {
       <section className={styles.section}>
         <h2>The Ashta-dikpalas: guardians of the directions</h2>
         <p className={styles.help}>
-          Eight gods guard the quarters of space. Temples and homes are laid out by them (vastu), and Brahma (zenith) and Vishnu or Ananta (nadir) make ten. Some lists
+          Eight devas guard the quarters of space. Temples and homes are laid out by them (vastu), and Brahma (zenith) and Vishnu or Ananta (nadir) make ten. Some lists
           place Soma in the north instead of Kubera.
         </p>
         <div className={styles.compassRow}>

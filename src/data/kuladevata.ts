@@ -8,7 +8,7 @@ export const deityKinds: { name: string; sanskrit: string; whose: string; text: 
     name: 'Kuladevata / Kuladevi',
     sanskrit: 'कुलदेवता · कुलदेवी',
     whose: 'Your family line (kula)',
-    text: 'The guardian deity of a lineage, handed down through generations. It is often a goddess (kuladevi), sometimes a god (kuladeva). The family honours it at every threshold of life.',
+    text: 'The guardian deity of a lineage, handed down through generations. It is often a goddess (kuladevi), sometimes a male deity (kuladeva). The family honours it at every threshold of life.',
     sources: [src.defKuladevata, src.defKuladevi, src.defKuladeva, src.defKuladaivata],
   },
   {
@@ -22,7 +22,7 @@ export const deityKinds: { name: string; sanskrit: string; whose: string; text: 
     name: 'Grama-devata',
     sanskrit: 'ग्रामदेवता',
     whose: 'Your village or town',
-    text: 'The guardian of a place: fields, boundaries, rain and health. Often a local goddess (Mariamman, Ellamma, Maramma) or a guardian god (Ayyanar, Bhairava). Honoured by everyone who lives there, whatever their family deity.',
+    text: 'The guardian of a place: fields, boundaries, rain and health. Often a local goddess (Mariamman, Ellamma, Maramma) or a guardian deity (Ayyanar, Bhairava). Honoured by everyone who lives there, whatever their family deity.',
     sources: [src.defGramadevata, src.gramadevataStory],
   },
   {

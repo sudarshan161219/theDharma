@@ -150,7 +150,7 @@ export const bhagavataAvatars: { n: number; name: string; note: string; person?:
   { n: 9, name: 'Prithu', note: 'The first consecrated king; milked the Earth' },
   { n: 10, name: 'Matsya', note: 'Fish' },
   { n: 11, name: 'Kurma', note: 'Tortoise' },
-  { n: 12, name: 'Dhanvantari', note: 'Rose from the ocean with amrita; god of Ayurveda' },
+  { n: 12, name: 'Dhanvantari', note: 'Rose from the ocean with amrita; deva of Ayurveda' },
   { n: 13, name: 'Mohini', note: 'Enchantress who distributed the amrita to the devas' },
   { n: 14, name: 'Narasimha', note: 'Man-lion' },
   { n: 15, name: 'Vamana', note: 'Dwarf' },

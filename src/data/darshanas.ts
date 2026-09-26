@@ -50,7 +50,7 @@ export interface Darshan {
   about: string;
   /** Headline categories of the system (padarthas, tattvas, limbs…). */
   categories: { title: string; items: string[] };
-  god: string;
+  ishvara: string;
   bondage: string;
   liberation: string;
   causation: string;
@@ -117,7 +117,7 @@ export const darshans: Darshan[] = [
         'Nigrahasthana — point of defeat',
       ],
     },
-    god: 'Ishvara is the efficient cause who shapes the world from eternal atoms. Udayana’s Nyaya-kusumanjali gives classic proofs of God.',
+    ishvara: 'Ishvara is the efficient cause who shapes the world from eternal atoms. Udayana’s Nyaya-kusumanjali gives classic proofs of Ishvara.',
     bondage: 'False knowledge (mithya-jnana) breeds attachment and aversion, action, birth and pain.',
     liberation: 'Apavarga: the soul’s complete release from pain, gained through true knowledge of the categories.',
     causation: 'Asatkarya-vada: the effect is new; the pot did not exist in the clay before it was made.',
@@ -125,7 +125,7 @@ export const darshans: Darshan[] = [
       { label: 'Vatsyayana', value: 'Nyaya Bhashya, the first commentary (c. 5th century)' },
       { label: 'Uddyotakara', value: 'Nyaya Varttika, against the Buddhists' },
       { label: 'Vachaspati Mishra', value: 'Tatparya-tika (9th–10th century)' },
-      { label: 'Udayana', value: 'Nyaya-kusumanjali, proofs of God (10th–11th century)' },
+      { label: 'Udayana', value: 'Nyaya-kusumanjali, proofs of Ishvara (10th–11th century)' },
       { label: 'Gangesha', value: 'Tattva-chintamani: founds Navya-Nyaya (14th century)' },
     ],
     sources: [src.dgNyayaVaisheshika, src.dgNyayaSutras, src.dgNyayaPramanas, src.nyayaSutraPrameyas, defn('nyaya', 'Nyaya')],
@@ -161,7 +161,7 @@ export const darshans: Darshan[] = [
         'Abhava — absence (added by later writers)',
       ],
     },
-    god: 'Silent in the sutras; later authors (Prashastapada onward) accept Ishvara as the one who sets atoms in motion.',
+    ishvara: 'Silent in the sutras; later authors (Prashastapada onward) accept Ishvara as the one who sets atoms in motion.',
     bondage: 'Action driven by desire, which binds the soul to bodies.',
     liberation: 'Knowledge of the categories, ending action and the soul’s qualities; a state beyond pain.',
     causation: 'Asatkarya-vada, as in Nyaya: atoms combine into genuinely new wholes.',
@@ -207,7 +207,7 @@ export const darshans: Darshan[] = [
         '5 mahabhutas — ether, air, fire, water, earth',
       ],
     },
-    god: 'Classical Samkhya needs no creator (nirishvara): prakriti evolves by itself. Epic and Puranic Samkhya is theistic.',
+    ishvara: 'Classical Samkhya needs no creator (nirishvara): prakriti evolves by itself. Epic and Puranic Samkhya is theistic.',
     bondage: 'Non-discrimination (aviveka): purusha seems to own the pains and pleasures of the mind.',
     liberation: 'Kaivalya, “aloneness”: discriminating knowledge (viveka) that purusha is not prakriti. Like a dancer who stops when seen, prakriti withdraws.',
     causation: 'Sat-karya-vada: the effect already exists in its cause. Oil is in the sesame seed, not in sand.',
@@ -251,7 +251,7 @@ export const darshans: Darshan[] = [
         'Samadhi — absorption, where only the object shines',
       ],
     },
-    god: 'Ishvara is a special purusha, the first teacher, untouched by karma and affliction (Yoga Sutra 1.24–26).',
+    ishvara: 'Ishvara is a special purusha, the first teacher, untouched by karma and affliction (Yoga Sutra 1.24–26).',
     bondage: 'The five kleshas: ignorance, ego-sense, attachment, aversion and clinging to life.',
     liberation: 'Kaivalya: the seer abides in itself once the mind’s fluctuations are fully stilled.',
     causation: 'Sat-karya-vada, as in Samkhya.',
@@ -295,7 +295,7 @@ export const darshans: Darshan[] = [
         'Two schools: Kumarila Bhatta (6 pramanas) and Prabhakara (5)',
       ],
     },
-    god: 'Early Mimamsa has no need of a creator: the Veda is eternal and rites work by apurva. Devas are named in mantras. Later Mimamsakas soften this.',
+    ishvara: 'Early Mimamsa has no need of a creator: the Veda is eternal and rites work by apurva. Devas are named in mantras. Later Mimamsakas soften this.',
     bondage: 'Neglect of duty and actions done with desire.',
     liberation: 'Originally heaven (svarga) through rites; later Mimamsakas accept moksha as ending bondage by doing only nitya duties.',
     causation: 'Accepts real causation and a real, eternal world.',
@@ -338,7 +338,7 @@ export const darshans: Darshan[] = [
         'Prasthana-traya — Upanishads, Brahma Sutras, Gita',
       ],
     },
-    god: 'Brahman is the material and efficient cause of the world. Most schools identify it with Vishnu/Narayana or Krishna; Shaiva Vedanta with Shiva; Advaita calls personal God (Ishvara) Brahman as seen through maya.',
+    ishvara: 'Brahman is the material and efficient cause of the world. Most schools identify it with Vishnu/Narayana or Krishna; Shaiva Vedanta with Shiva; Advaita calls the personal Lord, Ishvara, Brahman as seen through maya.',
     bondage: 'Ignorance (avidya) of one’s true nature and relation to Brahman.',
     liberation: 'Knowledge and/or devotion, by the school: realising identity (Advaita) or eternal loving service (Vaishnava schools).',
     causation: 'Sat-karya-vada in two forms: real transformation (parinama) in theistic schools, apparent transformation (vivarta) in Advaita.',
@@ -546,7 +546,7 @@ export const traditions: Tradition[] = [
         centres: 'Udupi and its eight mathas; Mantralayam (Raghavendra Swami)',
         practice: 'Worship of Krishna at Udupi; the Haridasa singers (Purandara Dasa, Kanaka Dasa) spread it in Kannada song',
         about:
-          'Madhva taught five real differences: God–soul, God–matter, soul–soul, soul–matter and matter–matter. The eight Udupi mathas take turns, every two years, to worship Krishna (the Paryaya festival).',
+          'Madhva taught five real differences: Ishvara–soul, Ishvara–matter, soul–soul, soul–matter and matter–matter. The eight Udupi mathas take turns, every two years, to worship Krishna (the Paryaya festival).',
         parampara: ['Narayana', 'Brahma', 'Narada', 'Vyasa', 'Madhva', 'Padmanabha Tirtha', 'Jayatirtha', 'Vyasatirtha', 'Raghavendra Tirtha'],
         sources: [src.dasguptaMadhva, src.dasgupta4],
       },
@@ -581,7 +581,7 @@ export const traditions: Tradition[] = [
         texts: 'Vedanta-parijata-saurabha, Dasha-shloki',
         centres: 'Vrindavan, Salemabad (Rajasthan)',
         practice: 'Worship of the divine couple; the “Gopala mantra”',
-        about: 'Among the earliest to worship Radha with Krishna. The soul and world are naturally both different and not different from God, like the sun and its rays.',
+        about: 'Among the earliest to worship Radha with Krishna. The soul and world are naturally both different and not different from Bhagavan, like the sun and its rays.',
         parampara: ['Hamsa (Vishnu)', 'Sanaka and the Kumaras', 'Narada', 'Nimbarka', 'Shrinivasa'],
         sources: [src.dasguptaNimbarka, src.dasgupta3],
       },

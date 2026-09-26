@@ -33,7 +33,7 @@ export default function Acharyas({ route }: { route: Route }) {
               <tr>
                 <th scope="col">School</th>
                 <th scope="col">In brief</th>
-                <th scope="col">Soul &amp; God</th>
+                <th scope="col">Soul &amp; Brahman</th>
                 <th scope="col">The world</th>
                 <th scope="col">Liberation</th>
               </tr>

@@ -97,7 +97,7 @@ export const ev = {
     id: 550,
     title: 'Srisailam Plates of Virupaksha',
     meta: 'Vijayanagara · 1465 CE',
-    note: 'On his coronation the king grants a village to the god Mallikarjuna of Shriparvata (Srisailam) for daily offerings, festivals and feeding ascetics.',
+    note: 'On his coronation the king grants a village to Mallikarjuna (Shiva) of Shriparvata (Srisailam) for daily offerings, festivals and feeding ascetics.',
   },
   mandhata: {
     kind: 'Inscription',
@@ -127,14 +127,14 @@ export const ev = {
     id: 434,
     title: 'Inscriptions at Ittagi — A. Of the time of Vikramaditya VI',
     meta: 'Chalukyas of Kalyana · 1112 CE · Epigraphia Indica 13',
-    note: 'The general Mahadeva builds a Shiva temple, a Vishnu temple for his father, a shrine for his mother, and a temple for his tutelary deity, Bhairava. Here the family deity sits alongside the great gods.',
+    note: 'The general Mahadeva builds a Shiva temple, a Vishnu temple for his father, a shrine for his mother, and a temple for his tutelary deity, Bhairava. Here the family deity sits alongside the great deities.',
   },
   shaliyaFamilyGod: {
     kind: 'Inscription',
     id: 2920,
     title: 'Tamil inscription from Trimurti Hills',
     meta: 'Tamil Nadu · ASI record',
-    note: 'Records the gift of an image of Tomar-malai, “the family god of the Shaliya” (a weaving community). A kula-devata held by a whole community.',
+    note: 'Records the gift of an image of Tomar-malai, the family deity of the Shaliya (a weaving community). A kula-devata held by a whole community.',
   },
   agastyaTutelary: {
     kind: 'Inscription',

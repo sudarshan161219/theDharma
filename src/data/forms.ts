@@ -36,7 +36,7 @@ export const art = {
   linga: met(37446, 'as/web-large/1987_142_331.jpg', 'Linga', '11th–12th century', 'Nepal, Kathmandu Valley', 'Bronze'),
   ekamukha: met(38250, 'as/web-large/DT6118.jpg', 'Linga with Face of Shiva (Ekamukhalinga)', '7th century', 'Kashmir', 'Stone'),
   ganga: cma('1966.119', 'River Goddess Ganga', 'c. 700', 'Mathura, Uttar Pradesh', 'Sandstone'),
-  surya: met(38943, 'as/web-large/1987_142_334_F_sf.jpg', 'Surya, the Sun God, with Attendants', 'c. 9th century', 'Bangladesh', 'Bronze'),
+  surya: met(38943, 'as/web-large/1987_142_334_F_sf.jpg', 'Surya with Attendants', 'c. 9th century', 'Bangladesh', 'Bronze'),
   govardhan: met(448183, 'is/web-large/DP231327.jpg', 'Krishna Holds Up Mount Govardhan, folio from a Harivamsha', 'c. 1590–95', 'Mughal court (present-day Pakistan)', 'Ink, opaque watercolour and gold on paper'),
   churning: met(37989, 'as/web-large/DP152318.jpg', 'The Churning of the Ocean of Milk', 'c. 1780–90', 'Mandi, Punjab Hills', 'Ink and opaque watercolour on paper'),
   narasimha: met(38470, 'as/web-large/1987_142_90.jpg', 'Narasimha Slaying Hiranyakashipu', '6th–7th century', 'Kashmir or Pakistan', 'Stone'),
@@ -64,7 +64,7 @@ export const terms: { term: string; from: string; meaning: string; examples: str
   { term: 'Zoomorphic', from: 'zoon “animal” + morphe “form”', meaning: 'The divine as an animal', examples: 'Kurma the tortoise, Matsya the fish, Nandi, the cow Kamadhenu' },
   { term: 'Therianthropic', from: 'therion “beast” + anthropos “human”', meaning: 'Part animal, part human', examples: 'Narasimha, Ganesha, Varaha, Hayagriva, Hanuman, Garuda' },
   { term: 'Androgynous / composite', from: '', meaning: 'Two deities or two sexes in one body', examples: 'Ardhanarishvara, Harihara' },
-  { term: 'Theophany', from: 'theos “god” + phainein “to show”', meaning: 'A god showing itself', examples: 'The pillar of fire between Brahma and Vishnu; Krishna’s cosmic form' },
+  { term: 'Theophany', from: 'theos “god” + phainein “to show”', meaning: 'A deity revealing itself', examples: 'The pillar of fire between Brahma and Vishnu; Krishna’s cosmic form' },
 ];
 
 export type FormId = 'formless' | 'aniconic' | 'sound' | 'nature' | 'animal' | 'hybrid' | 'human' | 'superhuman' | 'composite' | 'cosmic';
@@ -98,7 +98,7 @@ export const spectrum: { id: FormId; name: string; sanskrit: string; label: stri
     sanskrit: 'नाद · यन्त्र',
     label: 'Mantra and yantra',
     about:
-      'The deity is present as sound (mantra, the “body” of the god, with Om as the root of all sound: nada-brahman) and as sacred geometry (yantra, mandala). In Sri Vidya the Sri Chakra is the Goddess herself, and her fifteen-syllable mantra is her subtle form.',
+      'The deity is present as sound (mantra, the “body” of the deity, with Om as the root of all sound: nada-brahman) and as sacred geometry (yantra, mandala). In Sri Vidya the Sri Chakra is the Goddess herself, and her fifteen-syllable mantra is her subtle form.',
     examples: ['Om (pranava)', 'The Gayatri and other mantras', 'Sri Chakra and other yantras'],
     art: [],
     link: { to: '#/darshanas?t=shakta', label: 'Sri Vidya' },
@@ -119,7 +119,7 @@ export const spectrum: { id: FormId; name: string; sanskrit: string; label: stri
     sanskrit: 'पशु',
     label: 'Zoomorphic',
     about:
-      'The divine takes an animal body. In the Puranas Vishnu becomes a great fish to save Manu and the Vedas from the flood, and a tortoise to bear Mount Mandara as the ocean is churned. Animals also carry the gods (vahanas) and are honoured in their own right: Nandi, the cow, the serpent Ananta.',
+      'The divine takes an animal body. In the Puranas Vishnu becomes a great fish to save Manu and the Vedas from the flood, and a tortoise to bear Mount Mandara as the ocean is churned. Animals also carry the devas (vahanas) and are honoured in their own right: Nandi, the cow, the serpent Ananta.',
     examples: ['Matsya (fish), Kurma (tortoise)', 'Nandi, Kamadhenu, Ananta', 'The vahanas of each deity'],
     art: [art.churning],
     link: { to: '#/avatars', label: 'The Dashavatara' },
@@ -130,7 +130,7 @@ export const spectrum: { id: FormId; name: string; sanskrit: string; label: stri
     sanskrit: 'नर-पशु',
     label: 'Therianthropic',
     about:
-      'Some forms join an animal head or body to a human one, each part with meaning. Narasimha is neither man nor beast, to slay a demon who could be killed by neither. Ganesha’s elephant head is wisdom that removes obstacles. Artists often show Matsya and Kurma this way too, a god rising from the fish or tortoise.',
+      'Some forms join an animal head or body to a human one, each part with meaning. Narasimha is neither man nor beast, to slay a demon who could be killed by neither. Ganesha’s elephant head is wisdom that removes obstacles. Artists often show Matsya and Kurma this way too, the deity rising from the fish or tortoise.',
     examples: ['Narasimha, Varaha, Hayagriva', 'Ganesha', 'Hanuman, Garuda'],
     art: [art.narasimha, art.ganesha, art.varaha, art.hanuman, art.matsya, art.garuda],
   },
@@ -140,7 +140,7 @@ export const spectrum: { id: FormId; name: string; sanskrit: string; label: stri
     sanskrit: 'मनुष्य',
     label: 'Anthropomorphic',
     about:
-      'The divine lives a human life: born, growing up, loving, suffering and dying. Rama is the ideal king and son; Krishna a mischievous child, a friend, a teacher on the battlefield. Human form lets devotees relate to God as child, friend, master or beloved.',
+      'The divine lives a human life: born, growing up, loving, suffering and dying. Rama is the ideal king and son; Krishna a mischievous child, a friend, a teacher on the battlefield. Human form lets devotees relate to Bhagavan as child, friend, master or beloved.',
     examples: ['Rama, Krishna, Parashurama', 'Vishnu, Shiva, Devi in human likeness', 'The guru as a living form'],
     art: [art.vishnu, art.krishna, art.rama],
   },
@@ -150,7 +150,7 @@ export const spectrum: { id: FormId; name: string; sanskrit: string; label: stri
     sanskrit: 'दिव्य',
     label: 'Many arms, many heads',
     about:
-      'Extra arms show many powers at once, each hand holding an emblem or making a gesture; extra heads show facets of one nature. Vaikuntha Vishnu has the faces of a man, a lion and a boar. Durga’s ten arms carry the weapons of all the gods; Nataraja’s four arms create, protect, destroy and bless.',
+      'Extra arms show many powers at once, each hand holding an emblem or making a gesture; extra heads show facets of one nature. Vaikuntha Vishnu has the faces of a man, a lion and a boar. Durga’s ten arms carry the weapons of all the devas; Nataraja’s four arms create, protect, destroy and bless.',
     examples: ['Four-armed Vishnu and Shiva', 'Ten-armed Durga', 'Five-faced Sadashiva, four-faced Brahma'],
     art: [art.vaikuntha, art.durga, art.nataraja],
   },
@@ -170,7 +170,7 @@ export const spectrum: { id: FormId; name: string; sanskrit: string; label: stri
     sanskrit: 'विश्वरूप',
     label: 'Cosmic form',
     about:
-      'In the Gita’s eleventh chapter Krishna shows Arjuna his universal form, holding all worlds, beings and times, blazing like a thousand suns. Sculptors show it as a figure from whom other gods and beings pour out.',
+      'In the Gita’s eleventh chapter Krishna shows Arjuna his universal form, holding all worlds, beings and times, blazing like a thousand suns. Sculptors show it as a figure from whom other devas and beings pour out.',
     examples: ['Vishvarupa (Gita 11)', 'Virat Purusha (Rig Veda 10.90)', 'Vishnu sleeping on the cosmic ocean'],
     art: [art.vishvarupa],
     link: { to: '#/vedas', label: 'The Gita, chapter 11' },
@@ -180,7 +180,7 @@ export const spectrum: { id: FormId; name: string; sanskrit: string; label: stri
 /** Pancharatra: the five modes in which Vishnu is present. */
 export const fiveModes: { name: string; sanskrit: string; what: string; water: string }[] = [
   { name: 'Para', sanskrit: 'पर', what: 'The Supreme in his own abode, Vaikuntha, beyond the universe', water: 'Water beyond the universe, out of reach' },
-  { name: 'Vyuha', sanskrit: 'व्यूह', what: 'Four emanations for creating and ruling the world: Vasudeva, Sankarshana, Pradyumna, Aniruddha', water: 'The ocean of milk, reached only by the gods' },
+  { name: 'Vyuha', sanskrit: 'व्यूह', what: 'Four emanations for creating and ruling the world: Vasudeva, Sankarshana, Pradyumna, Aniruddha', water: 'The ocean of milk, reached only by the devas' },
   { name: 'Vibhava', sanskrit: 'विभव', what: 'The avataras who descend into the world: Rama, Krishna and the others', water: 'A flood that came in the past and is gone' },
   { name: 'Antaryamin', sanskrit: 'अन्तर्यामी', what: 'The inner controller, dwelling in the heart of every being', water: 'Water under the ground: present, but you must dig for it' },
   { name: 'Archa', sanskrit: 'अर्चा', what: 'The consecrated image in temple and home, which anyone can see and serve', water: 'Pools and tanks that anyone can reach and drink from' },
@@ -188,10 +188,10 @@ export const fiveModes: { name: string; sanskrit: string; what: string; water: s
 
 /** Degrees of divine descent. */
 export const descents: { name: string; sanskrit: string; meaning: string; example: string }[] = [
-  { name: 'Purna', sanskrit: 'पूर्ण', meaning: 'A full descent of God himself', example: 'Krishna: “Krishna is Bhagavan himself” (Bhagavata 1.3.28)' },
+  { name: 'Purna', sanskrit: 'पूर्ण', meaning: 'A full descent of Bhagavan himself', example: 'Krishna: “Krishna is Bhagavan himself” (Bhagavata 1.3.28)' },
   { name: 'Amsha', sanskrit: 'अंश', meaning: 'A partial descent, a portion of the divine', example: 'Many avataras of the Bhagavata’s list of 22' },
   { name: 'Avesha', sanskrit: 'आवेश', meaning: 'A being empowered by the divine for a task', example: 'Parashurama; the power leaves him after he meets Rama' },
-  { name: 'Vibhuti', sanskrit: 'विभूति', meaning: 'A glory: whatever is excellent reflects God', example: 'Gita 10: “among mountains I am the Himalaya, among rivers the Ganga”' },
+  { name: 'Vibhuti', sanskrit: 'विभूति', meaning: 'A glory: whatever is excellent reflects Bhagavan', example: 'Gita 10: “among mountains I am the Himalaya, among rivers the Ganga”' },
 ];
 
 /** How a statue becomes a living presence. */
@@ -234,7 +234,7 @@ export const iconography: { name: string; what: string }[] = [
   { name: 'Ayudhas', what: 'Emblems in the hands: Vishnu’s conch, discus, mace and lotus; Shiva’s trident and drum.' },
   { name: 'Third eye', what: 'Shiva’s eye of wisdom, which burned Kama to ashes.' },
   { name: 'Prabha-mandala', what: 'The halo or ring of flames around the figure: divine radiance, or the cosmos (as around Nataraja).' },
-  { name: 'Vahana', what: 'The mount beside or beneath the god, which shares its nature: Garuda for Vishnu, Nandi for Shiva, the lion for Durga.' },
+  { name: 'Vahana', what: 'The mount beside or beneath the deity, which shares its nature: Garuda for Vishnu, Nandi for Shiva, the lion for Durga.' },
 ];
 
 export const formSources: Source[] = [

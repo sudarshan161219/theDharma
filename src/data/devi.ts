@@ -32,7 +32,7 @@ export const charitas: { n: number; form: string; demon: string; cantos: string;
     form: 'Mahalakshmi (Chandika)',
     demon: 'Mahishasura',
     cantos: 'Markandeya Purana 82–84',
-    text: 'The buffalo-demon Mahisha drives the gods from heaven. From their blazing anger a single light arises and takes the form of the Goddess. Each god gives her his weapon, and she rides her lion into battle and slays Mahisha. This is Durga as Mahishasuramardini.',
+    text: 'The buffalo-demon Mahisha drives the devas from heaven. From their blazing anger a single light arises and takes the form of the Goddess. Each deva gives her his weapon, and she rides her lion into battle and slays Mahisha. This is Durga as Mahishasuramardini.',
     sources: [src.dmCanto82, src.dmCanto83],
   },
   {
@@ -45,7 +45,7 @@ export const charitas: { n: number; form: string; demon: string; cantos: string;
   },
 ];
 
-/** The seven Mothers who fight Raktabija (Markandeya Purana 88): each the shakti of a god. */
+/** The seven Mothers who fight Raktabija (Markandeya Purana 88): each the shakti of a deva. */
 export const matrikas: { name: string; of: string; mount: string }[] = [
   { name: 'Brahmani', of: 'Brahma', mount: 'Swan' },
   { name: 'Maheshvari', of: 'Shiva', mount: 'Bull' },
@@ -116,7 +116,7 @@ export const navadurga: DeviForm[] = [
     sanskrit: 'स्कन्दमाता',
     meaning: 'Mother of Skanda',
     form: 'Holds the infant Skanda (Kartikeya) on her lap; lotuses in two hands; seated on a lion or a lotus.',
-    story: 'Mother of the war-god Skanda, born to destroy the demon Taraka (Shiva Purana, Kumara-khanda).',
+    story: 'Mother of Skanda, commander of the devas’ army, born to destroy the demon Taraka (Shiva Purana, Kumara-khanda).',
     aside: 'Day 5 of Navaratri',
     sources: [src.defNavadurga, src.shivaPurana],
   },
@@ -157,7 +157,7 @@ export const navadurga: DeviForm[] = [
     name: 'Siddhidatri',
     sanskrit: 'सिद्धिदात्री',
     meaning: 'Giver of perfections (siddhis)',
-    form: 'Seated on a lotus (or lion); holds discus, conch, mace and lotus; worshipped by gods, siddhas and sages.',
+    form: 'Seated on a lotus (or lion); holds discus, conch, mace and lotus; worshipped by devas, siddhas and sages.',
     story: 'She grants all eight siddhis. Tradition says Shiva received them through her grace, and half his body became hers as Ardhanarishvara.',
     aside: 'Day 9 of Navaratri (Maha Navami)',
     sources: [src.defNavadurga],
@@ -222,7 +222,7 @@ export const mahavidyas: DeviForm[] = [
     name: 'Chhinnamasta',
     sanskrit: 'छिन्नमस्ता',
     meaning: 'She whose head is severed',
-    form: 'Holds her own severed head. Three streams of blood flow from her neck, one into her own mouth and two into the mouths of her attendants Dakini and Varnini. She stands on the love-god Kama and Rati.',
+    form: 'Holds her own severed head. Three streams of blood flow from her neck, one into her own mouth and two into the mouths of her attendants Dakini and Varnini. She stands on Kama, deva of love, and Rati.',
     story: 'The most startling image of the ten. It teaches self-sacrifice and the conquest of desire, and that life feeds on life. Her temple at Rajrappa, Jharkhand, is famous.',
     sources: [src.defMahavidya],
   },

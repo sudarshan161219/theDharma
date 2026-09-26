@@ -7,7 +7,7 @@ export interface Darshana {
   sanskrit: string;
   /** One sentence a beginner can hold on to. */
   inBrief: string;
-  /** How it answers: what is the relation of the soul (jiva) to God/Brahman? */
+  /** How it answers: what is the relation of the soul (jiva) to Brahman (Ishvara)? */
   jivaBrahman: string;
   world: string;
   liberation: string;
@@ -29,8 +29,8 @@ export const darshanas: Darshana[] = [
     sanskrit: 'विशिष्टाद्वैत',
     inBrief: 'Qualified non-dualism: one Brahman (Narayana) with souls and matter as his body.',
     jivaBrahman: 'Souls are real, eternal parts (modes) of Brahman: one with him as body with soul, yet distinct.',
-    world: 'Real, the body of God.',
-    liberation: 'Devotion (bhakti) and surrender (prapatti) by God’s grace; eternal service in Vaikuntha.',
+    world: 'Real, the body of Ishvara (Narayana).',
+    liberation: 'Devotion (bhakti) and surrender (prapatti) by Narayana’s grace; eternal service in Vaikuntha.',
   },
   {
     id: 'dvaita',
@@ -38,7 +38,7 @@ export const darshanas: Darshana[] = [
     sanskrit: 'द्वैत',
     inBrief: 'Dualism: Vishnu alone is independent, and everything else depends on him and is eternally different from him.',
     jivaBrahman: 'Eternally distinct; the soul is a reflection (pratibimba) dependent on Vishnu.',
-    world: 'Real. There are five eternal differences (pancha-bheda) between God, souls and matter.',
+    world: 'Real. There are five eternal differences (pancha-bheda) between Ishvara, souls and matter.',
     liberation: 'Knowledge and devotion, by Vishnu’s grace; souls differ even in liberation.',
   },
   {
@@ -47,7 +47,7 @@ export const darshanas: Darshana[] = [
     sanskrit: 'द्वैताद्वैत',
     inBrief: 'Dual-non-dualism: souls and the world are both different and not different from Krishna, naturally.',
     jivaBrahman: 'At once different and non-different, like the sun and its rays.',
-    world: 'Real, a transformation of God’s power.',
+    world: 'Real, a transformation of Bhagavan’s power.',
     liberation: 'Surrender and devotion to Radha-Krishna.',
   },
   {
@@ -218,7 +218,7 @@ export const acharyas: Acharya[] = [
     darshana: 'dvaitadvaita',
     sampradaya: 'Kumara (Sanaka) Sampradaya',
     born: 'Tradition: near Paithan or in the Telugu country',
-    summary: 'Tradition traces his line to the Kumaras through Narada. He is among the first to make Radha and Krishna together the object of worship. His brief commentary on the Brahma Sutras teaches the natural difference-and-non-difference of souls and God.',
+    summary: 'Tradition traces his line to the Kumaras through Narada. He is among the first to make Radha and Krishna together the object of worship. His brief commentary on the Brahma Sutras teaches the natural difference-and-non-difference of souls and Bhagavan.',
     facts: [
       { label: 'Lineage', value: 'Hamsa → Kumaras → Narada → Nimbarka' },
       { label: 'Deity', value: 'Radha-Krishna' },

@@ -1,10 +1,10 @@
 import type { Source } from './types';
 import { defn, src } from './sources';
 
-export const trimurti: { role: string; god: string; goddess: string; vahana: string; abode: string; emblems: string; note: string; to?: string }[] = [
+export const trimurti: { role: string; deva: string; goddess: string; vahana: string; abode: string; emblems: string; note: string; to?: string }[] = [
   {
     role: 'Creation',
-    god: 'Brahma',
+    deva: 'Brahma',
     goddess: 'Sarasvati: knowledge, speech, music',
     vahana: 'Hamsa (swan)',
     abode: 'Satyaloka',
@@ -14,7 +14,7 @@ export const trimurti: { role: string; god: string; goddess: string; vahana: str
   },
   {
     role: 'Preservation',
-    god: 'Vishnu',
+    deva: 'Vishnu',
     goddess: 'Lakshmi: fortune, prosperity, grace',
     vahana: 'Garuda (eagle)',
     abode: 'Vaikuntha; sleeps on Ananta in the milk ocean',
@@ -24,7 +24,7 @@ export const trimurti: { role: string; god: string; goddess: string; vahana: str
   },
   {
     role: 'Dissolution',
-    god: 'Shiva',
+    deva: 'Shiva',
     goddess: 'Parvati: power, devotion; also Durga and Kali',
     vahana: 'Nandi (bull)',
     abode: 'Kailasa',
@@ -36,8 +36,8 @@ export const trimurti: { role: string; god: string; goddess: string; vahana: str
 
 /** Brihadaranyaka 3.9: Yajnavalkya's answer to Vidagdha Shakalya. */
 export const godsCountdown: { n: string; answer: string }[] = [
-  { n: '3,306', answer: 'The glories (mahiman) of the gods' },
-  { n: '33', answer: 'The real gods: 8 Vasus, 11 Rudras, 12 Adityas, Indra and Prajapati' },
+  { n: '3,306', answer: 'The glories (mahiman) of the devas' },
+  { n: '33', answer: 'The real devas: 8 Vasus, 11 Rudras, 12 Adityas, Indra and Prajapati' },
   { n: '6', answer: 'Fire, earth, air, sky, sun and heaven' },
   { n: '3', answer: 'The three worlds' },
   { n: '2', answer: 'Food and breath' },
@@ -81,13 +81,13 @@ export const thirtyThree: { group: string; count: number; upanishad: string; nam
 ];
 
 export const vedicGods: { name: string; sanskrit: string; hymns: number; role: string }[] = [
-  { name: 'Indra', sanskrit: 'इन्द्र', hymns: 250, role: 'King of the gods, wielder of the thunderbolt; slays Vritra and frees the waters' },
-  { name: 'Agni', sanskrit: 'अग्नि', hymns: 200, role: 'Fire: the priest and messenger who carries offerings to the gods; opens the Rig Veda' },
-  { name: 'Soma', sanskrit: 'सोम', hymns: 120, role: 'The sacred drink and its god; all of Mandala 9 is his' },
-  { name: 'Ashvins', sanskrit: 'अश्विनौ', hymns: 55, role: 'Twin horsemen of dawn, physicians of the gods' },
+  { name: 'Indra', sanskrit: 'इन्द्र', hymns: 250, role: 'King of the devas, wielder of the thunderbolt; slays Vritra and frees the waters' },
+  { name: 'Agni', sanskrit: 'अग्नि', hymns: 200, role: 'Fire: the priest and messenger who carries offerings to the devas; opens the Rig Veda' },
+  { name: 'Soma', sanskrit: 'सोम', hymns: 120, role: 'The sacred drink and its deva; all of Mandala 9 is his' },
+  { name: 'Ashvins', sanskrit: 'अश्विनौ', hymns: 55, role: 'Twin horsemen of dawn, physicians of the devas' },
   { name: 'Ushas', sanskrit: 'उषस्', hymns: 20, role: 'Dawn, a radiant young woman who wakes all beings' },
   { name: 'Varuna', sanskrit: 'वरुण', hymns: 12, role: 'Guardian of cosmic order (rita); sees every falsehood (often paired with Mitra)' },
-  { name: 'Surya', sanskrit: 'सूर्य', hymns: 10, role: 'The sun, eye of the gods; as Savitri, the impeller praised in the Gayatri' },
+  { name: 'Surya', sanskrit: 'सूर्य', hymns: 10, role: 'The sun, eye of the devas; as Savitri, the impeller praised in the Gayatri' },
   { name: 'Vishnu', sanskrit: 'विष्णु', hymns: 6, role: 'Measures the three worlds in three strides' },
   { name: 'Rudra', sanskrit: 'रुद्र', hymns: 4, role: 'The fierce archer and healer: later Shiva' },
 ];

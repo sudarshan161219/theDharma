@@ -190,10 +190,10 @@ const index: Entry[] = [
   },
   ...trimurti.map((t) => ({
     kind: 'Deva',
-    title: t.god,
+    title: t.deva,
     subtitle: `${t.role} · with ${t.goddess.split(':')[0]}`,
     to: '#/devas',
-    haystack: [t.god, t.goddess, t.vahana, t.abode, t.emblems, t.note, 'trimurti'].join(' '),
+    haystack: [t.deva, t.goddess, t.vahana, t.abode, t.emblems, t.note, 'trimurti'].join(' '),
   })),
   ...vedicGods.map((g) => ({
     kind: 'Deva',

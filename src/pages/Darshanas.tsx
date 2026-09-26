@@ -334,7 +334,7 @@ function DarshanDetail({ d }: { d: Darshan }) {
 
       <div className={styles.questions}>
         {[
-          ['God', d.god],
+          ['Ishvara', d.ishvara],
           ['What binds us', d.bondage],
           ['Liberation', d.liberation],
           ['Cause and effect', d.causation],
@@ -651,7 +651,7 @@ export default function Darshanas({ route }: { route: Route }) {
       <section className={styles.section}>
         <h2>Does the effect exist before its cause?</h2>
         <p className={styles.help}>
-          The theory of causation (karya-karana-vada) quietly shapes each school’s view of creation. Is the world new, a real change in God or nature, or only an
+          The theory of causation (karya-karana-vada) quietly shapes each school’s view of creation. Is the world new, a real change in Brahman or nature, or only an
           appearance?
         </p>
         <div className={styles.causes}>

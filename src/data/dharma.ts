@@ -46,7 +46,7 @@ export const mahayajnas: { name: string; sanskrit: string; to: string; how: stri
 
 export const rinas: { debt: string; to: string; repaid: string }[] = [
   { debt: 'Rishi-rina', to: 'The seers', repaid: 'by study and passing on knowledge' },
-  { debt: 'Deva-rina', to: 'The gods', repaid: 'by worship and sacrifice' },
+  { debt: 'Deva-rina', to: 'The devas', repaid: 'by worship and sacrifice' },
   { debt: 'Pitri-rina', to: 'The ancestors', repaid: 'by raising children and keeping the line' },
 ];
 

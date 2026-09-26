@@ -226,7 +226,7 @@ export default function Kuladevata({ route }: { route: Route }) {
 
       <section className={styles.section}>
         <h2>Family deities in the inscriptions</h2>
-        <p className={styles.help}>The custom is old. Inscriptions record people building temples to their tutelary deity and naming the family god of a whole community.</p>
+        <p className={styles.help}>The custom is old. Inscriptions record people building temples to their tutelary deity and naming the family deity of a whole community.</p>
         <Evidence items={kulaEvidence} title="Tutelary and family deities in stone" />
       </section>
 

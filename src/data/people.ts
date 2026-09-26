@@ -220,7 +220,7 @@ export const people: Person[] = [
     kind: 'Rishi',
     short: 'Mind-born son of Brahma and founder of the Bhargava line; famous for testing the Trimurti.',
     about:
-      'To find which of the three gods was greatest, Bhrigu slighted Brahma and Shiva, then kicked the sleeping Vishnu on the chest. Vishnu only asked if the sage’s foot was hurt, and Bhrigu declared him supreme. The mark on Vishnu’s chest (Shrivatsa) is linked to this story. In the Gita (10.25) Krishna says, “Among great sages I am Bhrigu.” His line includes Shukra, Chyavana, Jamadagni and Parashurama.',
+      'To find which of the Trimurti was greatest, Bhrigu slighted Brahma and Shiva, then kicked the sleeping Vishnu on the chest. Vishnu only asked if the sage’s foot was hurt, and Bhrigu declared him supreme. The mark on Vishnu’s chest (Shrivatsa) is linked to this story. In the Gita (10.25) Krishna says, “Among great sages I am Bhrigu.” His line includes Shukra, Chyavana, Jamadagni and Parashurama.',
     facts: [
       { label: 'Father', value: 'Brahma (mind-born)' },
       { label: 'Sons', value: 'Shukra (Ushanas), Chyavana' },
@@ -322,7 +322,7 @@ export const people: Person[] = [
     kind: 'Rishi',
     short: 'Son of Atri and Anasuya, born of Shiva’s portion; famous for his temper and his curses.',
     about:
-      'His curse on Indra, who disrespected a garland, stripped the devas of their fortune and led to the churning of the ocean. He cursed Shakuntala to be forgotten by Dushyanta and gave Kunti the mantra to call the gods. When he tested King Ambarisha, Vishnu’s Sudarshana discus chased him until he begged the king’s pardon. The Durvasas Upapurana is named after him.',
+      'His curse on Indra, who disrespected a garland, stripped the devas of their fortune and led to the churning of the ocean. He cursed Shakuntala to be forgotten by Dushyanta and gave Kunti the mantra to call the devas. When he tested King Ambarisha, Vishnu’s Sudarshana discus chased him until he begged the king’s pardon. The Durvasas Upapurana is named after him.',
     facts: [
       { label: 'Parents', value: 'Atri and Anasuya' },
       { label: 'Portion of', value: 'Shiva' },
@@ -335,7 +335,7 @@ export const people: Person[] = [
     name: 'Dattatreya',
     sanskrit: 'दत्तात्रेय',
     kind: 'Avatara',
-    short: 'Son of Atri and Anasuya, revered as an avatara of Vishnu, or of all three gods together.',
+    short: 'Son of Atri and Anasuya, revered as an avatara of Vishnu, or of all three of the Trimurti together.',
     about:
       'The great avadhuta, a teacher beyond all conventions. In the Bhagavata (11th skandha) he tells King Yadu about his 24 gurus, among them the earth, the python and the honeybee, from whom he learned wisdom. He is counted among the 24 avataras of Vishnu (Bhagavata 1.3).',
     facts: [
@@ -562,9 +562,9 @@ export const people: Person[] = [
     name: 'Anasuya',
     sanskrit: 'अनसूया',
     kind: 'Rishika',
-    short: 'Wife of Atri, whose purity was so great that the three gods were born as her sons.',
+    short: 'Wife of Atri, whose purity was so great that the Trimurti were born as her sons.',
     about:
-      'Her name means “free from envy”. The three gods came to test her virtue. By the power of her chastity she turned them into infants, and they were born as her sons: Dattatreya, Durvasa and Chandra. When Rama and Sita visited the ashrama of Atri during their exile, Anasuya taught Sita about the duties of a wife and gave her garments and ornaments that never soiled.',
+      'Her name means “free from envy”. The Trimurti came to test her virtue. By the power of her chastity she turned them into infants, and they were born as her sons: Dattatreya, Durvasa and Chandra. When Rama and Sita visited the ashrama of Atri during their exile, Anasuya taught Sita about the duties of a wife and gave her garments and ornaments that never soiled.',
     facts: [
       { label: 'Husband', value: 'Atri' },
       { label: 'Sons', value: 'Dattatreya, Durvasa, Chandra' },
@@ -750,7 +750,7 @@ export const people: Person[] = [
   { id: 'shiva', name: 'Shiva', kind: 'Deva', short: 'Mahadeva; the original source of the Shiva Purana.' },
   { id: 'vishnu', name: 'Vishnu / Narayana', kind: 'Deva', short: 'The preserver; speaks the Garuda and Matsya Puranas through his forms.' },
   { id: 'kumaras', name: 'Sanaka, Sanandana, Sanatana, Sanatkumara', kind: 'Rishi', short: 'The four Kumaras, mind-born sons of Brahma, narrators of the Narada Purana.' },
-  { id: 'vayu', name: 'Vayu', kind: 'Deva', short: 'The wind-god; narrator of the Vayaviya-samhita and the Vayu/Brahmanda Purana.' },
+  { id: 'vayu', name: 'Vayu', kind: 'Deva', short: 'The deva of the wind; narrator of the Vayaviya-samhita and the Vayu/Brahmanda Purana.' },
   { id: 'nandi', name: 'Nandishvara', kind: 'Deva', short: 'Shiva’s chief attendant; tells Sanatkumara of Shiva’s incarnations (Shatarudra-samhita).' },
   { id: 'birds', name: 'The four wise birds', kind: 'Other', short: 'Pingaksha, Vibodha, Suputra and Sumukha — sons of Drona the bird — who answer Jaimini in the Markandeya Purana.' },
   { id: 'medhas', name: 'Medhas (Sumedhas)', kind: 'Rishi', short: 'Sage who teaches the Devi Mahatmya to King Suratha and the merchant Samadhi.' },
@@ -764,7 +764,7 @@ export const people: Person[] = [
   { id: 'yudhishthira', name: 'Yudhishthira', kind: 'King', short: 'Eldest Pandava; hears the teachings of Bhishma on the bed of arrows.' },
   { id: 'lava-kusha', name: 'Lava & Kusha', kind: 'Other', short: 'Twin sons of Rama and Sita, taught the Ramayana by Valmiki, sing it before Rama.' },
   { id: 'rama', name: 'Rama', kind: 'Avatara', short: 'Avatara of Vishnu in the Treta yuga; hero of the Ramayana.' },
-  { id: 'agni', name: 'Agni', kind: 'Deva', short: 'The fire-god; narrator of the Agni Purana.' },
+  { id: 'agni', name: 'Agni', kind: 'Deva', short: 'The deva of fire; narrator of the Agni Purana.' },
   { id: 'sumantu', name: 'Sumantu', kind: 'Rishi', short: 'Disciple of Vyasa (Atharva Veda); narrator of the Bhavishya Purana.' },
   { id: 'shatanika', name: 'Shatanika', kind: 'King', short: 'Descendant of Janamejaya; listener of the Bhavishya Purana.' },
   { id: 'varaha', name: 'Varaha', kind: 'Avatara', short: 'Boar incarnation of Vishnu who lifted the Earth from the waters.' },

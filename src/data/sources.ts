@@ -436,7 +436,7 @@ export const src = {
     url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-1/d/doc209841.html`,
   },
   dgMimamsaGod: {
-    label: 'Dasgupta Vol. 1 — Mimamsa on self, salvation and God',
+    label: 'Dasgupta Vol. 1 — Mimamsa on the self, liberation and Ishvara',
     url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-1/d/doc209842.html`,
   },
   dgVedantaLit: {
@@ -500,7 +500,7 @@ export const src = {
   nasadiya: { label: 'Rig Veda 10.129 — the hymn of creation (Nasadiya)', url: `${WL}/hinduism/book/rig-veda-english-translation/d/doc840082.html` },
   brihadaranyaka: { label: 'Brihadaranyaka Upanishad with Shankara’s commentary', url: `${WL}/hinduism/book/the-brihadaranyaka-upanishad` },
   brihadThirtyThree: {
-    label: 'Brihadaranyaka Upanishad 3.9 — Yajnavalkya and Vidagdha: the thirty-three gods',
+    label: 'Brihadaranyaka Upanishad 3.9 — Yajnavalkya and Vidagdha: the thirty-three devas',
     url: `${WL}/hinduism/book/the-brihadaranyaka-upanishad/d/doc118360.html`,
   },
   kathaShankara: { label: 'Katha Upanishad with Shankara’s commentary', url: `${WL}/hinduism/book/katha-upanishad-shankara-bhashya` },
@@ -526,7 +526,7 @@ export const src = {
   vpAdityas: { label: 'Vishnu Purana 2.10 — Names of the twelve Adityas', url: `${VPW}/d/doc115970.html` },
   vpRudras: { label: 'Vishnu Purana 1.8 — Origin of Rudra', url: `${VPW}/d/doc115943.html` },
   vpMindBorn: { label: 'Vishnu Purana 1.7 — The mind-born sons of Brahma', url: `${VPW}/d/doc115942.html` },
-  conceptThirtyThree: { label: 'Thirty-three gods — concept', url: `${WL}/concept/thirty-three-gods` },
+  conceptThirtyThree: { label: 'Thirty-three devas — concept', url: `${WL}/concept/thirty-three-gods` },
   defDikpala: { label: 'Dikpala — definitions', url: `${WL}/definition/dikpala` },
   defAshtadikpala: { label: 'Ashtadikpala — definitions', url: `${WL}/definition/ashtadikpala` },
   defNavagraha: { label: 'Navagraha — definitions', url: `${WL}/definition/navagraha` },
@@ -540,7 +540,7 @@ export const src = {
   vyuhaEssay: { label: 'The concepts of Vyuha and Vyuhantara (Diksha in Pancharatra)', url: `${WL}/hinduism/essay/diksha-initiation-in-pancharatra/d/doc1458639.html` },
   bhagavataPancaratra: { label: 'The Bhagavata Purana and Pancharatra', url: `${WL}/hinduism/book/the-bhagavata-purana/d/doc1113124.html` },
   conceptFiveManifestations: { label: 'Five manifestations — concept', url: `${WL}/concept/five-manifestations` },
-  agniConsecration: { label: 'Agni Purana 66 — Mode of consecration of the gods', url: `${WL}/hinduism/book/the-agni-purana/d/doc1083178.html` },
+  agniConsecration: { label: 'Agni Purana 66 — Consecration of the devas', url: `${WL}/hinduism/book/the-agni-purana/d/doc1083178.html` },
   defMurti: { label: 'Murti — definitions', url: `${WL}/definition/murti` },
   defPratima: { label: 'Pratima — definitions', url: `${WL}/definition/pratima` },
   defArca: { label: 'Arca — definitions', url: `${WL}/definition/arca` },

@@ -1,7 +1,7 @@
 import type { Source } from './types';
 import { defn, src } from './sources';
 
-export type GlossaryGroup = 'Kinds of scripture' | 'What a Purana contains' | 'Cosmic time' | 'Sages & roles' | 'Philosophy & lineage';
+export type GlossaryGroup = 'Kinds of scripture' | 'What a Purana contains' | 'Cosmic time' | 'Sages & roles' | 'The Divine' | 'Philosophy & lineage';
 
 export interface Term {
   id: string;
@@ -18,7 +18,7 @@ export interface Term {
   sources: Source[];
 }
 
-export const GROUPS: GlossaryGroup[] = ['Kinds of scripture', 'What a Purana contains', 'Cosmic time', 'Sages & roles', 'Philosophy & lineage'];
+export const GROUPS: GlossaryGroup[] = ['Kinds of scripture', 'What a Purana contains', 'Cosmic time', 'Sages & roles', 'The Divine', 'Philosophy & lineage'];
 
 export const glossary: Term[] = [
   // ——— Kinds of scripture ———
@@ -74,7 +74,7 @@ export const glossary: Term[] = [
     term: 'Purana',
     sanskrit: 'पुराण',
     group: 'Kinds of scripture',
-    meaning: '“Ancient (lore) that is ever new”: sacred histories of the cosmos, gods, sages and kings.',
+    meaning: '“Ancient (lore) that is ever new”: sacred histories of the cosmos, devas, sages and kings.',
     body: 'Vyasa gave the Purana-samhita to his disciple Romaharshana, the Suta, and it spread through his pupils. A Purana is traditionally defined by five subjects (pancha-lakshana, see below), though most surviving Puranas cover much more: pilgrimage, vows, worship, philosophy.',
     sources: [defn('purana', 'Purana'), src.vpVedaDivision, src.puranicEncyclopaedia],
   },
@@ -165,7 +165,7 @@ export const glossary: Term[] = [
     list: [
       { name: 'Sarga', text: 'Primary creation of the universe from Prakriti.' },
       { name: 'Pratisarga', text: 'Secondary creation: re-creation after each dissolution.' },
-      { name: 'Vamsha', text: 'Genealogies of gods and sages.' },
+      { name: 'Vamsha', text: 'Genealogies of devas and sages.' },
       { name: 'Manvantara', text: 'The ages of the fourteen Manus.' },
       { name: 'Vamshanucharita', text: 'Histories of the royal dynasties of Sun and Moon.' },
     ],
@@ -207,7 +207,7 @@ export const glossary: Term[] = [
     term: 'Vaktri–Shrotri (teller and listener)',
     group: 'What a Purana contains',
     meaning: 'The storytelling frame of a Purana.',
-    body: 'Almost every Purana is a story within a story. An outer narrator, usually the Suta at Naimisharanya, repeats a dialogue he heard, and inside it other sages and gods tell further tales. This is why each scripture page here shows a “who is telling, who is listening” chain.',
+    body: 'Almost every Purana is a story within a story. An outer narrator, usually the Suta at Naimisharanya, repeats a dialogue he heard, and inside it other sages and devas tell further tales. This is why each scripture page here shows a “who is telling, who is listening” chain.',
     sources: [src.shivaVidyeshvara, src.brihaddharmaCh1],
   },
 
@@ -328,7 +328,7 @@ export const glossary: Term[] = [
     term: 'Devarshi',
     sanskrit: 'देवर्षि',
     group: 'Sages & roles',
-    meaning: 'A divine sage who moves among the worlds of the gods.',
+    meaning: 'A divine sage who moves among the worlds of the devas.',
     body: 'Narada is the foremost Devarshi. In the Gita (10.26) Krishna says, “Of the devarshis I am Narada.”',
     sources: [defn('devarshi', 'Devarshi'), defn('narada', 'Narada')],
   },
@@ -416,7 +416,7 @@ export const glossary: Term[] = [
     sanskrit: 'शक्ति',
     group: 'Sages & roles',
     meaning: '“Power”: the Goddess as the dynamic energy of the divine.',
-    body: 'In Shakta thought she is the supreme reality itself. Every god’s power is his shakti, as the Matrikas of the Devi Mahatmya show. Her worshippers are Shaktas.',
+    body: 'In Shakta thought she is the supreme reality itself. Every deva’s power is his shakti, as the Matrikas of the Devi Mahatmya show. Her worshippers are Shaktas.',
     see: { label: 'Devi avatars', to: '#/avatars?g=devi' },
     sources: [src.conceptDeviMahatmya, src.upaShaktaIntro],
   },
@@ -504,8 +504,83 @@ export const glossary: Term[] = [
     term: 'Inscription (shasana, prashasti)',
     group: 'Kinds of scripture',
     meaning: 'Texts carved in stone or on copper plates: royal grants and eulogies.',
-    body: 'Unlike scriptures, which were recopied for centuries, inscriptions are usually precisely dated. They show which gods and texts people actually honoured at a given time and place. This site links to MIDF’s Smriti catalogue for such records.',
+    body: 'Unlike scriptures, which were recopied for centuries, inscriptions are usually precisely dated. They show which deities and texts people actually honoured at a given time and place. This site links to MIDF’s Smriti catalogue for such records.',
     sources: [src.smriti],
+  },
+
+  // ——— The Divine ———
+  {
+    id: 'ishvara',
+    term: 'Ishvara',
+    sanskrit: 'ईश्वर',
+    group: 'The Divine',
+    meaning: '“The Lord”, “the one who rules”: the Supreme as ruler and cause of the world.',
+    body: 'From īś, “to rule”. Ishvara is the personal Lord who creates, sustains and dissolves the world, gives the fruits of karma and grants grace. Yoga calls him a special purusha untouched by affliction; Nyaya proves his existence; Advaita calls him Brahman seen through maya; Vaishnavas and Shaivas identify him with Vishnu or Shiva. This site uses Ishvara, Bhagavan or Brahman rather than the English “God”, whose meaning comes from other religious traditions.',
+    see: { label: 'Ishvara in each darshana', to: '#/darshanas' },
+    sources: [defn('ishvara', 'Ishvara'), src.dgYoga],
+  },
+  {
+    id: 'bhagavan',
+    term: 'Bhagavan',
+    sanskrit: 'भगवान्',
+    group: 'The Divine',
+    meaning: '“The one who possesses bhaga”: the Blessed Lord, full of the six excellences.',
+    body: 'The Vishnu Purana (6.5) names the six bhagas: complete sovereignty, strength, fame, fortune, knowledge and detachment. The one who has all six in full is Bhagavan. The Gita calls Krishna “Sri Bhagavan”, and the Bhagavata says “Krishna is Bhagavan himself”. The feminine is Bhagavati, used for the Goddess.',
+    see: { label: 'How the Divine appears', to: '#/forms' },
+    sources: [defn('bhagavan', 'Bhagavan'), src.vishnuPurana],
+  },
+  {
+    id: 'brahman',
+    term: 'Brahman',
+    sanskrit: 'ब्रह्मन्',
+    group: 'The Divine',
+    meaning: '“The vast”: the one, infinite reality from which all comes and into which all returns.',
+    body: 'The subject of the Upanishads and the Brahma Sutras: “that from which these beings are born” (Taittiriya 3.1). Described as sat-chit-ananda, being, consciousness and bliss. Not to be confused with Brahma, the four-headed creator deva. The Bhagavata (1.2.11) says the one non-dual reality is called Brahman, Paramatman and Bhagavan: the same truth known in three ways.',
+    list: [
+      { name: 'Nirguna', text: 'Without attributes: beyond all qualities and forms (neti neti).' },
+      { name: 'Saguna', text: 'With attributes: the Lord with qualities such as knowledge, power and compassion.' },
+    ],
+    see: { label: 'The Upanishads', to: '#/vedas' },
+    sources: [defn('brahman', 'Brahman'), src.bhagavata, src.brahmaSutraShankara],
+  },
+  {
+    id: 'paramatman',
+    term: 'Paramatman',
+    sanskrit: 'परमात्मन्',
+    group: 'The Divine',
+    meaning: '“The supreme Self”: the Lord dwelling within every being.',
+    body: 'The inner witness and controller (antaryamin) in the heart of all, distinct from the individual self (jivatman) in the dualist schools and one with it in Advaita. Gita 13.22 calls him the witness, the permitter, the upholder.',
+    sources: [defn('paramatman', 'Paramatman'), src.defAntaryamin],
+  },
+  {
+    id: 'deva',
+    term: 'Deva, Devata',
+    sanskrit: 'देव · देवता',
+    group: 'The Divine',
+    meaning: '“The shining one”: a celestial being who governs a power of nature or of the cosmos.',
+    body: 'Agni, Indra, Varuna, Surya, Vayu and the rest. The devas receive offerings in the fire and in return sustain the world (Gita 3.11). They live in the heavens but are not eternal, and are distinct from Ishvara, the Supreme, from whom they draw their power. The Veda counts 33. A devata is the deity of a particular mantra, rite or place; the feminine is devi.',
+    see: { label: 'The Devas', to: '#/devas' },
+    sources: [defn('deva', 'Deva'), defn('devata', 'Devata'), src.brihadThirtyThree],
+  },
+  {
+    id: 'ishta-devata',
+    term: 'Ishta-devata',
+    sanskrit: 'इष्टदेवता',
+    group: 'The Divine',
+    meaning: '“The cherished deity”: the form of the Supreme a person chooses to worship.',
+    body: 'One may worship Shiva, Vishnu, Devi, Ganesha or another as one’s own chosen form while honouring the others. Distinct from the kuladevata, the family deity handed down through the line.',
+    see: { label: 'Kuladevata', to: '#/kuladevata' },
+    sources: [defn('istadevata', 'Ishta-devata')],
+  },
+  {
+    id: 'murti',
+    term: 'Murti, Archa',
+    sanskrit: 'मूर्ति · अर्चा',
+    group: 'The Divine',
+    meaning: '“Embodiment”: the consecrated image in which the deity is present for worship.',
+    body: 'After consecration (prana-pratishtha) the murti is not a symbol but the deity itself, present by its own will to receive worship. The Pancharatra calls this presence the archa, the nearest of the five modes of the Lord.',
+    see: { label: 'How the Divine appears', to: '#/forms' },
+    sources: [src.defMurti, src.defArca, src.defPranapratishtha],
   },
 
   // ——— Philosophy & lineage ———

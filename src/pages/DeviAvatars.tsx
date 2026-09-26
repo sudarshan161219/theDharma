@@ -83,7 +83,7 @@ export default function DeviAvatars({ focus }: { focus: string | null }) {
         </ol>
 
         <h3 className={styles.sub}>The Saptamatrikas: seven Mothers</h3>
-        <p className={styles.help}>Against Raktabija, the shakti of each god comes forth in that god’s own form, with his mount and weapons (Markandeya Purana 88).</p>
+        <p className={styles.help}>Against Raktabija, the shakti of each deva comes forth in that deva’s own form, with his mount and weapons (Markandeya Purana 88).</p>
         <ul className={styles.matrikas}>
           {matrikas.map((m) => (
             <li key={m.name}>

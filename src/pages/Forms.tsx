@@ -80,7 +80,7 @@ export default function Forms() {
       <PageHeader
         eyebrow="Murti, avatara, archa"
         title="How the Divine Appears"
-        sub="One reality, many forms: formless Brahman, a stone or a sound, a river, an animal, a lion-man, a human child, a four-armed god, the whole cosmos. Here is the range of forms, with sculptures and paintings from museum collections, and how tradition explains each."
+        sub="One reality, many forms: formless Brahman, a stone or a sound, a river, an animal, a lion-man, a human child, a four-armed deity, the whole cosmos. Here is the range of forms, with sculptures and paintings from museum collections, and how tradition explains each."
       />
 
       {/* ——— Why ——— */}
@@ -184,7 +184,7 @@ export default function Forms() {
 
       {/* ——— Five modes ——— */}
       <section className={styles.section}>
-        <h2>Five ways God is present: the Pancharatra view</h2>
+        <h2>Five ways Bhagavan is present: the Pancharatra view</h2>
         <p className={styles.help}>
           The Pancharatra Agamas, followed by the Sri Vaishnavas, say Vishnu is present in five modes, from the most distant to the most near. A traditional analogy (Pillai
           Lokacharya) compares them to water.
@@ -206,13 +206,13 @@ export default function Forms() {
           ))}
         </ol>
         <p className={styles.help}>
-          The last, the archa, is the most generous: God agrees to live in a form of stone or metal, to be bathed, dressed and fed, so that everyone can reach him.
+          The last, the archa, is the most generous: Bhagavan agrees to live in a form of stone or metal, to be bathed, dressed and fed, so that everyone can reach him.
         </p>
       </section>
 
       {/* ——— Descents ——— */}
       <section className={styles.section}>
-        <h2>How fully does God descend?</h2>
+        <h2>How fully does Bhagavan descend?</h2>
         <div className={styles.descents}>
           {descents.map((d) => (
             <div key={d.name}>
@@ -230,7 +230,7 @@ export default function Forms() {
       <section className={styles.section}>
         <h2>From stone to living presence</h2>
         <p className={styles.help}>
-          A carved image is not yet a deity. The Agamas lay down the rite that brings the god into it (Agni Purana 66 gives one). Some images are held to be svayambhu,
+          A carved image is not yet a deity. The Agamas lay down the rite that brings the deity into it (Agni Purana 66 gives one). Some images are held to be svayambhu,
           self-manifested, found rather than made: many lingas, the shaligrama, and hills like Arunachala.
         </p>
         <ol className={styles.steps}>
