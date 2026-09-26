@@ -1,0 +1,436 @@
+.section {
+  margin-bottom: 56px;
+}
+
+.help {
+  color: var(--muted);
+  max-width: 780px;
+}
+
+.sub {
+  margin: 28px 0 10px;
+  font-size: 1.4rem;
+}
+
+.srcs {
+  margin: 12px 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.srcs a {
+  text-decoration: none;
+}
+
+/* ——— trimurti ——— */
+
+.trimurti {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+}
+
+.tm {
+  padding: 18px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--gold);
+}
+
+.tm1 {
+  border-top-color: var(--indigo);
+}
+
+.tm2 {
+  border-top-color: var(--accent);
+}
+
+.role {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.tm h3 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.tm h3 a {
+  text-decoration: none;
+}
+
+.shakti {
+  margin: 0 0 10px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--gold);
+}
+
+.tm dl,
+.pick dl {
+  display: grid;
+  gap: 6px;
+  margin: 0 0 10px;
+}
+
+.tm dl div,
+.pick dl div {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 8px;
+  font-size: 0.88rem;
+}
+
+.tm dt,
+.pick dt {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.tm dd,
+.pick dd {
+  margin: 0;
+}
+
+.tm p:last-child {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* ——— the countdown ——— */
+
+.countdown {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.countdown li {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.countdown li:last-child {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.countdown b {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--accent);
+  text-align: right;
+}
+
+.countdown span {
+  font-size: 0.93rem;
+}
+
+/* ——— the 33 ——— */
+
+.dots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.dotGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+}
+
+.dotGroup:hover,
+.dotOn {
+  border-color: var(--tone);
+}
+
+.dotOn {
+  background: color-mix(in srgb, var(--tone) 12%, var(--surface));
+}
+
+.dotRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.dotRow i {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--tone);
+}
+
+.tone_gold {
+  --tone: var(--gold);
+}
+
+.tone_accent {
+  --tone: var(--accent);
+}
+
+.tone_indigo {
+  --tone: var(--indigo);
+}
+
+.tone_muted {
+  --tone: var(--muted);
+}
+
+.groups33 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.g33 {
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--tone);
+}
+
+.g33 h4 {
+  margin: 0 0 6px;
+  font-size: 1.25rem;
+}
+
+.g33 p {
+  margin: 0 0 8px;
+  font-size: 0.88rem;
+}
+
+.label {
+  font-weight: 600;
+  color: var(--tone);
+}
+
+.names {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0 0 6px;
+  padding: 0;
+  list-style: none;
+}
+
+.names li {
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  font-size: 0.8rem;
+}
+
+.g33 small {
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+
+/* ——— hymn bars ——— */
+
+.hymns {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hymns li {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 2px 14px;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.hymns b {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+}
+
+.hymns b :global(.deva) {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.hBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hBar i {
+  display: block;
+  height: 10px;
+  min-width: 4px;
+  border-radius: 5px;
+  background: linear-gradient(90deg, var(--gold), var(--accent));
+}
+
+.hBar small {
+  flex: none;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.hymns p {
+  grid-column: 2;
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+/* ——— compass grids ——— */
+
+.compassRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.compass {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-areas:
+    'nw n ne'
+    'w c e'
+    'sw s se';
+  gap: 6px;
+  aspect-ratio: 1;
+  max-width: 420px;
+  padding: 10px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  color: var(--text);
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+
+.cell small {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+
+.cell:hover {
+  border-color: var(--accent);
+}
+
+.cellOn {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+
+.cellOn small {
+  color: var(--bg);
+}
+
+.centre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px dashed var(--gold);
+  font-family: var(--font-display);
+  line-height: 1.1;
+}
+
+.centre small {
+  font-family: var(--font-body);
+  font-size: 0.64rem;
+  color: var(--muted);
+}
+
+.pick {
+  padding: 18px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+}
+
+.pick h3 {
+  margin: 0 0 8px;
+  font-size: 1.8rem;
+}
+
+.pick h3 :global(.deva) {
+  font-size: 1rem;
+  color: var(--gold);
+}
+
+.pick p {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.dirName {
+  margin: -6px 0 10px !important;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+@media (max-width: 760px) {
+  .compassRow {
+    grid-template-columns: 1fr;
+  }
+  .compass {
+    max-width: none;
+  }
+  .hymns li {
+    grid-template-columns: 1fr;
+  }
+  .hymns p {
+    grid-column: 1;
+  }
+  .countdown li {
+    grid-template-columns: 60px 1fr;
+  }
+}

@@ -5,6 +5,7 @@ import { fmt, human, kaliElapsed, kaliRemaining } from '../lib/time';
 import { PageHeader, Sources } from '../components/ui';
 import TimeCalculator from '../components/TimeCalculator';
 import styles from './CosmicTime.module.css';
+import { onTabListKeyDown } from '../lib/a11y';
 
 const SCALE = [
   { name: 'Life of Brahma', years: BRAHMA_LIFE_YEARS, fits: '100 Brahma-years of 360 days and nights', where: 'Now in his 51st year' },
@@ -57,7 +58,7 @@ export default function CosmicTime({ route }: { route: Route }) {
         <p className={styles.help}>
           Their lengths stand in the ratio 4 : 3 : 2 : 1, and dharma stands on 4, 3, 2 and then 1 leg. Tap a yuga.
         </p>
-        <div className={styles.yugaBar} role="tablist" aria-label="Yugas">
+        <div className={styles.yugaBar} role="tablist" onKeyDown={onTabListKeyDown} aria-label="Yugas">
           {yugas.map((y) => (
             <button
               key={y.id}

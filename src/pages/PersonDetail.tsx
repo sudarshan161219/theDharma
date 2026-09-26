@@ -2,6 +2,7 @@ import { personById } from '../data/people';
 import { scriptures } from '../data/scriptures';
 import { ganaHead, gotras } from '../data/gotra';
 import { href } from '../lib/router';
+import { useDocumentTitle } from '../lib/title';
 import { Chip, Facts, PageHeader, PersonLink, Sources } from '../components/ui';
 import NotFound from './NotFound';
 import styles from './PersonDetail.module.css';
@@ -31,6 +32,7 @@ function appearancesOf(id: string): Appearance[] {
 
 export default function PersonDetail({ id }: { id: string }) {
   const p = personById.get(id);
+  useDocumentTitle(p ? p.name : 'Not found');
   if (!p) return <NotFound />;
   const apps = appearancesOf(id);
 

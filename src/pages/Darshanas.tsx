@@ -22,6 +22,7 @@ import {
 import { navigate, type Route } from '../lib/router';
 import { Chip, Facts, PageHeader, PersonLink, Sources } from '../components/ui';
 import styles from './Darshanas.module.css';
+import { onTabListKeyDown } from '../lib/a11y';
 
 /** Keep both selections (school and tradition) in the URL, so every view can be linked. */
 function go(d: string, t: string, anchor?: string) {
@@ -582,7 +583,7 @@ export default function Darshanas({ route }: { route: Route }) {
       {/* ——— The six in depth ——— */}
       <section className={styles.section} id="six">
         <h2>The six darshanas in depth</h2>
-        <div className={styles.tabs} role="tablist">
+        <div className={styles.tabs} role="tablist" onKeyDown={onTabListKeyDown}>
           {darshans.map((x) => (
             <button key={x.id} role="tab" aria-selected={dId === x.id} className={dId === x.id ? styles.tabOn : undefined} onClick={() => go(x.id, tId)}>
               {x.name.replace(' (Vedanta)', '')}
@@ -703,7 +704,7 @@ export default function Darshanas({ route }: { route: Route }) {
           Hindu worship gathers around a supreme deity. Shankara is credited with the six-fold worship (shanmata) of Vishnu, Shiva, Devi, Surya, Ganesha and Skanda;
           in practice today the great families are Vaishnava, Shaiva, Shakta and Smarta. Each contains several lineages.
         </p>
-        <div className={styles.tradTabs} role="tablist">
+        <div className={styles.tradTabs} role="tablist" onKeyDown={onTabListKeyDown}>
           {traditions.map((t) => (
             <button
               key={t.id}

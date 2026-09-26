@@ -9,6 +9,17 @@ npm install
 npm run dev
 ```
 
+| Script | What it does |
+| --- | --- |
+| `npm run build` | Type-check and build to `dist/` |
+| `npm run lint` | oxlint |
+| `npm test` | Vitest unit tests (`src/lib/__tests__`): the verse scanner, the panchanga and festival dates, cosmic time and the gotra check |
+| `npm run links` | Checks every internal `#/…` link against the routes and data, and fetches the non-wisdomlib sources. wisdomlib.org blocks scripted requests (Cloudflare), so its links are only checked for shape; `npm run links -- --list` prints them for checking by hand |
+
+GitHub Actions (`.github/workflows/ci.yml`) runs lint, tests, build and the link check on every push to `main` and on pull requests.
+
+Link previews use `public/og.png` (1200 × 630). Most crawlers want an absolute URL, so once the site has a domain, put it in front of `/og.png` in the `og:image` and `twitter:image` tags in `index.html`.
+
 ## Where things live
 
 | File | What it holds |
@@ -23,11 +34,15 @@ npm run dev
 | `src/data/acharyas.ts` | Vedanta schools compared, the four Vaishnava sampradayas, and 13 acharyas from Gaudapada to Chaitanya. Shown at `#/acharyas` |
 | `src/data/devi.ts` | Devi Mahatmya episodes, Saptamatrikas, promised incarnations, Navadurga, Dasha Mahavidya. Shown at `#/avatars?g=devi` |
 | `src/data/smriti.ts` | Hand-checked inscriptions and manuscripts from MIDF's Smriti catalogue (smriti.midf.org.in), shown as "primary evidence" |
-| `src/data/places.ts` | 12 Jyotirlingas (Shiva Purana, Kotirudra-samhita) and Shakti Peethas (the 18 Maha Peethas, other 51-list seats, the 4 Kaula pithas) with coordinates. Shown on a Leaflet/OpenStreetMap map at `#/places` |
+| `src/data/places.ts` | 12 Jyotirlingas (Shiva Purana, Kotirudra-samhita) and Shakti Peethas (the 18 Maha Peethas, other 51-list seats, the 4 Kaula pithas), plus the pilgrimage circuits (Char Dham, Chota Char Dham, Sapta Puri, Kumbh, Arupadai Veedu, Pancha Bhuta Sthalas), with coordinates. Shown on a Leaflet/OpenStreetMap map at `#/places` |
 | `src/data/kuladevata.ts` | Family deities: kula / ishta / grama / griha devata, customs, how to find yours, 30 regional shrines with coordinates, and `roots`: each deity's supreme deity (Shiva / Vishnu / Skanda / Devi), chain of manifestation and scriptural basis. Shown at `#/kuladevata` |
 | `src/data/gotra.ts` | The four original gotras, the eight gotrakarin rishis, 17 gotras with gana and pravara, the classical same-family rule (`compareGotras`). Shown at `#/gotra` |
 | `src/data/dynasties.ts` | The Solar (Ikshvaku) and Lunar (Puru/Yadu/Kuru) dynasties as lines with side-branches, per Vishnu Purana Book IV. Shown at `#/dynasties` |
 | `src/lib/cosmicPosition.ts` | The time calculator's engine: locates any year (or years ago/ahead, or a preset) in Brahma's life down to the yuga and its dawn/dusk. Shown at `#/time` |
+| `src/data/vedas.ts` | The four Vedas (size, shakhas, Brahmanas, Aranyakas, Upanishads, upaveda, mahavakya, opening verse), the four layers, the principal Upanishads with teacher and student, the six Vedangas and four Upavedas, the Dharmashastras, and the Gita's 18 chapters. Shown at `#/vedas` |
+| `src/data/calendar.ts` + `src/lib/panchanga.ts` | A live panchanga (tithi, nakshatra, yoga, karana, month, adhika masa, samvatsara, Shaka/Vikram) from low-precision Sun and Moon positions (Meeus) with the Lahiri ayanamsa, and a festival finder. Shown at `#/calendar` |
+| `src/data/devas.ts` | The Trimurti, the 33 gods of Brihadaranyaka 3.9, the Rig Veda's gods by hymn count, the Navagrahas and the Ashta-dikpalas. Shown at `#/devas` |
+| `src/data/dharma.ts` | Manu's ten marks of dharma, the purusharthas, the ashramas, the sixteen samskaras, the five daily offerings and the three debts. Shown at `#/dharma` |
 | `src/data/darshanas.ts` | The six astika darshanas (founder, sutra, opening verse, categories, God, bondage, liberation, causation, commentators), the nastika schools, the pramana matrix, theories of causation, and the sampradayas by tradition (Vaishnava, Shaiva, Shakta, Smarta, Ganapatya/Saura/Kaumara) with guru-paramparas and Shankara's four mathas. Shown at `#/darshanas` |
 | `src/data/chandas.ts` + `src/lib/prosody.ts` | The Anushtubh (shloka) metre: weight rules, the 4 × 8 template, ganas, examples; plus a scanner that syllabifies IAST or Devanagari, marks laghu/guru and checks the classical rules. Shown at `#/chandas` |
 | `src/lib/time.ts` | "Where are we now" maths (Kali and kalpa years elapsed) |

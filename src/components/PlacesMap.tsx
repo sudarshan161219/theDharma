@@ -16,7 +16,7 @@ export interface MapPoint extends LatLng {
   id: string;
   n: number;
   name: string;
-  kind: 'jyotirlinga' | 'shakti' | 'kula';
+  kind: 'jyotirlinga' | 'shakti' | 'kula' | 'tirtha';
   alternates?: (LatLng & { place: string })[];
 }
 
@@ -33,10 +33,14 @@ export default function PlacesMap({ places, selected, onSelect }: Props) {
   const layer = useRef<L.LayerGroup | null>(null);
   const markers = useRef(new Map<string, L.CircleMarker>());
   const onSelectRef = useRef(onSelect);
-  onSelectRef.current = onSelect;
   const selectedRef = useRef(selected);
-  selectedRef.current = selected;
   const fit = useRef(() => {});
+
+  // Keep the latest props for the map's event handlers (which are bound once).
+  useEffect(() => {
+    onSelectRef.current = onSelect;
+    selectedRef.current = selected;
+  });
 
   // Create the map once.
   useEffect(() => {
@@ -70,10 +74,11 @@ export default function PlacesMap({ places, selected, onSelect }: Props) {
     const jyoti = token('--indigo') || '#9eaaf0';
     const shakti = token('--accent') || '#f08a4b';
     const kula = token('--gold') || '#e0b454';
+    const tirtha = token('--jade') || '#5fc69a';
     const bg = token('--bg') || '#000';
 
     for (const p of places) {
-      const color = p.kind === 'jyotirlinga' ? jyoti : p.kind === 'kula' ? kula : shakti;
+      const color = p.kind === 'jyotirlinga' ? jyoti : p.kind === 'kula' ? kula : p.kind === 'tirtha' ? tirtha : shakti;
       const mk = L.circleMarker([p.lat, p.lng], { radius: 7, color: bg, weight: 2, fillColor: color, fillOpacity: 0.95 })
         .bindTooltip(`${p.n}. ${p.name}`, { direction: 'top', offset: [0, -6] })
         .on('click', () => onSelectRef.current(p.id));

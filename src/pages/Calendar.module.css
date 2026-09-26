@@ -1,0 +1,516 @@
+.section {
+  margin-bottom: 56px;
+}
+
+.help {
+  color: var(--muted);
+  max-width: 780px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.sub {
+  margin: 28px 0 10px;
+  font-size: 1.4rem;
+}
+
+.note {
+  margin-top: 12px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  max-width: 780px;
+}
+
+/* ——— today ——— */
+
+.todayHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 16px;
+}
+
+.todayHead h2 {
+  margin: 0 0 12px;
+}
+
+.picker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.picker input,
+.picker button {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+}
+
+.picker button {
+  cursor: pointer;
+}
+
+.picker button:hover {
+  border-color: var(--accent);
+}
+
+.today {
+  display: grid;
+  grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+  gap: 20px;
+  padding: 20px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.wheelBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.wheel {
+  width: 100%;
+  max-width: 240px;
+}
+
+.seg {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: butt;
+  opacity: 0.35;
+}
+
+.segS {
+  stroke: var(--gold);
+}
+
+.segK {
+  stroke: var(--indigo);
+}
+
+.segOn {
+  opacity: 1;
+  stroke: var(--accent);
+  stroke-width: 16;
+}
+
+.moonDark {
+  fill: var(--surface-2);
+  stroke: var(--line);
+}
+
+.moonLit {
+  fill: #f3ead3;
+}
+
+.wheelLabel {
+  fill: var(--muted);
+  font: 600 9px var(--font-body);
+  letter-spacing: 0.05em;
+}
+
+.wheelSide {
+  fill: var(--muted);
+  font: 700 9px var(--font-body);
+}
+
+.bigTithi {
+  margin: 8px 0 4px;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.progress {
+  width: 100%;
+  max-width: 220px;
+  height: 6px;
+  margin: 0 0 4px;
+  border-radius: 3px;
+  background: var(--surface-2);
+  overflow: hidden;
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+}
+
+.wheelBox small {
+  font-size: 0.78rem;
+}
+
+.limbGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 8px;
+  margin: 0;
+  align-content: start;
+}
+
+.limb,
+.extra {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--surface-2);
+}
+
+.limb {
+  border-left: 3px solid var(--accent);
+}
+
+.limbGrid dt {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.limbGrid dd {
+  margin: 2px 0 0;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.limbGrid small {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+
+/* ——— five limbs ——— */
+
+.limbsExplained {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 10px;
+}
+
+.limbsExplained > div {
+  position: relative;
+  padding: 16px 16px 14px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.limbNo {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent-soft);
+  -webkit-text-stroke: 1px var(--accent);
+}
+
+.limbsExplained b {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+}
+
+.limbsExplained b :global(.deva) {
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.limbsExplained p {
+  margin: 6px 0;
+  font-size: 0.9rem;
+}
+
+.limbsExplained small {
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+/* ——— month ——— */
+
+.phases {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.phase {
+  width: 100%;
+  max-width: 56px;
+}
+
+.halves {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.half {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--gold-soft);
+  border-top: 3px solid var(--gold);
+}
+
+.halfK {
+  background: var(--indigo-soft);
+  border-top-color: var(--indigo);
+}
+
+.half p {
+  margin: 4px 0 0;
+  font-size: 0.88rem;
+}
+
+.systems {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.systems small {
+  color: var(--muted);
+}
+
+.band {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 6px;
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.band span {
+  padding: 7px;
+}
+
+.bS {
+  background: var(--gold);
+  color: var(--bg);
+}
+
+.bK {
+  background: var(--indigo);
+  color: var(--bg);
+}
+
+.months {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 8px;
+}
+
+.month {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.month b {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+}
+
+.month small {
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+
+.mNo {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.monthOn {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+}
+
+.groups div {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.groups b {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+}
+
+.groups small {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.groups span {
+  margin-top: 4px;
+  font-size: 0.82rem;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* ——— nakshatras ——— */
+
+.naks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.naks li {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  column-gap: 6px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.naks span {
+  grid-row: span 2;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.naks b {
+  font-size: 0.9rem;
+}
+
+.naks small {
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+
+.nakOn {
+  border-color: var(--accent) !important;
+  background: var(--accent-soft) !important;
+}
+
+/* ——— years ——— */
+
+.years {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.85rem;
+}
+
+.years li {
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.years span {
+  display: inline-block;
+  min-width: 22px;
+  color: var(--muted);
+  font-size: 0.74rem;
+}
+
+.yearOn {
+  border-color: var(--accent) !important;
+  background: var(--accent-soft) !important;
+  font-weight: 700;
+}
+
+/* ——— festivals ——— */
+
+.fests {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fests li {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 12px;
+  align-items: baseline;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.fests time {
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.fests b {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+}
+
+.fests small {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+@media (max-width: 760px) {
+  .today {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+  .halves {
+    grid-template-columns: 1fr;
+  }
+  .fests li {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}

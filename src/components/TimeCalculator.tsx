@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { brahmaElapsedAtYear, eras, locate, manuName, presets, toAstroYear, type Position } from '../lib/cosmicPosition';
 import { fmt, human } from '../lib/time';
 import styles from './TimeCalculator.module.css';
+import { onTabListKeyDown } from '../lib/a11y';
 
 type Mode = 'year' | 'offset' | 'preset';
 
@@ -123,7 +124,7 @@ export default function TimeCalculator() {
 
   return (
     <div className={styles.calc}>
-      <div className={styles.modes} role="tablist" aria-label="Input">
+      <div className={styles.modes} role="tablist" onKeyDown={onTabListKeyDown} aria-label="Input">
         {(
           [
             ['year', 'A calendar year'],

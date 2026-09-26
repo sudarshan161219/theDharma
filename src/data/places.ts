@@ -9,7 +9,9 @@ export interface LatLng {
 
 export interface Place extends LatLng {
   id: string;
-  kind: 'jyotirlinga' | 'shakti';
+  kind: 'jyotirlinga' | 'shakti' | 'tirtha';
+  /** Tirthas: the pilgrimage circuits this place belongs to. */
+  circuits?: CircuitId[];
   n: number;
   name: string;
   sanskrit: string;
@@ -271,6 +273,90 @@ export const kaulaPithas: { name: string; where: string; part: string; sources: 
   { name: 'Uddiyana (Oddiyana)', where: 'Disputed (Swat valley or Odisha)', part: 'Thighs (Kalika Purana)', sources: [src.upaKalika] },
 ];
 
+/* ——————————————————————— Pilgrimage circuits ——————————————————————— */
+
+export type CircuitId = 'char-dham' | 'chota-char-dham' | 'sapta-puri' | 'kumbh' | 'arupadai' | 'pancha-bhuta';
+
+export const circuits: { id: CircuitId; name: string; sanskrit: string; about: string; verse?: { iast: string; meaning: string }; sources: Source[] }[] = [
+  {
+    id: 'char-dham',
+    name: 'Char Dham',
+    sanskrit: 'चार धाम',
+    about: 'The four “abodes” at the four corners of India, linked by tradition with Adi Shankaracharya. Three are Vaishnava (Badrinath, Dvaraka, Puri) and one Shaiva (Rameswaram). Each is near one of the four Shankara mathas.',
+    sources: [defn('dham', 'Dham'), src.conceptShanmata],
+  },
+  {
+    id: 'chota-char-dham',
+    name: 'Chota Char Dham',
+    sanskrit: 'छोटा चार धाम',
+    about: 'The Himalayan circuit in Garhwal (Uttarakhand), made west to east: the sources of the Yamuna and the Ganga, then Kedarnath and Badrinath. Open only from about May to November.',
+    sources: [defn('gangotri', 'Gangotri'), defn('yamunotri', 'Yamunotri')],
+  },
+  {
+    id: 'sapta-puri',
+    name: 'Sapta Puri',
+    sanskrit: 'सप्त पुरी',
+    about: 'The seven cities that grant liberation (moksha) to those who die in them.',
+    verse: {
+      iast: 'ayodhyā mathurā māyā kāśī kāñcī avantikā | purī dvāravatī caiva saptaitā mokṣadāyikāḥ ||',
+      meaning: 'Ayodhya, Mathura, Maya (Haridwar), Kashi, Kanchi, Avantika (Ujjain) and Dvaravati (Dvaraka): these seven give liberation.',
+    },
+    sources: [src.defSaptapuri, src.conceptSaptapuri, src.skandaSevenCities],
+  },
+  {
+    id: 'kumbh',
+    name: 'Kumbh Mela',
+    sanskrit: 'कुम्भ मेला',
+    about: 'When the ocean was churned, drops of the nectar of immortality fell from the pot (kumbha) at four places. Each hosts the Kumbh every twelve years, by the positions of Jupiter and the sun; Prayagraj’s Maha Kumbh is the largest gathering on earth.',
+    sources: [defn('kumbhamela', 'Kumbha Mela')],
+  },
+  {
+    id: 'arupadai',
+    name: 'Arupadai Veedu',
+    sanskrit: 'ஆறுபடை வீடு',
+    about: 'The six battle-camps (abodes) of Murugan (Skanda) in Tamil Nadu, sung in Nakkirar’s Tirumurugarruppadai. See the Kaumara tradition on the Darshanas page.',
+    sources: [defn('skanda', 'Skanda'), defn('murugan', 'Murugan')],
+  },
+  {
+    id: 'pancha-bhuta',
+    name: 'Pancha Bhuta Sthalas',
+    sanskrit: 'पञ्चभूत स्थल',
+    about: 'Five Shiva temples in South India, each for one of the five elements: earth, water, fire, air and space (ether).',
+    sources: [defn('pancabhuta', 'Pancha-bhuta')],
+  },
+];
+
+const t = (p: Omit<Place, 'kind' | 'n'> & { n?: number }): Place => ({ kind: 'tirtha', n: 0, ...p });
+
+export const tirthas: Place[] = [
+  t({ id: 'badrinath', circuits: ['char-dham', 'chota-char-dham'], name: 'Badrinath', sanskrit: 'बद्रीनाथ', scriptureSays: 'Badarikashrama, where Nara and Narayana perform austerity', today: 'Badrinath temple, on the Alaknanda', state: 'Uttarakhand', lat: 30.7443, lng: 79.4938, story: 'Vishnu as Badri-Narayana in meditation. Vyasa’s cave, where he is said to have dictated the Mahabharata, is nearby at Mana. The northern Char Dham.', sources: [defn('badarikashrama', 'Badarikashrama')] }),
+  t({ id: 'dvaraka', circuits: ['char-dham', 'sapta-puri'], name: 'Dvaraka', sanskrit: 'द्वारका', scriptureSays: 'Dvaravati, Krishna’s city by the western sea', today: 'Dwarkadhish temple, Dwarka', state: 'Gujarat', lat: 22.2378, lng: 68.9674, sameSiteAs: 'nageshvara', story: 'Krishna’s capital after he left Mathura, swallowed by the sea after his departure. The western Char Dham and one of the Sapta Puri; Shankara’s western matha is here.', sources: [defn('dvaraka', 'Dvaraka'), src.skandaSevenCities] }),
+  t({ id: 'puri', circuits: ['char-dham'], name: 'Puri (Jagannatha)', sanskrit: 'पुरी', scriptureSays: 'Purushottama-kshetra', today: 'Jagannath temple, Puri', state: 'Odisha', lat: 19.8048, lng: 85.8179, story: 'Jagannatha with Balabhadra and Subhadra, in wooden images renewed every 12–19 years. The Ratha Yatra draws the three on great chariots. Chaitanya spent his last years here. The eastern Char Dham.', sources: [defn('purushottama', 'Purushottama')] }),
+  t({ id: 'rameswaram', circuits: ['char-dham'], name: 'Rameswaram', sanskrit: 'रामेश्वरम्', scriptureSays: 'Where Rama worshipped Shiva before crossing to Lanka', today: 'Ramanathaswamy temple, Rameswaram island', state: 'Tamil Nadu', lat: 9.2881, lng: 79.3174, sameSiteAs: 'rameshvara', story: 'Both a Jyotirlinga and the southern Char Dham. Pilgrims bathe in its 22 wells, then carry Ganga water from the north to pour on the linga.', sources: [defn('rameshvara', 'Rameshvara')] }),
+  t({ id: 'yamunotri', circuits: ['chota-char-dham'], name: 'Yamunotri', sanskrit: 'यमुनोत्री', scriptureSays: 'Source of the Yamuna, daughter of Surya and sister of Yama', today: 'Yamunotri temple', state: 'Uttarakhand', lat: 31.0142, lng: 78.46, story: 'The first stop of the Himalayan circuit. Rice is cooked in the hot spring of Surya Kund and offered to the goddess.', sources: [defn('yamuna', 'Yamuna')] }),
+  t({ id: 'gangotri', circuits: ['chota-char-dham'], name: 'Gangotri', sanskrit: 'गङ्गोत्री', scriptureSays: 'Where Ganga descended, caught in Shiva’s hair, at Bhagiratha’s prayer', today: 'Gangotri temple; the glacier source is at Gaumukh', state: 'Uttarakhand', lat: 30.9947, lng: 78.9398, story: 'King Bhagiratha’s austerities brought the Ganga down to earth to free the souls of his ancestors, the sons of Sagara.', sources: [defn('bhagiratha', 'Bhagiratha')] }),
+  t({ id: 'kedarnath', circuits: ['chota-char-dham'], name: 'Kedarnath', sanskrit: 'केदारनाथ', scriptureSays: 'Kedara in the Himalaya', today: 'Kedarnath temple', state: 'Uttarakhand', lat: 30.7352, lng: 79.0669, sameSiteAs: 'kedara', story: 'A Jyotirlinga and the third stop of the Himalayan circuit. The Pandavas sought Shiva here to be forgiven for the war.', sources: [defn('kedara', 'Kedara')] }),
+  t({ id: 'ayodhya', circuits: ['sapta-puri'], name: 'Ayodhya', sanskrit: 'अयोध्या', scriptureSays: 'Capital of the Solar dynasty on the Sarayu', today: 'Ayodhya', state: 'Uttar Pradesh', lat: 26.7956, lng: 82.1943, story: 'City of the Ikshvaku kings and birthplace of Rama.', sources: [defn('ayodhya', 'Ayodhya'), src.skandaSevenCities] }),
+  t({ id: 'mathura', circuits: ['sapta-puri'], name: 'Mathura', sanskrit: 'मथुरा', scriptureSays: 'Krishna’s birthplace on the Yamuna', today: 'Mathura', state: 'Uttar Pradesh', lat: 27.4924, lng: 77.6737, story: 'Krishna was born here in Kamsa’s prison, and returned to slay him. With Vrindavan and Govardhana it forms the land of Braj.', sources: [defn('mathura', 'Mathura')] }),
+  t({ id: 'haridwar', circuits: ['sapta-puri', 'kumbh'], name: 'Haridwar (Maya)', sanskrit: 'हरिद्वार', scriptureSays: 'Mayapuri, the “gate” where the Ganga leaves the mountains', today: 'Har ki Pauri, Haridwar', state: 'Uttarakhand', lat: 29.9557, lng: 78.1714, story: 'The Ganga enters the plains here. Evening arati at Har ki Pauri; one of the four Kumbh sites.', sources: [defn('haridvara', 'Haridvara')] }),
+  t({ id: 'kashi', circuits: ['sapta-puri'], name: 'Kashi (Varanasi)', sanskrit: 'काशी', scriptureSays: 'Kashi, never abandoned by Shiva, even at dissolution', today: 'Varanasi', state: 'Uttar Pradesh', lat: 25.3176, lng: 83.0131, sameSiteAs: 'vishveshvara', story: 'Said to rest on Shiva’s trident. Those who die here receive the liberating mantra from Shiva himself.', sources: [defn('kashi', 'Kashi')] }),
+  t({ id: 'kanchi', circuits: ['sapta-puri'], name: 'Kanchi', sanskrit: 'काञ्ची', scriptureSays: 'Kanchipuram, city of a thousand temples', today: 'Kanchipuram', state: 'Tamil Nadu', lat: 12.8342, lng: 79.7036, sameSiteAs: 'kamakshi', story: 'The only southern city among the seven: Shiva Kanchi and Vishnu Kanchi, with Kamakshi’s Shakti Peetha between them.', sources: [defn('kanci', 'Kanchi')] }),
+  t({ id: 'ujjain', circuits: ['sapta-puri', 'kumbh'], name: 'Ujjain (Avantika)', sanskrit: 'उज्जयिनी', scriptureSays: 'Avantika on the Shipra', today: 'Ujjain', state: 'Madhya Pradesh', lat: 23.1765, lng: 75.7885, sameSiteAs: 'mahakala', story: 'Home of the Mahakala Jyotirlinga, and the prime meridian of Indian astronomy. The Kumbh here is called Simhastha.', sources: [defn('avanti', 'Avanti')] }),
+  t({ id: 'prayagraj', circuits: ['kumbh'], name: 'Prayagraj', sanskrit: 'प्रयाग', scriptureSays: 'Prayaga, “king of tirthas”, at the meeting of three rivers', today: 'Triveni Sangam, Prayagraj', state: 'Uttar Pradesh', lat: 25.4246, lng: 81.8852, story: 'Where the Ganga, the Yamuna and the unseen Sarasvati meet. Brahma is said to have performed the first sacrifice here. Host of the Maha Kumbh.', sources: [defn('prayaga', 'Prayaga')] }),
+  t({ id: 'nashik', circuits: ['kumbh'], name: 'Nashik–Trimbak', sanskrit: 'नाशिक', scriptureSays: 'Panchavati on the Godavari', today: 'Ramkund, Nashik (and Trimbakeshwar)', state: 'Maharashtra', lat: 20.0072, lng: 73.7926, sameSiteAs: 'tryambaka', story: 'Rama, Sita and Lakshmana lived at Panchavati in exile. The Kumbh is held here and at Trimbakeshwar, source of the Godavari.', sources: [defn('pancavati', 'Panchavati')] }),
+  t({ id: 'tirupparankundram', circuits: ['arupadai'], name: 'Tirupparankundram', sanskrit: 'திருப்பரங்குன்றம்', scriptureSays: 'First of the six abodes', today: 'Subramaniya Swamy temple, near Madurai', state: 'Tamil Nadu', lat: 9.8794, lng: 78.0717, story: 'Where Murugan married Devasena, Indra’s daughter, after his victory over Surapadman.', sources: [defn('skanda', 'Skanda')] }),
+  t({ id: 'tiruchendur', circuits: ['arupadai'], name: 'Tiruchendur', sanskrit: 'திருச்செந்தூர்', scriptureSays: 'Second abode, on the seashore', today: 'Subramaniya Swamy temple, Tiruchendur', state: 'Tamil Nadu', lat: 8.4962, lng: 78.1253, story: 'The battlefield where Murugan defeated the asura Surapadman, celebrated at Skanda Shashti.', sources: [defn('skanda', 'Skanda')] }),
+  t({ id: 'palani', circuits: ['arupadai'], name: 'Palani', sanskrit: 'பழனி', scriptureSays: 'Third abode, on a hill', today: 'Dhandayuthapani temple, Palani hill', state: 'Tamil Nadu', lat: 10.4488, lng: 77.5202, story: 'Murugan as an ascetic boy with a staff, after losing the contest for the fruit of wisdom to Ganesha. Famous for the kavadi pilgrimage at Thaipusam.', sources: [defn('skanda', 'Skanda')] }),
+  t({ id: 'swamimalai', circuits: ['arupadai'], name: 'Swamimalai', sanskrit: 'சுவாமிமலை', scriptureSays: 'Fourth abode', today: 'Swaminatha Swamy temple, near Kumbakonam', state: 'Tamil Nadu', lat: 10.9573, lng: 79.3257, story: 'Where the boy Murugan explained the meaning of Om to his father Shiva: hence Swaminatha, “teacher of the Lord”.', sources: [defn('skanda', 'Skanda')] }),
+  t({ id: 'tiruttani', circuits: ['arupadai'], name: 'Tiruttani', sanskrit: 'திருத்தணி', scriptureSays: 'Fifth abode', today: 'Subramaniya Swamy temple, Tiruttani hill', state: 'Tamil Nadu', lat: 13.1757, lng: 79.6069, story: 'Where Murugan’s anger cooled after the war, and where he married Valli, the tribal girl.', sources: [defn('skanda', 'Skanda')] }),
+  t({ id: 'pazhamudircholai', circuits: ['arupadai'], name: 'Pazhamudircholai', sanskrit: 'பழமுதிர்சோலை', scriptureSays: 'Sixth abode, in a forest grove', today: 'Solaimalai Murugan temple, above Alagar Koil, near Madurai', state: 'Tamil Nadu', lat: 10.0885, lng: 78.2233, story: 'Where the young Murugan tested the poet Avvaiyar with the riddle of “hot fruit or cold fruit”.', sources: [defn('skanda', 'Skanda')] }),
+  t({ id: 'ekambareswarar', circuits: ['pancha-bhuta'], name: 'Ekambareswarar (Earth)', sanskrit: 'एकाम्रेश्वर', scriptureSays: 'Prithvi linga', today: 'Ekambareswarar temple, Kanchipuram', state: 'Tamil Nadu', lat: 12.8475, lng: 79.6995, story: 'Parvati made a linga of sand under a mango tree and embraced it to save it from a flood. The ancient mango tree still stands.', sources: [defn('pancabhuta', 'Pancha-bhuta')] }),
+  t({ id: 'jambukeswarar', circuits: ['pancha-bhuta'], name: 'Jambukeswarar (Water)', sanskrit: 'जम्बुकेश्वर', scriptureSays: 'Appu (jala) linga', today: 'Jambukeswarar temple, Thiruvanaikaval, Tiruchirappalli', state: 'Tamil Nadu', lat: 10.8533, lng: 78.7055, story: 'An underground spring keeps the sanctum floor always wet around the linga.', sources: [defn('pancabhuta', 'Pancha-bhuta')] }),
+  t({ id: 'arunachaleswarar', circuits: ['pancha-bhuta'], name: 'Arunachaleswarar (Fire)', sanskrit: 'अरुणाचलेश्वर', scriptureSays: 'Agni linga', today: 'Annamalaiyar temple, Tiruvannamalai', state: 'Tamil Nadu', lat: 12.2319, lng: 79.0677, story: 'The hill itself is Shiva as the column of fire. At Karthigai Deepam a great flame is lit on its summit. Ramana Maharshi lived here.', sources: [defn('arunacala', 'Arunachala')] }),
+  t({ id: 'srikalahasti', circuits: ['pancha-bhuta'], name: 'Srikalahasti (Air)', sanskrit: 'श्रीकालहस्ती', scriptureSays: 'Vayu linga', today: 'Srikalahasteeswara temple, Srikalahasti', state: 'Andhra Pradesh', lat: 13.7497, lng: 79.6984, story: 'A lamp in the windless sanctum flickers, said to be Shiva’s breath. Named after a spider, a snake and an elephant (shri-kala-hasti) that worshipped here. The hunter Kannappa offered his eyes here.', sources: [defn('kalahasti', 'Kalahasti')] }),
+  t({ id: 'chidambaram', circuits: ['pancha-bhuta'], name: 'Chidambaram (Space)', sanskrit: 'चिदम्बरम्', scriptureSays: 'Akasha linga', today: 'Thillai Nataraja temple, Chidambaram', state: 'Tamil Nadu', lat: 11.3993, lng: 79.6936, story: 'Shiva as Nataraja, the cosmic dancer. The “Chidambara rahasya” is an empty space behind a curtain: Shiva as formless ether.', sources: [defn('cidambara', 'Chidambaram'), src.dgShaivaSiddhanta] }),
+].map((p, i) => ({ ...p, n: i + 1 }));
+
 export const placesSources: Source[] = [
   src.jyotirlingaList,
   src.jyotirlingaIncarnations,
@@ -287,8 +373,10 @@ export const placesSources: Source[] = [
   src.upaKalika,
   src.deviBhagavata,
   defn('pitha', 'Pitha'),
+  src.defSaptapuri,
+  src.skandaSevenCities,
   src.smriti,
 ];
 
-export const allPlaces = [...jyotirlingas, ...shaktiPeethas, ...otherPeethas];
+export const allPlaces = [...jyotirlingas, ...shaktiPeethas, ...otherPeethas, ...tirthas];
 export const placeById = new Map(allPlaces.map((p) => [p.id, p]));

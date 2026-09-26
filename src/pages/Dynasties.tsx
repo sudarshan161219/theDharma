@@ -3,6 +3,7 @@ import { DYNASTIES, dynastyExtraSources, flatten, type DNode, type Line } from '
 import { navigate, type Route } from '../lib/router';
 import { PageHeader, PersonLink, Sources } from '../components/ui';
 import styles from './Dynasties.module.css';
+import { onTabListKeyDown } from '../lib/a11y';
 
 type Key = keyof typeof DYNASTIES;
 
@@ -68,7 +69,7 @@ export default function Dynasties({ route }: { route: Route }) {
       />
 
       <div className={styles.controls}>
-        <div className={styles.tabs} role="tablist">
+        <div className={styles.tabs} role="tablist" onKeyDown={onTabListKeyDown}>
           {(Object.keys(DYNASTIES) as Key[]).map((k) => (
             <button key={k} role="tab" aria-selected={k === key} className={k === key ? styles.on : undefined} onClick={() => navigate(`/dynasties?d=${k}`)}>
               {k === 'solar' ? '☀ Solar (Surya-vamsha)' : '☾ Lunar (Chandra-vamsha)'}

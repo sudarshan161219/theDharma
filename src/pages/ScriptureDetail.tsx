@@ -1,5 +1,6 @@
 import { scriptureById } from '../data/scriptures';
 import { href } from '../lib/router';
+import { useDocumentTitle } from '../lib/title';
 import { Chip, Evidence, Facts, PageHeader, Sources } from '../components/ui';
 import { Lineage, NarrationChain } from '../components/NarrationChain';
 import NotFound from './NotFound';
@@ -7,6 +8,7 @@ import styles from './ScriptureDetail.module.css';
 
 export default function ScriptureDetail({ id }: { id: string }) {
   const s = scriptureById.get(id);
+  useDocumentTitle(s ? s.name : 'Not found');
   if (!s) return <NotFound />;
 
   return (

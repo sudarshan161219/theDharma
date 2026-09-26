@@ -1,6 +1,10 @@
 import { manvantaras, vyasas, yugas } from '../data/cosmos';
 import { acharyas, darshanas } from '../data/acharyas';
 import { darshans, nastikas, traditions } from '../data/darshanas';
+import { dharmashastras, gitaChapters, upanishads, vedangas, vedas } from '../data/vedas';
+import { festivals } from '../data/calendar';
+import { dikpalas, navagrahas, trimurti, vedicGods } from '../data/devas';
+import { ashramas, purusharthas, samskaras } from '../data/dharma';
 import { dashavatara } from '../data/avatars';
 import { mahavidyas, navadurga } from '../data/devi';
 import { allPlaces } from '../data/places';
@@ -86,7 +90,7 @@ const index: Entry[] = [
     haystack: [f.name, f.meaning, f.form, f.story, f.aside ?? '', group, 'devi goddess durga shakti avatar'].join(' '),
   })),
   ...allPlaces.map((p) => ({
-    kind: p.kind === 'jyotirlinga' ? 'Jyotirlinga' : 'Shakti Peetha',
+    kind: p.kind === 'jyotirlinga' ? 'Jyotirlinga' : p.kind === 'shakti' ? 'Shakti Peetha' : 'Tirtha',
     title: p.name,
     subtitle: `${p.today} · ${p.state}`,
     to: `#/places?p=${p.id}`,
@@ -133,6 +137,97 @@ const index: Entry[] = [
     subtitle: `${a.dates} · ${darshanas.find((d) => d.id === a.darshana)?.name ?? ''}`,
     to: `#/acharyas?a=${a.id}`,
     haystack: [a.name, a.summary, a.born, a.sampradaya ?? '', ...a.works, ...a.facts.map((f) => f.value), 'acharya teacher'].join(' '),
+  })),
+  ...vedas.map((v) => ({
+    kind: 'Veda',
+    title: v.name,
+    subtitle: v.meaning,
+    to: `#/vedas?v=${v.id}`,
+    haystack: [v.name, v.what, v.size, v.shakhas, v.brahmanas, v.aranyakas, v.upanishads, v.upaveda, v.receivedBy, v.mahavakya.iast, v.note, 'veda samhita shruti'].join(' '),
+  })),
+  ...upanishads.map((u) => ({
+    kind: 'Upanishad',
+    title: `${u.name} Upanishad`,
+    subtitle: `${u.veda} · ${u.teacher} teaches ${u.student}`,
+    to: '#/vedas',
+    haystack: [u.name, u.veda, u.teacher, u.student, u.setting, u.teaching, u.famous.iast, u.famous.meaning, 'upanishad vedanta'].join(' '),
+  })),
+  ...vedangas.map((v) => ({
+    kind: 'Vedanga',
+    title: v.name,
+    subtitle: v.what,
+    to: '#/vedas',
+    haystack: [v.name, v.what, v.texts, v.part, 'vedanga limb of the veda'].join(' '),
+  })),
+  ...dharmashastras.map((d) => ({
+    kind: 'Dharmashastra',
+    title: d.name,
+    subtitle: d.size,
+    to: '#/vedas',
+    haystack: [d.name, d.when, d.about, d.commentaries, 'smriti law dharmashastra'].join(' '),
+  })),
+  ...gitaChapters.map((c) => ({
+    kind: 'Gita chapter',
+    title: `Gita ${c.n}: ${c.name}`,
+    subtitle: `${c.verses} verses · ${c.theme}`,
+    to: '#/vedas',
+    haystack: [c.name, c.theme, c.key.iast, c.key.meaning, c.key.ref, 'bhagavad gita chapter adhyaya'].join(' '),
+  })),
+  ...festivals.map((f) => ({
+    kind: 'Festival',
+    title: f.name,
+    subtitle: f.note,
+    to: '#/calendar',
+    haystack: [f.name, f.note, 'festival utsava calendar panchanga tithi'].join(' '),
+  })),
+  {
+    kind: 'Calendar',
+    title: 'Today’s panchanga',
+    subtitle: 'Tithi, nakshatra, yoga, karana, month and samvatsara, worked out live',
+    to: '#/calendar',
+    haystack: 'panchanga panchang calendar tithi nakshatra yoga karana vara masa ritu samvatsara shaka vikram amavasya purnima ekadashi',
+  },
+  ...trimurti.map((t) => ({
+    kind: 'Deva',
+    title: t.god,
+    subtitle: `${t.role} · with ${t.goddess.split(':')[0]}`,
+    to: '#/devas',
+    haystack: [t.god, t.goddess, t.vahana, t.abode, t.emblems, t.note, 'trimurti'].join(' '),
+  })),
+  ...vedicGods.map((g) => ({
+    kind: 'Deva',
+    title: g.name,
+    subtitle: g.role,
+    to: '#/devas',
+    haystack: [g.name, g.role, 'vedic god rig veda deva'].join(' '),
+  })),
+  ...navagrahas.map((g) => ({
+    kind: 'Navagraha',
+    title: g.name,
+    subtitle: `${g.body} · ${g.day}`,
+    to: '#/devas',
+    haystack: [g.name, g.body, g.day, g.parents, g.role, 'graha navagraha planet'].join(' '),
+  })),
+  ...dikpalas.map((d) => ({
+    kind: 'Dikpala',
+    title: d.name,
+    subtitle: `Guardian of the ${d.dir.toLowerCase()}`,
+    to: '#/devas',
+    haystack: [d.name, d.dir, d.weapon, d.vahana, d.consort, 'dikpala lokapala direction guardian'].join(' '),
+  })),
+  ...samskaras.map((x) => ({
+    kind: 'Samskara',
+    title: x.name,
+    subtitle: `${x.when} · ${x.what}`,
+    to: '#/dharma',
+    haystack: [x.name, x.when, x.what, x.phase, 'samskara rite of passage'].join(' '),
+  })),
+  ...[...ashramas, ...purusharthas].map((x) => ({
+    kind: 'Dharma',
+    title: x.name,
+    subtitle: 'duty' in x ? `${x.who} · ${x.years}` : x.meaning,
+    to: '#/dharma',
+    haystack: [x.name, 'duty' in x ? x.duty : x.about, 'ashrama purushartha stage aim of life dharma'].join(' '),
   })),
   ...darshans.map((d) => ({
     kind: 'Darshana',

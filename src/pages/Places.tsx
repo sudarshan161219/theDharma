@@ -1,12 +1,15 @@
 import { useMemo } from 'react';
-import { jyotirlingas, kaulaPithas, otherPeethas, placeById, placesSources, shaktiPeethas, type Place } from '../data/places';
+import { circuits, jyotirlingas, kaulaPithas, otherPeethas, placeById, placesSources, shaktiPeethas, tirthas, type Place } from '../data/places';
 import { src } from '../data/sources';
 import { href, navigate, type Route } from '../lib/router';
 import { Chip, Evidence, PageHeader, Sources } from '../components/ui';
 import PlacesMap from '../components/PlacesMap';
 import styles from './Places.module.css';
 
-type Show = 'all' | 'jyotirlinga' | 'shakti';
+type Show = 'all' | 'jyotirlinga' | 'shakti' | 'tirtha';
+
+const kindLabel = (p: Place) => (p.kind === 'jyotirlinga' ? 'Jyotirlinga' : p.kind === 'shakti' ? 'Shakti Peetha' : 'Tirtha');
+const itemTone = (p: Place) => (p.kind === 'jyotirlinga' ? 'itemJ' : p.kind === 'shakti' ? 'itemS' : 'itemT');
 
 const osm = (p: { lat: number; lng: number }) => `https://www.openstreetmap.org/?mlat=${p.lat}&mlon=${p.lng}#map=14/${p.lat}/${p.lng}`;
 
@@ -15,14 +18,17 @@ function Detail({ p }: { p: Place }) {
   return (
     <article className={styles.detail}>
       <div className={styles.detailHead}>
-        <Chip tone={p.kind === 'jyotirlinga' ? 'indigo' : 'accent'}>{p.kind === 'jyotirlinga' ? `Jyotirlinga ${p.n}` : 'Shakti Peetha'}</Chip>
+        <Chip tone={p.kind === 'jyotirlinga' ? 'indigo' : p.kind === 'shakti' ? 'accent' : 'gold'}>{p.kind === 'jyotirlinga' ? `Jyotirlinga ${p.n}` : kindLabel(p)}</Chip>
+        {p.circuits?.map((c) => (
+          <Chip key={c}>{circuits.find((x) => x.id === c)?.name}</Chip>
+        ))}
         <h2>
           {p.name} <span className="deva">{p.sanskrit}</span>
         </h2>
       </div>
       <dl className={styles.where}>
         <div>
-          <dt>{p.kind === 'jyotirlinga' ? 'Shiva Purana says' : 'The stotra / texts say'}</dt>
+          <dt>{p.kind === 'jyotirlinga' ? 'Shiva Purana says' : p.kind === 'shakti' ? 'The stotra / texts say' : 'Tradition says'}</dt>
           <dd>{p.scriptureSays}</dd>
         </div>
         <div>
@@ -61,7 +67,7 @@ function Detail({ p }: { p: Place }) {
         <p className={styles.twin}>
           Same sacred town as{' '}
           <a href={`#/places?p=${twin.id}`}>
-            {twin.name} ({twin.kind === 'jyotirlinga' ? 'Jyotirlinga' : 'Shakti Peetha'})
+            {twin.name} ({kindLabel(twin)})
           </a>
           .
         </p>
@@ -89,7 +95,7 @@ function PlaceList({ items, selected }: { items: Place[]; selected: string | nul
         <li key={p.id}>
           <a
             href={`#/places?p=${p.id}`}
-            className={`${styles.item} ${p.kind === 'jyotirlinga' ? styles.itemJ : styles.itemS} ${selected === p.id ? styles.itemOn : ''}`}
+            className={`${styles.item} ${styles[itemTone(p)]} ${selected === p.id ? styles.itemOn : ''}`}
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             <span className={styles.itemNum}>{p.n}</span>
@@ -115,7 +121,8 @@ export default function Places({ route }: { route: Route }) {
   const visible = useMemo(() => {
     if (show === 'jyotirlinga') return jyotirlingas;
     if (show === 'shakti') return [...shaktiPeethas, ...otherPeethas];
-    return [...jyotirlingas, ...shaktiPeethas, ...otherPeethas];
+    if (show === 'tirtha') return tirthas;
+    return [...jyotirlingas, ...shaktiPeethas, ...otherPeethas, ...tirthas];
   }, [show]);
 
   const setShow = (s: Show) => navigate(`/places?show=${s}`);
@@ -124,8 +131,8 @@ export default function Places({ route }: { route: Route }) {
     <>
       <PageHeader
         eyebrow="Tirtha — sacred geography"
-        title="Jyotirlingas & Shakti Peethas"
-        sub="The twelve places where Shiva manifests as a pillar of light, and the seats where the Goddess abides, traditionally where parts of Sati’s body fell. Tap a marker or a name."
+        title="Sacred Places"
+        sub="The twelve places where Shiva manifests as a pillar of light, the seats where the Goddess abides, and the great pilgrimage circuits: Char Dham, the seven liberating cities, the Kumbh sites, Murugan’s six abodes and the five element temples. Tap a marker or a name."
       />
 
       <div className={styles.controls} role="group" aria-label="Show on map">
@@ -134,6 +141,7 @@ export default function Places({ route }: { route: Route }) {
             ['all', 'All'],
             ['jyotirlinga', '12 Jyotirlingas'],
             ['shakti', 'Shakti Peethas'],
+            ['tirtha', 'Pilgrimage circuits'],
           ] as [Show, string][]
         ).map(([k, label]) => (
           <button key={k} onClick={() => setShow(k)} className={show === k ? styles.on : undefined} aria-pressed={show === k}>
@@ -143,6 +151,7 @@ export default function Places({ route }: { route: Route }) {
         <span className={styles.legend}>
           <span className={styles.dotJ} /> Jyotirlinga
           <span className={styles.dotS} /> Shakti Peetha
+          <span className={styles.dotT} /> Tirtha
           <span className={styles.dotAlt} /> Other claimed site
         </span>
       </div>
@@ -166,7 +175,7 @@ export default function Places({ route }: { route: Route }) {
         </div>
       </div>
 
-      {show !== 'shakti' && (
+      {(show === 'all' || show === 'jyotirlinga') && (
         <section className={styles.section}>
           <h2>The twelve Jyotirlingas</h2>
           <p className={styles.help}>
@@ -179,7 +188,7 @@ export default function Places({ route }: { route: Route }) {
         </section>
       )}
 
-      {show !== 'jyotirlinga' && (
+      {(show === 'all' || show === 'shakti') && (
         <section className={styles.section}>
           <h2>Shakti Peethas</h2>
           <p className={styles.help}>
@@ -209,6 +218,31 @@ export default function Places({ route }: { route: Route }) {
               </li>
             ))}
           </ul>
+        </section>
+      )}
+
+      {(show === 'all' || show === 'tirtha') && (
+        <section className={styles.section}>
+          <h2>Pilgrimage circuits</h2>
+          <p className={styles.help}>
+            A tirtha is a “crossing place”, where the world is thin enough to cross over. Tradition groups the great tirthas into circuits (yatras), each walked or
+            visited as a whole. Some towns belong to more than one.
+          </p>
+          {circuits.map((c) => (
+            <div key={c.id} className={styles.circuit}>
+              <h3 className={styles.sub}>
+                {c.name} <span className="deva">{c.sanskrit}</span>
+              </h3>
+              <p className={styles.help}>{c.about}</p>
+              {c.verse && (
+                <blockquote className={styles.cVerse}>
+                  <i>{c.verse.iast}</i>
+                  <span>“{c.verse.meaning}”</span>
+                </blockquote>
+              )}
+              <PlaceList items={tirthas.filter((p) => p.circuits?.includes(c.id))} selected={selected} />
+            </div>
+          ))}
         </section>
       )}
 

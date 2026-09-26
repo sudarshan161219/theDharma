@@ -12,6 +12,7 @@
   --gold-soft: #211a0b;
   --indigo: #9eaaf0;
   --indigo-soft: #141830;
+  --jade: #5fc69a;
   --shadow: none;
 
   --font-display: 'Cormorant Garamond', Georgia, serif;
@@ -36,6 +37,7 @@
   --gold-soft: #f4ead0;
   --indigo: #3c4a8a;
   --indigo-soft: #e3e6f4;
+  --jade: #2e7d5b;
   --shadow: 0 1px 2px rgb(60 40 20 / 0.06), 0 6px 20px rgb(60 40 20 / 0.06);
   color-scheme: light;
 }

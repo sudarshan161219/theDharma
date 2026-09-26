@@ -494,6 +494,51 @@ export const src = {
   vaikhanasaPancaratra: { label: 'Vaikhanasa and Pancharatra (Diksha in Pancharatra)', url: `${WL}/hinduism/essay/diksha-initiation-in-pancharatra/d/doc1458637.html` },
   historicalVaishnavism: { label: 'Sri Krishna Chaitanya, Ch. 9 — Historical Vaishnavism', url: `${WL}/hinduism/book/sri-krishna-chaitanya/d/doc1112793.html` },
   shaktiAndShakta: { label: 'Woodroffe — Shakti and Shakta, Ch. VI', url: `${WL}/hinduism/book/shakti-and-shakta/d/doc210193.html` },
+  // ——— Vedas & shastras ———
+  rigVeda: { label: 'Rig Veda with Sayana’s commentary (H. H. Wilson)', url: `${WL}/hinduism/book/rig-veda-english-translation` },
+  rigVeda1_1_1: { label: 'Rig Veda 1.1.1 — “agnim īḷe purohitam”', url: `${WL}/hinduism/book/rig-veda-english-translation/d/doc828866.html` },
+  nasadiya: { label: 'Rig Veda 10.129 — the hymn of creation (Nasadiya)', url: `${WL}/hinduism/book/rig-veda-english-translation/d/doc840082.html` },
+  brihadaranyaka: { label: 'Brihadaranyaka Upanishad with Shankara’s commentary', url: `${WL}/hinduism/book/the-brihadaranyaka-upanishad` },
+  brihadThirtyThree: {
+    label: 'Brihadaranyaka Upanishad 3.9 — Yajnavalkya and Vidagdha: the thirty-three gods',
+    url: `${WL}/hinduism/book/the-brihadaranyaka-upanishad/d/doc118360.html`,
+  },
+  kathaShankara: { label: 'Katha Upanishad with Shankara’s commentary', url: `${WL}/hinduism/book/katha-upanishad-shankara-bhashya` },
+  katha1_1_1: { label: 'Katha Upanishad 1.1.1 — Nachiketa and Yama', url: `${WL}/hinduism/book/katha-upanishad-shankara-bhashya/d/doc145148.html` },
+  gitaTelang: { label: 'Bhagavadgita (K. T. Telang, Sacred Books of the East 8)', url: `${WL}/hinduism/book/the-bhagavadgita` },
+  gitaMbh: { label: 'Mahabharata — Bhagavat-Gita Parva', url: `${WL}/hinduism/book/the-mahabharata-mohan/d/doc375161.html` },
+  manusmriti: { label: 'Manusmriti with the commentary of Medhatithi (G. Jha)', url: `${WL}/hinduism/book/manusmriti-with-the-commentary-of-medhatithi` },
+  vedangaIntro: {
+    label: 'Introduction to the Vedangas (limbs of the Veda)',
+    url: `${WL}/history/essay/glories-of-india-culture-and-civilization/d/doc1472122.html`,
+  },
+  vedangaStudy: { label: 'Vedanga: the six auxiliary disciplines', url: `${WL}/hinduism/essay/vasudevavijaya-of-vasudeva-study/d/doc1150488.html` },
+  conceptSixVedangas: { label: 'Six Vedangas — concept', url: `${WL}/concept/six-vedangas` },
+  // ——— Calendar ———
+  defPancanga: { label: 'Panchanga — definitions', url: `${WL}/definition/pancanga` },
+  defTithi: { label: 'Tithi — definitions', url: `${WL}/definition/tithi` },
+  defNakshatra: { label: 'Nakshatra — definitions', url: `${WL}/definition/nakshatra` },
+  defSamvatsara: { label: 'Samvatsara — definitions', url: `${WL}/definition/samvatsara` },
+  agniSamvatsaras: { label: 'Agni Purana 139 — The names of the sixty years', url: `${WL}/hinduism/book/the-agni-purana/d/doc1083369.html` },
+  naradaYear: { label: 'Narada Purana 56.11 — Description of the year', url: `${WL}/hinduism/book/narada-purana-english/d/doc1597811.html` },
+  brihatSamhitaJupiter: { label: 'Brihat Samhita 8 — On the course of Jupiter', url: `${WL}/hinduism/book/brihat-samhita/d/doc226724.html` },
+  // ——— Devas ———
+  vpAdityas: { label: 'Vishnu Purana 2.10 — Names of the twelve Adityas', url: `${VPW}/d/doc115970.html` },
+  vpRudras: { label: 'Vishnu Purana 1.8 — Origin of Rudra', url: `${VPW}/d/doc115943.html` },
+  vpMindBorn: { label: 'Vishnu Purana 1.7 — The mind-born sons of Brahma', url: `${VPW}/d/doc115942.html` },
+  conceptThirtyThree: { label: 'Thirty-three gods — concept', url: `${WL}/concept/thirty-three-gods` },
+  defDikpala: { label: 'Dikpala — definitions', url: `${WL}/definition/dikpala` },
+  defAshtadikpala: { label: 'Ashtadikpala — definitions', url: `${WL}/definition/ashtadikpala` },
+  defNavagraha: { label: 'Navagraha — definitions', url: `${WL}/definition/navagraha` },
+  // ——— Dharma & life ———
+  defShodashaSamskara: { label: 'Shodasha samskara — definitions', url: `${WL}/definition/shodasha-samskara` },
+  conceptSixteenSamskaras: { label: 'Sixteen samskaras — concept', url: `${WL}/concept/sixteen-samskaras` },
+  defSamskara: { label: 'Samskara — definitions', url: `${WL}/definition/samskara` },
+  manu6_92: { label: 'Manusmriti 6.92 — the ten marks of dharma', url: `${WL}/hinduism/book/manusmriti-with-the-commentary-of-medhatithi/d/doc200653.html` },
+  // ——— Pilgrimage ———
+  defSaptapuri: { label: 'Saptapuri — definitions', url: `${WL}/definition/saptapuri` },
+  conceptSaptapuri: { label: 'Saptapuri — concept', url: `${WL}/concept/saptapuri` },
+  skandaSevenCities: { label: 'Skanda Purana — The seven holy cities', url: `${WL}/hinduism/book/the-skanda-purana/d/doc423744.html` },
   wilsonReview,
 } satisfies Record<string, Source | ((n: number, name: string) => Source)>;
 
