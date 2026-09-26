@@ -2,6 +2,7 @@ import { manvantaras, vyasas, yugas } from '../data/cosmos';
 import { acharyas, darshanas } from '../data/acharyas';
 import { darshans, nastikas, traditions } from '../data/darshanas';
 import { ksSchools, ksTeachers, ksTexts, tattvaBands, trikaIdeas, upayas } from '../data/trika';
+import { alvars, fiveForms, kalais, rahasyaTraya, tattvaTraya, vaIdeas, vaPaths, vaTeachers } from '../data/vishishtadvaita';
 import { agamasByFace, fourPaths, graceSteps, pashas, siddhantaTeachers, soulClasses, tirumurai, tripadartha } from '../data/siddhanta';
 import { dharmashastras, gitaChapters, upanishads, vedangas, vedas } from '../data/vedas';
 import { festivals } from '../data/calendar';
@@ -380,6 +381,48 @@ const index: Entry[] = [
     subtitle: `${t.dates} · ${t.role}`,
     to: '#/siddhanta',
     haystack: [t.name, t.stream, t.role, t.works, 'teacher acharya saint shaiva siddhanta'].join(' '),
+  })),
+  {
+    kind: 'Vishishtadvaita',
+    title: 'Vishishtadvaita',
+    subtitle: 'Ramanuja’s qualified non-dualism: the world as the body of Narayana',
+    to: '#/vishishtadvaita',
+    haystack: 'vishishtadvaita visistadvaita qualified non-dualism ramanuja sri vaishnava srivaishnava sharira shariri body soul tattva traya prapatti sharanagati alvar vadakalai tenkalai',
+  },
+  ...[...tattvaTraya, ...vaIdeas.map((x) => ({ name: x.term, meaning: x.meaning, about: x.about }))].map((x) => ({
+    kind: 'Vishishtadvaita',
+    title: x.name,
+    subtitle: x.meaning,
+    to: '#/vishishtadvaita',
+    haystack: [x.name, x.meaning, x.about, 'vishishtadvaita ramanuja'].join(' '),
+  })),
+  ...[...fiveForms.map((f) => ({ name: f.name, about: f.what })), ...vaPaths, ...rahasyaTraya.map((r) => ({ name: r.name, about: `${r.iast} ${r.meaning}` }))].map((x) => ({
+    kind: 'Vishishtadvaita',
+    title: x.name,
+    subtitle: x.about.slice(0, 100) + '…',
+    to: '#/vishishtadvaita',
+    haystack: [x.name, x.about, 'vishishtadvaita sri vaishnava'].join(' '),
+  })),
+  ...alvars.map((a) => ({
+    kind: 'Alvar',
+    title: a.name,
+    subtitle: a.work,
+    to: '#/vishishtadvaita',
+    haystack: [a.name, a.work, 'alvar azhwar tamil vaishnava saint divya prabandham'].join(' '),
+  })),
+  ...vaTeachers.map((t) => ({
+    kind: 'Vishishtadvaita',
+    title: t.name,
+    subtitle: `${t.dates} · ${t.role}`,
+    to: '#/vishishtadvaita',
+    haystack: [t.name, t.role, t.works, 'acharya sri vaishnava'].join(' '),
+  })),
+  ...kalais.map((k) => ({
+    kind: 'Vishishtadvaita',
+    title: `Vadakalai and Tenkalai: ${k.topic.toLowerCase()}`,
+    subtitle: `${k.vadakalai.slice(0, 60)}… / ${k.tenkalai.slice(0, 60)}…`,
+    to: '#/vishishtadvaita',
+    haystack: [k.topic, k.vadakalai, k.tenkalai, 'vadakalai tenkalai markata marjara monkey cat namam'].join(' '),
   })),
   ...darshanas.map((d) => ({
     kind: 'School',

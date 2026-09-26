@@ -16,7 +16,7 @@ import {
   vsAdvaita,
 } from '../data/trika';
 import { PageHeader, Sources } from '../components/ui';
-import styles from './Shaiva.module.css';
+import styles from './Theology.module.css';
 
 const TEXT_KINDS = ['Revealed', 'Philosophy', 'Manual', 'Hymn'] as const;
 const TEXT_KIND_LABEL: Record<(typeof TEXT_KINDS)[number], string> = {

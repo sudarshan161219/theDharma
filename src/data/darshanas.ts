@@ -532,6 +532,7 @@ export const traditions: Tradition[] = [
         about:
           'Worship in both Sanskrit and Tamil, with Lakshmi as the merciful mediator. After Vedanta Desika and Pillai Lokacharya it divided into the northern (Vadakalai) and southern (Tenkalai) schools, which differ on how grace and effort work together.',
         parampara: ['Narayana', 'Lakshmi', 'Vishvaksena', 'Nammalvar', 'Nathamuni', 'Pundarikaksha', 'Rama Mishra', 'Yamunacharya', 'Periya Nambi', 'Ramanuja'],
+        more: { label: 'Vishishtadvaita in depth: the Lord’s body, the five forms, surrender, the Alvars and the two schools', to: '#/vishishtadvaita' },
         sources: [src.brahmaSutraRamanuja, src.dasgupta3, defn('shrivaishnava', 'Sri Vaishnava')],
       },
       {

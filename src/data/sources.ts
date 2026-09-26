@@ -580,6 +580,18 @@ export const src = {
   ksShaktiSpanda: { label: 'Shakti in Kashmir Shaivism — Spanda', url: `${WL}/hinduism/essay/shakti-in-kashmir-shaivism-study/d/doc1597886.html` },
   ksPrakashaVimarsha: { label: 'Shaiva Tantra: a way of self-awareness — Light (prakasha) and thinking (vimarsha)', url: `${WL}/hinduism/essay/shaiva-tantra-a-way-of-self-awareness/d/doc1460204.html` },
   tantralokaSanskrit: { label: 'Tantraloka (Sanskrit text)', url: `${WL}/hinduism/book/tantraloka-sanskrit-text` },
+  // ——— Vishishtadvaita ———
+  defVishishtadvaita: { label: 'Vishishtadvaita — definitions', url: `${WL}/definition/vishishta-advaita` },
+  vaIntro: { label: 'Sankalpa-suryodaya study — Introduction to the Vishishtadvaita school of Ramanuja', url: `${WL}/hinduism/essay/sankalpa-suryodaya-study/d/doc1528105.html` },
+  vaManuals: { label: 'Sankalpa-suryodaya study — Manuals of Sri Vaishnava religion', url: `${WL}/hinduism/essay/sankalpa-suryodaya-study/d/doc1528031.html` },
+  dgVaPrecursors: { label: 'Dasgupta Vol. 3 — The precursors of the Vishishtadvaita philosophy', url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-3/d/doc209947.html` },
+  dgRamanujaLit: { label: 'Dasgupta Vol. 3 — Ramanuja literature', url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-3/d/doc209948.html` },
+  dgVaSoul: { label: 'Dasgupta Vol. 3 — The Vishishtadvaita doctrine of the soul', url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-3/d/doc209953.html` },
+  vaFundamentalTexts: { label: 'Siddhanta-sangraha — Fundamental texts in Vishishtadvaita literature', url: `${WL}/hinduism/book/siddhanta-sangraha-sailacharya/d/doc427502.html` },
+  vaSurrender: { label: 'Siddhanta-sangraha — The path of surrender', url: `${WL}/hinduism/book/siddhanta-sangraha-sailacharya/d/doc427520.html` },
+  ramanujaMahavakyas: { label: 'Sivaprakasam study — Ramanuja’s interpretation of the Mahavakyas', url: `${WL}/hinduism/book/sivaprakasam-study/d/doc1210745.html` },
+  conceptTattvatraya: { label: 'Tattvatraya — concept', url: `${WL}/concept/tattvatraya` },
+  tiruvaymoli: { label: 'Tiruvaymoli of Nammalvar (English translation)', url: `${WL}/hinduism/book/tiruvaymoli-english` },
   // ——— Shaiva Siddhanta ———
   defShaivaSiddhanta: { label: 'Shaiva Siddhanta — definitions', url: `${WL}/definition/shaiva-siddhanta` },
   conceptPatiPashuPasha: { label: 'Pati, pashu, pasha — concept', url: `${WL}/concept/pati-pashu-pasha` },

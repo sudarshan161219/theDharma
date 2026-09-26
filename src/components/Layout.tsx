@@ -28,12 +28,25 @@ const NAV = [
   { key: "darshanas", label: "Darshanas" },
   { key: "trika", label: "Kashmir Shaivism" },
   { key: "siddhanta", label: "Shaiva Siddhanta" },
+  { key: "vishishtadvaita", label: "Vishishtadvaita" },
   { key: "dharma", label: "Life & Dharma" },
   { key: "places", label: "Sacred Places" },
   { key: "kuladevata", label: "Kuladevata" },
   { key: "chandas", label: "Chandas" },
   { key: "glossary", label: "Definitions" },
 ];
+
+/** The desktop sidebar groups the same sections; the phone strip keeps the flat order above. */
+const NAV_GROUPS: { label: string; keys: string[] }[] = [
+  { label: "Texts", keys: ["scriptures", "vedas", "chandas", "glossary"] },
+  { label: "Time", keys: ["time", "calendar", "manvantaras", "dynasties", "vyasas"] },
+  { label: "The Divine", keys: ["devas", "forms", "epithets", "avatars"] },
+  { label: "Philosophy", keys: ["darshanas", "trika", "siddhanta", "vishishtadvaita"] },
+  { label: "People & lineage", keys: ["people", "acharyas", "gotra", "kuladevata"] },
+  { label: "Life & places", keys: ["dharma", "places"] },
+];
+
+const LABELS = Object.fromEntries(NAV.map((n) => [n.key, n.label]));
 
 type Theme = "dark" | "light" | "paper";
 
@@ -161,6 +174,46 @@ function NavScroller({ active }: { active: string }) {
   );
 }
 
+/** Desktop: every section at once, in groups, in a sticky sidebar. */
+function Sidebar({ active }: { active: string }) {
+  const ref = useRef<HTMLElement>(null);
+
+  // Keep the current section in view when the sidebar itself scrolls (never the page).
+  useEffect(() => {
+    const el = ref.current;
+    const link = el?.querySelector<HTMLElement>(`[data-key="${active}"]`);
+    if (!el || !link) return;
+    const top = link.offsetTop;
+    if (top < el.scrollTop || top + link.offsetHeight > el.scrollTop + el.clientHeight) {
+      el.scrollTop = top - el.clientHeight / 2;
+    }
+  }, [active]);
+
+  return (
+    <nav ref={ref} className={styles.sidebar} aria-label="Sections">
+      {NAV_GROUPS.map((g) => (
+        <div key={g.label} className={styles.group}>
+          <p className={styles.groupLabel}>{g.label}</p>
+          <ul>
+            {g.keys.map((k) => (
+              <li key={k}>
+                <a
+                  data-key={k}
+                  href={href(k)}
+                  className={active === k ? styles.active : undefined}
+                  aria-current={active === k ? "page" : undefined}
+                >
+                  {LABELS[k]}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </nav>
+  );
+}
+
 /** Dark (pitch black) is the default; light and paper ink are opt-in and remembered. */
 function readTheme(): Theme {
   try {
@@ -180,6 +233,17 @@ export default function Layout({
 }) {
   const [q, setQ] = useState("");
   const [theme, setTheme] = useState<Theme>(readTheme);
+  const header = useRef<HTMLElement>(null);
+  const shell = useRef<HTMLDivElement>(null);
+
+  // The sidebar sticks just below the header, whatever its height.
+  useEffect(() => {
+    const h = header.current;
+    if (!h) return;
+    const ro = new ResizeObserver(() => shell.current?.style.setProperty("--header-h", `${h.offsetHeight}px`));
+    ro.observe(h);
+    return () => ro.disconnect();
+  }, []);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -199,8 +263,8 @@ export default function Layout({
   };
 
   return (
-    <div className={styles.shell}>
-      <header className={styles.header}>
+    <div className={styles.shell} ref={shell}>
+      <header className={styles.header} ref={header}>
         <div className={styles.bar}>
           <a href="#/" className={styles.brand} aria-label="theDharma home">
             <span className={styles.mark} aria-hidden>
@@ -230,7 +294,10 @@ export default function Layout({
         </div>
         <NavScroller active={active} />
       </header>
-      <main className={styles.main}>{children}</main>
+      <div className={styles.body}>
+        <Sidebar active={active} />
+        <main className={styles.main}>{children}</main>
+      </div>
       <footer className={styles.footer}>
         <p>
           Content is summarised from the translations hosted on{" "}

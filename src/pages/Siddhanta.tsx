@@ -20,7 +20,7 @@ import {
 import { src } from '../data/sources';
 import { art } from '../data/forms';
 import { PageHeader, Sources } from '../components/ui';
-import styles from './Shaiva.module.css';
+import styles from './Theology.module.css';
 
 /** Pati above, the soul below, tied by the rope of pasha. */
 function TripadarthaFigure() {
