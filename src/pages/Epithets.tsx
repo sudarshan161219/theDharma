@@ -6,6 +6,13 @@ import styles from './Epithets.module.css';
 
 const KINDS = Object.keys(kindInfo) as NameKind[];
 
+/** Deity chips in three rows; the avataras in the order of the Dashavatara. */
+const GROUPS: { kind: 'Deva' | 'Devi' | 'Avatara'; label: string; order?: string[] }[] = [
+  { kind: 'Deva', label: 'Devas' },
+  { kind: 'Devi', label: 'Devis' },
+  { kind: 'Avatara', label: 'Avataras of Vishnu', order: ['matsya', 'kurma', 'varaha', 'narasimha', 'vamana', 'parashurama', 'rama', 'balarama', 'krishna', 'kalki'] },
+];
+
 export default function Epithets({ route }: { route: Route }) {
   const d = route.query.get('d') ?? 'vishnu';
   const k = KINDS.includes(route.query.get('k') as NameKind) ? (route.query.get('k') as NameKind) : null;
@@ -60,14 +67,26 @@ export default function Epithets({ route }: { route: Route }) {
       <section className={styles.section}>
         <h2>The names</h2>
         <div className={styles.deities} role="tablist" aria-label="Deity" onKeyDown={onTabListKeyDown}>
-          <button role="tab" aria-selected={!deity} className={!deity ? styles.on : undefined} onClick={() => go('all', k)}>
-            All
-          </button>
-          {namedDeities.map((x) => (
-            <button key={x.id} role="tab" aria-selected={deity?.id === x.id} className={deity?.id === x.id ? styles.on : undefined} onClick={() => go(x.id, k)}>
-              {x.name.replace(/ \(.*\)/, '')}
-              <span className="deva">{x.sanskrit}</span>
+          <div className={styles.groupRow}>
+            <button role="tab" aria-selected={!deity} className={!deity ? styles.on : undefined} onClick={() => go('all', k)}>
+              All
             </button>
+          </div>
+          {GROUPS.map((g) => (
+            <div key={g.kind} className={styles.groupRow}>
+              <span className={styles.groupLabel}>{g.label}</span>
+              <div className={styles.chips}>
+                {namedDeities
+                  .filter((x) => x.kind === g.kind)
+                  .sort((a, b) => (g.order ? g.order.indexOf(a.id) - g.order.indexOf(b.id) : 0))
+                  .map((x) => (
+                    <button key={x.id} role="tab" aria-selected={deity?.id === x.id} className={deity?.id === x.id ? styles.on : undefined} onClick={() => go(x.id, k)}>
+                      {x.name.replace(/ \(.*\)/, '')}
+                      <span className="deva">{x.sanskrit}</span>
+                    </button>
+                  ))}
+              </div>
+            </div>
           ))}
         </div>
 

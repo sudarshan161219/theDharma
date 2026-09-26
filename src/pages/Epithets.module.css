@@ -113,10 +113,41 @@
 }
 
 .deities {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.groupRow {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  align-items: start;
+  gap: 6px;
+}
+
+.chips {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-bottom: 14px;
+}
+
+.groupRow > button {
+  justify-self: start;
+}
+
+@media (max-width: 760px) {
+  .groupRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+.groupLabel {
+  padding-top: 9px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 .deities button {
