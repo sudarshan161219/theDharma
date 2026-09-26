@@ -28,6 +28,8 @@ npm run dev
 | `src/data/gotra.ts` | The four original gotras, the eight gotrakarin rishis, 17 gotras with gana and pravara, the classical same-family rule (`compareGotras`). Shown at `#/gotra` |
 | `src/data/dynasties.ts` | The Solar (Ikshvaku) and Lunar (Puru/Yadu/Kuru) dynasties as lines with side-branches, per Vishnu Purana Book IV. Shown at `#/dynasties` |
 | `src/lib/cosmicPosition.ts` | The time calculator's engine: locates any year (or years ago/ahead, or a preset) in Brahma's life down to the yuga and its dawn/dusk. Shown at `#/time` |
+| `src/data/darshanas.ts` | The six astika darshanas (founder, sutra, opening verse, categories, God, bondage, liberation, causation, commentators), the nastika schools, the pramana matrix, theories of causation, and the sampradayas by tradition (Vaishnava, Shaiva, Shakta, Smarta, Ganapatya/Saura/Kaumara) with guru-paramparas and Shankara's four mathas. Shown at `#/darshanas` |
+| `src/data/chandas.ts` + `src/lib/prosody.ts` | The Anushtubh (shloka) metre: weight rules, the 4 × 8 template, ganas, examples; plus a scanner that syllabifies IAST or Devanagari, marks laghu/guru and checks the classical rules. Shown at `#/chandas` |
 | `src/lib/time.ts` | "Where are we now" maths (Kali and kalpa years elapsed) |
 
 ## Adding a scripture

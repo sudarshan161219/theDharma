@@ -15,6 +15,7 @@ const QUICK: { q: string; a: string; to: string }[] = [
   { q: 'Who tells the Devi Bhagavata?', a: 'Vyasa, to King Janamejaya after the snake sacrifice, retold by Suta at Naimisharanya.', to: href('scriptures', 'devi-bhagavata') },
   { q: 'What is the difference between a Purana and an Upapurana?', a: 'The 18 Mahapuranas are the “great” Puranas. Upapuranas are secondary ones, often the chief text of a single tradition.', to: '#/glossary?t=upapurana' },
   { q: 'What is the difference between Advaita and Dvaita?', a: 'Advaita (Shankara): the Self is Brahman. Dvaita (Madhva): the soul is eternally distinct from and dependent on Vishnu.', to: '#/acharyas' },
+  { q: 'What are the six darshanas?', a: 'Nyaya, Vaisheshika, Samkhya, Yoga, Purva Mimamsa and Vedanta: the six orthodox schools, in three pairs.', to: '#/darshanas' },
   { q: 'Who are the nine Durgas of Navaratri?', a: 'Shailaputri, Brahmacharini, Chandraghanta, Kushmanda, Skandamata, Katyayani, Kalaratri, Mahagauri, Siddhidatri.', to: '#/avatars?g=devi&a=devi-navadurga' },
   { q: 'Where are the 12 Jyotirlingas?', a: 'From Somnath in Gujarat to Rameswaram in Tamil Nadu. See them on a map, with the Shiva Purana’s story of each.', to: '#/places?show=jyotirlinga' },
   { q: 'What is a kuladevata, and how do I find mine?', a: 'The guardian deity of your family line. Ask elders and the family priest, check pilgrimage-priest registers, and look to your ancestral village.', to: '#/kuladevata' },
@@ -33,9 +34,11 @@ const SECTIONS = [
   { key: 'people', title: 'Rishis & narrators', text: 'Sages, and every text in which each one speaks or listens.' },
   { key: 'avatars', title: 'Avatars', text: 'Vishnu’s Dashavatara, Shiva’s incarnations, and the Goddess: Navadurga, Mahavidyas and the Devi Mahatmya.' },
   { key: 'acharyas', title: 'Acharyas', text: 'Shankara, Ramanuja, Madhva, Nimbarka, Vallabha, Chaitanya… and how their schools differ.' },
+  { key: 'darshanas', title: 'Darshanas & Sampradayas', text: 'The six schools of philosophy and the four that reject the Veda, the pramanas, and the living lineages: Vaishnava, Shaiva, Shakta, Smarta and more.' },
   { key: 'places', title: 'Sacred Places', text: 'The 12 Jyotirlingas and the Shakti Peethas on a map, with where scripture places them and where they are today.' },
   { key: 'gotra', title: 'Gotras', text: 'The rishi behind your gotra, its pravara, the eight founders, and a same-family check.' },
   { key: 'kuladevata', title: 'Kuladevata', text: 'Your family deity: what it is, how it is honoured, how to find it, and 30 great family shrines on a map.' },
+  { key: 'chandas', title: 'Chandas', text: 'The Anushtubh (shloka) metre made visual: its 32 syllables, laghu and guru, the rules, and a scanner for any verse.' },
   { key: 'glossary', title: 'Definitions', text: 'Purana, Upapurana, Itihasa, pancha-lakshana, manvantara, rishi… explained with sources.' },
 ];
 

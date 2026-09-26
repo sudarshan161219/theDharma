@@ -316,6 +316,29 @@ export const src = {
   storyJamadagni: { label: 'Puranic Encyclopaedia — Story of Jamadagni', url: `${WL}/hinduism/compilation/puranic-encyclopaedia/d/doc241636.html` },
   defMahalakshmi: { label: 'Mahalakshmi — definitions', url: `${WL}/definition/mahalakshmi` },
   defVaishnavi: { label: 'Vaishnavi — definitions', url: `${WL}/definition/vaishnavi` },
+  // Chandas (metre)
+  defAnushtubh: { label: 'Anushtubh — definitions', url: `${WL}/definition/anushtubh` },
+  defAnushtup: { label: 'Anushtup — definitions', url: `${WL}/definition/anushtup` },
+  conceptAnushtubhMetre: { label: 'Anushtubh metre — concept', url: `${WL}/concept/anushtubh-metre` },
+  defSloka: { label: 'Shloka — definitions', url: `${WL}/definition/sloka` },
+  defPada: { label: 'Pada — definitions', url: `${WL}/definition/pada` },
+  anushtubhRigveda: {
+    label: 'Poetic spirit of the Rigvedic seers 2.3 — Description of the Anushtubh metre',
+    url: `${WL}/hinduism/essay/poetic-spirit-of-the-rigvedic-seers/d/doc1887610.html`,
+  },
+  defChandahsutra: { label: 'Chandahsutra (Pingala) — definitions', url: `${WL}/definition/chandahsutra` },
+  defPingalaSutra: { label: 'Pingala-sutra — definitions', url: `${WL}/definition/pingalasutra` },
+  defChandasshastra: { label: 'Chandas-shastra — definitions', url: `${WL}/definition/chandasshastra` },
+  chandasIntro: {
+    label: 'Glimpses of the History of Sanskrit Literature, Ch. 27 — Introduction to Chandah-shastra',
+    url: `${WL}/history/book/glimpses-of-history-of-sanskrit-literature/d/doc1546783.html`,
+  },
+  chandasRhythm: { label: 'Mudrarakshasa study — Chandas, the science of rhythm', url: `${WL}/hinduism/essay/mudrarakshasa-literary-study/d/doc1196509.html` },
+  ramayanaFirstShloka: {
+    label: 'Ramayana, Bala-kanda 2 — Valmiki creates the metrical form (the first shloka)',
+    url: `${WL}/hinduism/book/the-ramayana-of-valmiki/d/doc423852.html`,
+  },
+  conceptFirstSloka: { label: 'First shloka (mā niṣāda) — concept', url: `${WL}/concept/first-sloka` },
   // Sacred places
   jyotirlingaList: {
     label: 'Shiva Purana, Kotirudra-samhita Ch. 1 — The Jyotirlingas and their Upalingas',
@@ -353,6 +376,124 @@ export const src = {
   defUpapurana: { label: 'Upapurana — definitions', url: `${WL}/definition/upapurana` },
   defGaneshaPurana: { label: 'Ganesha Purana — definitions', url: `${WL}/definition/ganesha-purana` },
   defVishnudharmottara: { label: 'Vishnudharmottara Purana — definitions', url: `${WL}/definition/vishnudharmottarapurana` },
+  // ——— Darshanas & sampradayas ———
+  dasgupta1: { label: 'Dasgupta — A History of Indian Philosophy, Vol. 1', url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-1` },
+  dasgupta2: { label: 'Dasgupta — A History of Indian Philosophy, Vol. 2', url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-2` },
+  dgGeneral: {
+    label: 'Dasgupta Vol. 1, Ch. IV — General observations on the systems of Indian philosophy',
+    url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-1/d/doc6979.html`,
+  },
+  dgBeforeBuddha: {
+    label: 'Dasgupta Vol. 1 — The state of philosophy in India before the Buddha',
+    url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-1/d/doc209742.html`,
+  },
+  dgNyayaVaisheshika: {
+    label: 'Dasgupta Vol. 1, Ch. VIII — The Nyaya-Vaisheshika philosophy',
+    url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-1/d/doc6985.html`,
+  },
+  dgNyayaSutras: {
+    label: 'Dasgupta Vol. 1 — Nyaya and Vaisheshika sutras',
+    url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-1/d/doc209809.html`,
+  },
+  dgNyayaPramanas: {
+    label: 'Dasgupta Vol. 1 — The four pramanas of Nyaya',
+    url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-1/d/doc209822.html`,
+  },
+  dgCausation: {
+    label: 'Dasgupta Vol. 1 — The Nyaya-Vaisheshika theory of causation',
+    url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-1/d/doc209817.html`,
+  },
+  dgSamkhyaTexts: {
+    label: 'Dasgupta Vol. 1 — Samkhya-karika, Samkhya-sutra, Vachaspati and Vijnanabhikshu',
+    url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-1/d/doc209788.html`,
+  },
+  dgEarlySamkhya: {
+    label: 'Dasgupta Vol. 1 — An early school of Samkhya',
+    url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-1/d/doc209787.html`,
+  },
+  dgPurusha: {
+    label: 'Dasgupta Vol. 1 — The Samkhya and Yoga doctrine of soul (Purusha)',
+    url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-1/d/doc209790.html`,
+  },
+  dgYoga: {
+    label: 'Dasgupta Vol. 1 — Yoga and Patanjali',
+    url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-1/d/doc209789.html`,
+  },
+  dgMimamsa: {
+    label: 'Dasgupta Vol. 1, Ch. IX — Mimamsa philosophy',
+    url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-1/d/doc6986.html`,
+  },
+  dgMimamsaLit: {
+    label: 'Dasgupta Vol. 1 — The Mimamsa literature',
+    url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-1/d/doc209831.html`,
+  },
+  dgSvatahPramanya: {
+    label: 'Dasgupta Vol. 1 — Svatah-pramanya and paratah-pramanya',
+    url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-1/d/doc209832.html`,
+  },
+  dgAnupalabdhi: {
+    label: 'Dasgupta Vol. 1 — The pramana of non-perception (anupalabdhi)',
+    url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-1/d/doc209841.html`,
+  },
+  dgMimamsaGod: {
+    label: 'Dasgupta Vol. 1 — Mimamsa on self, salvation and God',
+    url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-1/d/doc209842.html`,
+  },
+  dgVedantaLit: {
+    label: 'Dasgupta Vol. 1 — Vedanta literature',
+    url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-1/d/doc209846.html`,
+  },
+  dgGaudapada: {
+    label: 'Dasgupta Vol. 1 — Vedanta in Gaudapada',
+    url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-1/d/doc209847.html`,
+  },
+  dgShankara: {
+    label: 'Dasgupta Vol. 1 — Vedanta and Shankara',
+    url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-1/d/doc209848.html`,
+  },
+  dgCarvaka: {
+    label: 'Dasgupta Vol. 3, Appendix I — The Lokayata, Nastika and Carvaka',
+    url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-3/d/doc7637.html`,
+  },
+  dgShivaPurana: {
+    label: 'Dasgupta Vol. 5 — The Shaiva philosophy in the Shiva Purana',
+    url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-5/d/doc210068.html`,
+  },
+  dgPashupata: {
+    label: 'Dasgupta Vol. 5 — The doctrine of the Pashupata sutras',
+    url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-5/d/doc210070.html`,
+  },
+  dgShaivaSiddhanta: {
+    label: 'Dasgupta Vol. 5 — Manikkavachakar and Shaiva Siddhanta',
+    url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-5/d/doc210072.html`,
+  },
+  dgVirashaiva: {
+    label: 'Dasgupta Vol. 5 — History and literature of Virashaivism',
+    url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-5/d/doc210063.html`,
+  },
+  kapilaBhagavata: {
+    label: 'Dasgupta Vol. 4 — Kapila’s philosophy in the Bhagavata Purana',
+    url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-4/d/doc209997.html`,
+  },
+  samkhyaGita: {
+    label: 'Dasgupta Vol. 2 — Samkhya and Yoga in the Gita',
+    url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-2/d/doc209923.html`,
+  },
+  yogaSutras: { label: 'Yoga Sutras with Vyasa’s bhashya and Vachaspati Mishra', url: `${WL}/hinduism/book/yoga-sutras-with-commentaries` },
+  yogaSutrasStudy: { label: 'Yoga Sutras: ancient and modern interpretations', url: `${WL}/hinduism/book/yoga-sutras-study` },
+  vaisheshikaSutra: { label: 'Vaisheshika Sutra with commentary (Kanada)', url: `${WL}/hinduism/book/vaisheshika-sutra-commentary` },
+  nyayaSutraPrameyas: { label: 'Prameyas in the Nyaya Sutra of Gautama', url: `${WL}/hinduism/essay/prameyas-in-the-nyaya-sutra` },
+  samkhyaKarikaIntro: {
+    label: 'Introduction to the Samkhya-karika of Ishvarakrishna',
+    url: `${WL}/hinduism/essay/samkhya-thoughts-in-the-mahabharata/d/doc1210263.html`,
+  },
+  conceptShanmata: { label: 'Shanmata — concept', url: `${WL}/concept/shanmata` },
+  conceptShaivaSiddhanta: { label: 'Shaiva Siddhanta — concept', url: `${WL}/concept/shaiva-siddhanta` },
+  conceptRamanandi: { label: 'Ramanandi sampradaya — concept', url: `${WL}/concept/ramanandi-sampradaya` },
+  conceptWarkari: { label: 'Warkari pilgrim — concept', url: `${WL}/concept/warkari-pilgrim` },
+  vaikhanasaPancaratra: { label: 'Vaikhanasa and Pancharatra (Diksha in Pancharatra)', url: `${WL}/hinduism/essay/diksha-initiation-in-pancharatra/d/doc1458637.html` },
+  historicalVaishnavism: { label: 'Sri Krishna Chaitanya, Ch. 9 — Historical Vaishnavism', url: `${WL}/hinduism/book/sri-krishna-chaitanya/d/doc1112793.html` },
+  shaktiAndShakta: { label: 'Woodroffe — Shakti and Shakta, Ch. VI', url: `${WL}/hinduism/book/shakti-and-shakta/d/doc210193.html` },
   wilsonReview,
 } satisfies Record<string, Source | ((n: number, name: string) => Source)>;
 

@@ -8,6 +8,8 @@ import NotFound from './pages/NotFound';
 // (Search pulls in the index of all data; the map pages pull in Leaflet.)
 const Acharyas = lazy(() => import('./pages/Acharyas'));
 const Avatars = lazy(() => import('./pages/Avatars'));
+const Chandas = lazy(() => import('./pages/Chandas'));
+const Darshanas = lazy(() => import('./pages/Darshanas'));
 const CosmicTime = lazy(() => import('./pages/CosmicTime'));
 const Dynasties = lazy(() => import('./pages/Dynasties'));
 const Glossary = lazy(() => import('./pages/Glossary'));
@@ -58,11 +60,17 @@ export default function App() {
     case 'acharyas':
       page = <Acharyas route={route} />;
       break;
+    case 'darshanas':
+      page = <Darshanas route={route} />;
+      break;
     case 'places':
       page = <Places route={route} />;
       break;
     case 'kuladevata':
       page = <Kuladevata route={route} />;
+      break;
+    case 'chandas':
+      page = <Chandas />;
       break;
     case 'glossary':
       page = <Glossary route={route} />;

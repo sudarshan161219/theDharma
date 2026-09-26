@@ -1,5 +1,6 @@
 import { manvantaras, vyasas, yugas } from '../data/cosmos';
 import { acharyas, darshanas } from '../data/acharyas';
+import { darshans, nastikas, traditions } from '../data/darshanas';
 import { dashavatara } from '../data/avatars';
 import { mahavidyas, navadurga } from '../data/devi';
 import { allPlaces } from '../data/places';
@@ -112,6 +113,13 @@ const index: Entry[] = [
         haystack: [n.name, n.note ?? '', n.spouse ?? '', 'king dynasty vamsha lineage', d === 'solar' ? 'surya ikshvaku ayodhya' : 'chandra soma kuru puru yadu'].join(' '),
       })),
   ),
+  {
+    kind: 'Chandas',
+    title: 'Anushtubh (shloka) metre',
+    subtitle: '4 padas × 8 syllables: laghu and guru, the rules, and a verse scanner',
+    to: '#/chandas',
+    haystack: 'anushtubh anushtup anustubh shloka sloka chandas chhand chanda metre meter prosody laghu guru pingala gana pada syllable scanner',
+  },
   ...gotras.map((g) => ({
     kind: 'Gotra',
     title: `${g.name} gotra`,
@@ -126,6 +134,36 @@ const index: Entry[] = [
     to: `#/acharyas?a=${a.id}`,
     haystack: [a.name, a.summary, a.born, a.sampradaya ?? '', ...a.works, ...a.facts.map((f) => f.value), 'acharya teacher'].join(' '),
   })),
+  ...darshans.map((d) => ({
+    kind: 'Darshana',
+    title: d.name,
+    subtitle: `${d.focus} · ${d.founder}`,
+    to: `#/darshanas?d=${d.id}`,
+    haystack: [d.name, d.meaning, d.focus, d.founder, d.rootText, d.inBrief, d.about, ...d.categories.items, ...d.commentators.map((c) => c.label), 'darshana astika philosophy school'].join(' '),
+  })),
+  ...nastikas.map((n) => ({
+    kind: 'Darshana',
+    title: n.name,
+    subtitle: `Nastika · ${n.founder}`,
+    to: '#/darshanas',
+    haystack: [n.name, n.founder, n.teaching, ...n.key, 'nastika philosophy school'].join(' '),
+  })),
+  ...traditions.flatMap((t) => [
+    {
+      kind: 'Sampradaya',
+      title: `${t.name} tradition`,
+      subtitle: t.inBrief,
+      to: `#/darshanas?t=${t.id}`,
+      haystack: [t.name, t.deity, t.inBrief, t.scriptures, 'sampradaya tradition sect'].join(' '),
+    },
+    ...t.sampradayas.map((s) => ({
+      kind: 'Sampradaya',
+      title: s.name,
+      subtitle: `${t.name} · ${s.founder}`,
+      to: `#/darshanas?t=${t.id}`,
+      haystack: [s.name, s.founder, s.deity, s.darshana, s.texts, s.centres, s.practice, s.about, ...(s.parampara ?? []), 'sampradaya lineage parampara'].join(' '),
+    })),
+  ]),
   ...darshanas.map((d) => ({
     kind: 'School',
     title: d.name,

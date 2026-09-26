@@ -20,8 +20,10 @@ const NAV = [
   { key: "gotra", label: "Gotras" },
   { key: "avatars", label: "Avatars" },
   { key: "acharyas", label: "Acharyas" },
+  { key: "darshanas", label: "Darshanas" },
   { key: "places", label: "Sacred Places" },
   { key: "kuladevata", label: "Kuladevata" },
+  { key: "chandas", label: "Chandas" },
   { key: "glossary", label: "Definitions" },
 ];
 
