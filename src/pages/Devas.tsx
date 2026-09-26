@@ -49,7 +49,7 @@ export default function Devas() {
         <p className={styles.help}>
           Three forms for the three works of the cosmos, each with his Shakti: creation, preservation and dissolution, matched to the three gunas. Who stands above them,
           and whether one of them is himself the Supreme, is answered differently by each sampradaya: see below. For the many shapes the deities take, from the linga
-          to the lion-man, see <a href="#/forms">How the Divine Appears</a>.
+          to the lion-man, see <a href="#/forms">How the Divine Appears</a>; for their names, see <a href="#/epithets">Epithets</a>.
         </p>
         <div className={styles.trimurti}>
           {trimurti.map((t, i) => (
@@ -57,8 +57,12 @@ export default function Devas() {
               <span className={styles.role}>
                 {t.role} · {t.guna}
               </span>
-              <h3>{t.to ? <a href={t.to}>{t.deva}</a> : t.deva}</h3>
-              <p className={styles.shakti}>with {t.shakti}</p>
+              <h3 className={styles.pair}>
+                {t.to ? <a href={t.to}>{t.deva}</a> : t.deva}
+                <span className={styles.bar}>|</span>
+                <span className={styles.consort}>{t.shakti.split(':')[0]}</span>
+              </h3>
+              <p className={styles.shakti}>{t.shakti.split(':').slice(1).join(':').trim()}</p>
               <dl>
                 <div>
                   <dt>Vahana</dt>

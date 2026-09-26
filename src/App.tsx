@@ -16,6 +16,7 @@ const CosmicTime = lazy(() => import('./pages/CosmicTime'));
 const Devas = lazy(() => import('./pages/Devas'));
 const Dharma = lazy(() => import('./pages/Dharma'));
 const Dynasties = lazy(() => import('./pages/Dynasties'));
+const Epithets = lazy(() => import('./pages/Epithets'));
 const Forms = lazy(() => import('./pages/Forms'));
 const Glossary = lazy(() => import('./pages/Glossary'));
 const Gotra = lazy(() => import('./pages/Gotra'));
@@ -53,6 +54,9 @@ export default function App() {
       break;
     case 'devas':
       page = <Devas />;
+      break;
+    case 'epithets':
+      page = <Epithets route={route} />;
       break;
     case 'forms':
       page = <Forms />;

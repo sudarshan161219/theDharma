@@ -6,6 +6,7 @@ import { festivals } from '../data/calendar';
 import { dikpalas, navagrahas, trimurti, vedicGods } from '../data/devas';
 import { ashramas, purusharthas, samskaras } from '../data/dharma';
 import { spectrum, terms } from '../data/forms';
+import { kindInfo, namedDeities } from '../data/epithets';
 import { dashavatara } from '../data/avatars';
 import { mahavidyas, navadurga } from '../data/devi';
 import { allPlaces } from '../data/places';
@@ -230,6 +231,15 @@ const index: Entry[] = [
     to: '#/forms',
     haystack: [t.term, t.meaning, t.examples, 'anthropomorphism zoomorphism therianthropy aniconism'].join(' '),
   })),
+  ...namedDeities.flatMap((d) =>
+    d.epithets.map((e) => ({
+      kind: 'Epithet',
+      title: `${e.name} · ${d.name.replace(/ \(.*\)/, '')}`,
+      subtitle: e.meaning,
+      to: `#/epithets?d=${d.id}`,
+      haystack: [e.name, e.meaning, e.why ?? '', d.name, kindInfo[e.kind].label, 'epithet name nama sahasranama'].join(' '),
+    })),
+  ),
   ...samskaras.map((x) => ({
     kind: 'Samskara',
     title: x.name,

@@ -547,6 +547,14 @@ export const src = {
   defVyuha: { label: 'Vyuha — definitions', url: `${WL}/definition/vyuha` },
   defAntaryamin: { label: 'Antaryamin — definitions', url: `${WL}/definition/antaryamin` },
   defPranapratishtha: { label: 'Pranapratishtha — definitions', url: `${WL}/definition/pranapratishtha` },
+  // ——— Epithets ———
+  vishnuSahasranamaSkanda: { label: 'Skanda Purana — Vishnu-sahasranama (a thousand epithets of Vishnu)', url: `${WL}/hinduism/book/the-skanda-purana/d/doc425635.html` },
+  shivaSahasranamaLinga: { label: 'Linga Purana 1.98 — Thousand names of Shiva', url: `${WL}/hinduism/book/the-linga-purana/d/doc1196078.html` },
+  shivaSahasranamaSP: { label: 'Shiva Purana, Kotirudra 35 — Shiva-sahasranama', url: `${WL}/hinduism/book/shiva-purana-english/d/doc226536.html` },
+  lalitaSahasranamaNarada: { label: 'Narada Purana 89 — Lalita-sahasranama', url: `${WL}/hinduism/book/narada-purana-english/d/doc1857951.html` },
+  lalitopakhyana: { label: 'Lalitopakhyana (Brahmanda Purana)', url: `${WL}/hinduism/book/lalitopakhyana-lalita-mahatmya` },
+  defSahasranama: { label: 'Sahasranama — definitions', url: `${WL}/definition/sahasranama` },
+  defAshtottara: { label: 'Ashtottara — definitions', url: `${WL}/definition/ashtottara` },
   // ——— Pilgrimage ———
   defSaptapuri: { label: 'Saptapuri — definitions', url: `${WL}/definition/saptapuri` },
   conceptSaptapuri: { label: 'Saptapuri — concept', url: `${WL}/concept/saptapuri` },

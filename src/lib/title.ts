@@ -14,6 +14,7 @@ export const SECTION_TITLES: Record<string, string> = {
   people: 'Rishis & Narrators',
   devas: 'Devas',
   forms: 'How the Divine Appears',
+  epithets: 'Epithets of the Devas and Devis',
   gotra: 'Gotras',
   avatars: 'Avatars',
   acharyas: 'Acharyas',
