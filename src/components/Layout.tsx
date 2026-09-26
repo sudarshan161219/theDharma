@@ -38,14 +38,59 @@ const NAV = [
   { key: "glossary", label: "Definitions" },
 ];
 
+/** Line icons for the collapsed sidebar, one per group (24×24, drawn with the text colour). */
+const ICONS: Record<string, ReactNode> = {
+  book: (
+    <>
+      <path d="M3 5.5C5.5 4 8.5 4 12 6c3.5-2 6.5-2 9-.5V19c-2.5-1.5-5.5-1.5-9 .5-3.5-2-6.5-2-9-.5z" />
+      <path d="M12 6v13.5" />
+    </>
+  ),
+  clock: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 2" />
+    </>
+  ),
+  flame: <path d="M12 3c2 3 5 5 5 9.5a5 5 0 0 1-10 0c0-2 1-3.5 2-4.5 0 2 1 3 2 3 0-3-1-5 1-8z" />,
+  eye: (
+    <>
+      <path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z" />
+      <circle cx="12" cy="12" r="3" />
+    </>
+  ),
+  people: (
+    <>
+      <circle cx="9" cy="8" r="3" />
+      <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" />
+      <circle cx="17" cy="9" r="2.5" />
+      <path d="M16 14.2c2.8.4 5 2.8 5 5.8" />
+    </>
+  ),
+  pin: (
+    <>
+      <path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" />
+      <circle cx="12" cy="10" r="2.5" />
+    </>
+  ),
+};
+
+function Icon({ name }: { name: string }) {
+  return (
+    <svg className={styles.icon} viewBox="0 0 24 24" aria-hidden="true">
+      {ICONS[name]}
+    </svg>
+  );
+}
+
 /** The desktop sidebar groups the same sections; the phone strip keeps the flat order above. */
-const NAV_GROUPS: { label: string; keys: string[] }[] = [
-  { label: "Texts", keys: ["scriptures", "vedas", "chandas", "glossary"] },
-  { label: "Time", keys: ["time", "calendar", "manvantaras", "dynasties", "vyasas"] },
-  { label: "The Divine", keys: ["devas", "forms", "epithets", "avatars"] },
-  { label: "Philosophy", keys: ["darshanas", "trika", "siddhanta", "vishishtadvaita", "dvaita"] },
-  { label: "People & lineage", keys: ["people", "acharyas", "gotra", "kuladevata"] },
-  { label: "Life & places", keys: ["dharma", "places", "regions"] },
+const NAV_GROUPS: { label: string; icon: string; keys: string[] }[] = [
+  { label: "Texts", icon: "book", keys: ["scriptures", "vedas", "chandas", "glossary"] },
+  { label: "Time", icon: "clock", keys: ["time", "calendar", "manvantaras", "dynasties", "vyasas"] },
+  { label: "The Divine", icon: "flame", keys: ["devas", "forms", "epithets", "avatars"] },
+  { label: "Philosophy", icon: "eye", keys: ["darshanas", "trika", "siddhanta", "vishishtadvaita", "dvaita"] },
+  { label: "People & lineage", icon: "people", keys: ["people", "acharyas", "gotra", "kuladevata"] },
+  { label: "Life & places", icon: "pin", keys: ["dharma", "places", "regions"] },
 ];
 
 const LABELS = Object.fromEntries(NAV.map((n) => [n.key, n.label]));
@@ -176,23 +221,103 @@ function NavScroller({ active }: { active: string }) {
   );
 }
 
-/** Desktop: every section at once, in groups, in a sticky sidebar. */
-function Sidebar({ active }: { active: string }) {
+/**
+ * Desktop: every section at once, in groups, in a sticky sidebar. It can be
+ * collapsed to a rail of group icons; each icon opens its group's links in a
+ * small flyout on hover or keyboard focus.
+ */
+function Sidebar({
+  active,
+  collapsed,
+  onToggle,
+}: {
+  active: string;
+  collapsed: boolean;
+  onToggle: () => void;
+}) {
   const ref = useRef<HTMLElement>(null);
 
   // Keep the current section in view when the sidebar itself scrolls (never the page).
   useEffect(() => {
     const el = ref.current;
     const link = el?.querySelector<HTMLElement>(`[data-key="${active}"]`);
-    if (!el || !link) return;
+    if (!el || !link || collapsed) return;
     const top = link.offsetTop;
     if (top < el.scrollTop || top + link.offsetHeight > el.scrollTop + el.clientHeight) {
       el.scrollTop = top - el.clientHeight / 2;
     }
+  }, [active, collapsed]);
+
+  // After choosing a page from a flyout, let the flyout close.
+  useEffect(() => {
+    const focused = document.activeElement;
+    if (focused instanceof HTMLElement && ref.current?.contains(focused)) focused.blur();
   }, [active]);
+
+  const toggle = (
+    <button
+      type="button"
+      className={styles.collapse}
+      onClick={onToggle}
+      aria-expanded={!collapsed}
+      aria-label={collapsed ? "Expand the sidebar" : "Collapse the sidebar"}
+      title={collapsed ? "Expand the sidebar" : "Collapse the sidebar"}
+    >
+      {collapsed ? "»" : "«"}
+    </button>
+  );
+
+  if (collapsed) {
+    return (
+      <nav
+        ref={ref}
+        className={`${styles.sidebar} ${styles.rail}`}
+        aria-label="Sections"
+        onKeyDown={(e) => {
+          // Escape closes an open flyout.
+          if (e.key === "Escape" && e.target instanceof HTMLElement) e.target.blur();
+        }}
+      >
+        {toggle}
+        {NAV_GROUPS.map((g) => {
+          const here = g.keys.includes(active);
+          return (
+            <div key={g.label} className={styles.railGroup}>
+              <button
+                type="button"
+                className={`${styles.railIcon} ${here ? styles.railHere : ""}`}
+                aria-label={g.label}
+                aria-haspopup="true"
+              >
+                <Icon name={g.icon} />
+              </button>
+              <div className={styles.flyout}>
+                <p className={styles.groupLabel}>{g.label}</p>
+                <ul>
+                  {g.keys.map((k) => (
+                    <li key={k}>
+                      <a
+                        data-key={k}
+                        href={href(k)}
+                        className={active === k ? styles.active : undefined}
+                        aria-current={active === k ? "page" : undefined}
+                      >
+                        {LABELS[k]}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          );
+        })}
+      </nav>
+    );
+  }
 
   return (
     <nav ref={ref} className={styles.sidebar} aria-label="Sections">
+      {toggle}
       {NAV_GROUPS.map((g) => (
         <div key={g.label} className={styles.group}>
           <p className={styles.groupLabel}>{g.label}</p>
@@ -216,6 +341,15 @@ function Sidebar({ active }: { active: string }) {
   );
 }
 
+/** The sidebar is open unless this viewer collapsed it before. */
+function readCollapsed(): boolean {
+  try {
+    return localStorage.getItem("sidebar") === "collapsed";
+  } catch {
+    return false;
+  }
+}
+
 /** Dark (pitch black) is the default; light and paper ink are opt-in and remembered. */
 function readTheme(): Theme {
   try {
@@ -235,6 +369,7 @@ export default function Layout({
 }) {
   const [q, setQ] = useState("");
   const [theme, setTheme] = useState<Theme>(readTheme);
+  const [collapsed, setCollapsed] = useState(readCollapsed);
   const header = useRef<HTMLElement>(null);
   const shell = useRef<HTMLDivElement>(null);
 
@@ -255,6 +390,15 @@ export default function Layout({
       /* storage unavailable */
     }
   }, [theme]);
+
+  useEffect(() => {
+    try {
+      if (collapsed) localStorage.setItem("sidebar", "collapsed");
+      else localStorage.removeItem("sidebar");
+    } catch {
+      /* storage unavailable */
+    }
+  }, [collapsed]);
 
   const current = THEMES.findIndex((t) => t.id === theme);
   const next = THEMES[(current + 1) % THEMES.length];
@@ -296,8 +440,8 @@ export default function Layout({
         </div>
         <NavScroller active={active} />
       </header>
-      <div className={styles.body}>
-        <Sidebar active={active} />
+      <div className={`${styles.body} ${collapsed ? styles.bodyCollapsed : ""}`}>
+        <Sidebar active={active} collapsed={collapsed} onToggle={() => setCollapsed((c) => !c)} />
         <main className={styles.main}>{children}</main>
       </div>
       <footer className={styles.footer}>
