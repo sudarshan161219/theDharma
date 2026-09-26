@@ -22,6 +22,8 @@ export const SECTION_TITLES: Record<string, string> = {
   trika: 'Kashmir Shaivism',
   siddhanta: 'Shaiva Siddhanta',
   vishishtadvaita: 'Vishishtadvaita',
+  dvaita: 'Dvaita',
+  regions: 'Regions of Dharma',
   dharma: 'Life & Dharma',
   places: 'Sacred Places',
   kuladevata: 'Kuladevata',

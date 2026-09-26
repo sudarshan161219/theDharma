@@ -551,6 +551,7 @@ export const traditions: Tradition[] = [
         about:
           'Madhva taught five real differences: Ishvara–soul, Ishvara–matter, soul–soul, soul–matter and matter–matter. The eight Udupi mathas take turns, every two years, to worship Krishna (the Paryaya festival).',
         parampara: ['Narayana', 'Brahma', 'Narada', 'Vyasa', 'Madhva', 'Padmanabha Tirtha', 'Jayatirtha', 'Vyasatirtha', 'Raghavendra Tirtha'],
+        more: { label: 'Dvaita in depth: the nine truths, the five differences, the gradation of souls, Udupi and the Haridasas', to: '#/dvaita' },
         sources: [src.dasguptaMadhva, src.dasgupta4],
       },
       {

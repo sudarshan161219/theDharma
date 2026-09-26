@@ -11,12 +11,12 @@ const ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright">Op
 /** Read a CSS custom property so markers follow the site's colour tokens. */
 const token = (name: string) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 
-/** Anything that can be pinned: a Jyotirlinga, a Shakti Peetha or a family deity's shrine. */
+/** Anything that can be pinned: a Jyotirlinga, a Shakti Peetha, a family deity's shrine, a region or one of its sites. */
 export interface MapPoint extends LatLng {
   id: string;
   n: number;
   name: string;
-  kind: 'jyotirlinga' | 'shakti' | 'kula' | 'tirtha';
+  kind: 'jyotirlinga' | 'shakti' | 'kula' | 'tirtha' | 'region' | 'site';
   alternates?: (LatLng & { place: string })[];
 }
 
@@ -24,14 +24,18 @@ interface Props {
   places: MapPoint[];
   selected: string | null;
   onSelect: (id: string) => void;
+  label?: string;
 }
 
-export default function PlacesMap({ places, selected, onSelect }: Props) {
+/** Regions are drawn larger than single sites, which are drawn smaller than everything else. */
+const RADIUS: Partial<Record<MapPoint['kind'], number>> = { region: 10, site: 5 };
+
+export default function PlacesMap({ places, selected, onSelect, label = 'Map of sacred places' }: Props) {
   const el = useRef<HTMLDivElement>(null);
   const map = useRef<L.Map | null>(null);
   const tiles = useRef<L.TileLayer | null>(null);
   const layer = useRef<L.LayerGroup | null>(null);
-  const markers = useRef(new Map<string, L.CircleMarker>());
+  const markers = useRef(new Map<string, { marker: L.CircleMarker; radius: number }>());
   const onSelectRef = useRef(onSelect);
   const selectedRef = useRef(selected);
   const fit = useRef(() => {});
@@ -75,15 +79,18 @@ export default function PlacesMap({ places, selected, onSelect }: Props) {
     const shakti = token('--accent') || '#f08a4b';
     const kula = token('--gold') || '#e0b454';
     const tirtha = token('--jade') || '#5fc69a';
+    const region = token('--accent') || '#f08a4b';
     const bg = token('--bg') || '#000';
 
     for (const p of places) {
-      const color = p.kind === 'jyotirlinga' ? jyoti : p.kind === 'kula' ? kula : p.kind === 'tirtha' ? tirtha : shakti;
-      const mk = L.circleMarker([p.lat, p.lng], { radius: 7, color: bg, weight: 2, fillColor: color, fillOpacity: 0.95 })
-        .bindTooltip(`${p.n}. ${p.name}`, { direction: 'top', offset: [0, -6] })
+      const color =
+        p.kind === 'jyotirlinga' ? jyoti : p.kind === 'kula' || p.kind === 'site' ? kula : p.kind === 'tirtha' ? tirtha : p.kind === 'region' ? region : shakti;
+      const radius = RADIUS[p.kind] ?? 7;
+      const mk = L.circleMarker([p.lat, p.lng], { radius, color: bg, weight: 2, fillColor: color, fillOpacity: 0.95 })
+        .bindTooltip(p.n ? `${p.n}. ${p.name}` : p.name, { direction: 'top', offset: [0, -6] })
         .on('click', () => onSelectRef.current(p.id));
       mk.addTo(group);
-      markers.current.set(p.id, mk);
+      markers.current.set(p.id, { marker: mk, radius });
       for (const a of p.alternates ?? []) {
         L.circleMarker([a.lat, a.lng], { radius: 5, color, weight: 2, fillOpacity: 0, dashArray: '3 3' })
           .bindTooltip(`${p.name}: alternative claim, ${a.place}`, { direction: 'top' })
@@ -100,13 +107,13 @@ export default function PlacesMap({ places, selected, onSelect }: Props) {
   // Highlight and fly to the selected place.
   useEffect(() => {
     const m = map.current;
-    for (const [id, mk] of markers.current) mk.setRadius(id === selected ? 11 : 7);
-    const mk = selected ? markers.current.get(selected) : undefined;
+    for (const [id, { marker, radius }] of markers.current) marker.setRadius(id === selected ? radius + 4 : radius);
+    const mk = selected ? markers.current.get(selected)?.marker : undefined;
     if (m && mk) {
       m.flyTo(mk.getLatLng(), Math.max(m.getZoom(), 6), { duration: 0.6 });
       mk.openTooltip();
     }
   }, [selected]);
 
-  return <div ref={el} className={styles.map} role="region" aria-label="Map of sacred places" />;
+  return <div ref={el} className={styles.map} role="region" aria-label={label} />;
 }

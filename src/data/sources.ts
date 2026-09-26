@@ -580,6 +580,13 @@ export const src = {
   ksShaktiSpanda: { label: 'Shakti in Kashmir Shaivism — Spanda', url: `${WL}/hinduism/essay/shakti-in-kashmir-shaivism-study/d/doc1597886.html` },
   ksPrakashaVimarsha: { label: 'Shaiva Tantra: a way of self-awareness — Light (prakasha) and thinking (vimarsha)', url: `${WL}/hinduism/essay/shaiva-tantra-a-way-of-self-awareness/d/doc1460204.html` },
   tantralokaSanskrit: { label: 'Tantraloka (Sanskrit text)', url: `${WL}/hinduism/book/tantraloka-sanskrit-text` },
+  // ——— Dvaita ———
+  dgMadhvaWorks: { label: 'Dasgupta Vol. 4 — Important Madhva works', url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-4/d/doc210001.html` },
+  dgRamanujaMadhva: { label: 'Dasgupta Vol. 4 — Ramanuja and Madhva', url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-4/d/doc210003.html` },
+  dgMadhvaOntology: { label: 'Dasgupta Vol. 4 — Madhva’s ontology', url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-4/d/doc210009.html` },
+  dgMadhvaBhakti: { label: 'Dasgupta Vol. 4 — The concept of bhakti', url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-4/d/doc210037.html` },
+  mundakaMadhva: { label: 'Mundaka Upanishad with Madhva’s commentary', url: `${WL}/hinduism/book/mundaka-upanishad-madhva-commentary` },
+  haridasas: { label: 'Triveni — Some saint-singers of Karnataka', url: `${WL}/history/compilation/triveni-journal/d/doc67677.html` },
   // ——— Vishishtadvaita ———
   defVishishtadvaita: { label: 'Vishishtadvaita — definitions', url: `${WL}/definition/vishishta-advaita` },
   vaIntro: { label: 'Sankalpa-suryodaya study — Introduction to the Vishishtadvaita school of Ramanuja', url: `${WL}/hinduism/essay/sankalpa-suryodaya-study/d/doc1528105.html` },

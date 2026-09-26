@@ -933,7 +933,7 @@
 
 .steps {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 165px), 1fr));
   gap: 8px;
   margin: 0;
   padding: 0;
@@ -1322,4 +1322,249 @@
 
 .upayas + .twoCol {
   margin-top: 12px;
+}
+
+/* ——————————————— Dvaita ——————————————— */
+
+.tenets {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: t;
+}
+
+.tenets li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 14px 12px 44px;
+  position: relative;
+  border-radius: 12px;
+  background: var(--gold-soft);
+  border-left: 3px solid var(--gold);
+  counter-increment: t;
+}
+
+.tenets li::before {
+  content: counter(t);
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.tenets :global(.deva) {
+  font-size: 1.1rem;
+}
+
+.tenets i {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.tenets b {
+  font-size: 0.9rem;
+}
+
+.bhedaWrap {
+  grid-template-columns: 320px minmax(0, 1fr);
+}
+
+.bhedaFig {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.bEdge {
+  fill: none;
+  stroke: var(--muted);
+  stroke-width: 2;
+  stroke-dasharray: 5 4;
+}
+
+.bLord {
+  fill: var(--gold-soft);
+  stroke: var(--gold);
+  stroke-width: 2;
+}
+
+.bSoul {
+  fill: color-mix(in srgb, var(--jade) 16%, var(--surface));
+  stroke: var(--jade);
+  stroke-width: 2;
+}
+
+.bMatter {
+  fill: var(--indigo-soft);
+  stroke: var(--indigo);
+  stroke-width: 2;
+}
+
+.bhedaFig text {
+  fill: var(--text);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  text-anchor: middle;
+}
+
+.bNum {
+  fill: var(--accent);
+}
+
+.bhedaFig .bNumText {
+  fill: var(--bg);
+  font-family: var(--font-body);
+  font-size: 11px;
+}
+
+.bhedaList {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: b;
+}
+
+.bhedaList li {
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr);
+  grid-template-areas:
+    'n name'
+    'n about';
+  column-gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  counter-increment: b;
+}
+
+.bhedaList li::before {
+  content: counter(b);
+  grid-area: n;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.bhedaList b {
+  grid-area: name;
+}
+
+.bhedaList span {
+  grid-area: about;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.wideVerse {
+  margin-bottom: 12px;
+  max-width: 860px;
+}
+
+.debate {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 26px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.debate li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 14px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--d);
+}
+
+.debate li:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%);
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.dvSide {
+  --d: var(--accent);
+}
+
+.adSide {
+  --d: var(--indigo);
+}
+
+.debate .level {
+  color: var(--d);
+}
+
+.debate b {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+}
+
+.debate small {
+  color: var(--muted);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chips li {
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 760px) {
+  .tenets {
+    grid-template-columns: 1fr;
+  }
+  .bhedaWrap {
+    grid-template-columns: 1fr;
+  }
+  .debate {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .debate li:not(:last-child)::after {
+    content: '↓';
+    top: auto;
+    right: auto;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }

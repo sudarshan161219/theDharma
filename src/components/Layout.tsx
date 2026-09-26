@@ -29,8 +29,10 @@ const NAV = [
   { key: "trika", label: "Kashmir Shaivism" },
   { key: "siddhanta", label: "Shaiva Siddhanta" },
   { key: "vishishtadvaita", label: "Vishishtadvaita" },
+  { key: "dvaita", label: "Dvaita" },
   { key: "dharma", label: "Life & Dharma" },
   { key: "places", label: "Sacred Places" },
+  { key: "regions", label: "Regions" },
   { key: "kuladevata", label: "Kuladevata" },
   { key: "chandas", label: "Chandas" },
   { key: "glossary", label: "Definitions" },
@@ -41,9 +43,9 @@ const NAV_GROUPS: { label: string; keys: string[] }[] = [
   { label: "Texts", keys: ["scriptures", "vedas", "chandas", "glossary"] },
   { label: "Time", keys: ["time", "calendar", "manvantaras", "dynasties", "vyasas"] },
   { label: "The Divine", keys: ["devas", "forms", "epithets", "avatars"] },
-  { label: "Philosophy", keys: ["darshanas", "trika", "siddhanta", "vishishtadvaita"] },
+  { label: "Philosophy", keys: ["darshanas", "trika", "siddhanta", "vishishtadvaita", "dvaita"] },
   { label: "People & lineage", keys: ["people", "acharyas", "gotra", "kuladevata"] },
-  { label: "Life & places", keys: ["dharma", "places"] },
+  { label: "Life & places", keys: ["dharma", "places", "regions"] },
 ];
 
 const LABELS = Object.fromEntries(NAV.map((n) => [n.key, n.label]));

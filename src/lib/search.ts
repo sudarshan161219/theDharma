@@ -2,6 +2,8 @@ import { manvantaras, vyasas, yugas } from '../data/cosmos';
 import { acharyas, darshanas } from '../data/acharyas';
 import { darshans, nastikas, traditions } from '../data/darshanas';
 import { ksSchools, ksTeachers, ksTexts, tattvaBands, trikaIdeas, upayas } from '../data/trika';
+import { dvIdeas, dvTeachers, haridasas, nineTenets, panchaBheda } from '../data/dvaita';
+import { regions } from '../data/regions';
 import { alvars, fiveForms, kalais, rahasyaTraya, tattvaTraya, vaIdeas, vaPaths, vaTeachers } from '../data/vishishtadvaita';
 import { agamasByFace, fourPaths, graceSteps, pashas, siddhantaTeachers, soulClasses, tirumurai, tripadartha } from '../data/siddhanta';
 import { dharmashastras, gitaChapters, upanishads, vedangas, vedas } from '../data/vedas';
@@ -424,6 +426,50 @@ const index: Entry[] = [
     to: '#/vishishtadvaita',
     haystack: [k.topic, k.vadakalai, k.tenkalai, 'vadakalai tenkalai markata marjara monkey cat namam'].join(' '),
   })),
+  {
+    kind: 'Dvaita',
+    title: 'Dvaita (Tattvavada)',
+    subtitle: 'Madhva’s dualism: Vishnu alone independent; the world and differences real',
+    to: '#/dvaita',
+    haystack: 'dvaita tattvavada madhva madhvacharya dualism pancha bheda five differences taratamya udupi haridasa brahma sampradaya',
+  },
+  ...[...dvIdeas.map((x) => ({ name: x.term, about: `${x.meaning}. ${x.about}` })), ...nineTenets.map((t) => ({ name: t.iast, about: t.meaning })), ...panchaBheda.map((b) => ({ name: `Difference: ${b.between}`, about: b.about }))].map((x) => ({
+    kind: 'Dvaita',
+    title: x.name,
+    subtitle: x.about.slice(0, 100),
+    to: '#/dvaita',
+    haystack: [x.name, x.about, 'dvaita madhva'].join(' '),
+  })),
+  ...[...dvTeachers.map((t) => ({ name: t.name, about: `${t.dates} · ${t.role}` })), ...haridasas.map((h) => ({ name: h.name, about: `${h.dates} · ${h.note}` }))].map((x) => ({
+    kind: 'Dvaita',
+    title: x.name,
+    subtitle: x.about.slice(0, 110),
+    to: '#/dvaita',
+    haystack: [x.name, x.about, 'dvaita madhva haridasa acharya'].join(' '),
+  })),
+  ...regions.flatMap((r) => [
+    {
+      kind: 'Region',
+      title: r.name,
+      subtitle: `${r.oldNames} · ${r.tagline}`,
+      to: `#/regions?r=${r.id}`,
+      haystack: [r.name, r.oldNames, r.states, r.tagline, r.about, ...r.deities, ...r.traditions, ...r.languages, ...r.scripts.map((s) => s.name), ...r.philosophy.map((p) => p.name), 'region state regional contribution'].join(' '),
+    },
+    ...r.people.map((p) => ({
+      kind: 'Region',
+      title: p.name,
+      subtitle: `${r.name} · ${p.when} · ${p.note}`,
+      to: `#/regions?r=${r.id}`,
+      haystack: [p.name, p.note, r.name, 'saint sage scholar poet'].join(' '),
+    })),
+    ...r.sites.map((st, i) => ({
+      kind: 'Region',
+      title: st.name,
+      subtitle: `${r.name} · ${st.note}`,
+      to: `#/regions?r=${r.id}&s=${i}`,
+      haystack: [st.name, st.note, r.name, 'site temple shrine place'].join(' '),
+    })),
+  ]),
   ...darshanas.map((d) => ({
     kind: 'School',
     title: d.name,
