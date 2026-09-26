@@ -10,7 +10,7 @@ const KINDS = Object.keys(kindInfo) as NameKind[];
 const GROUPS: { kind: 'Deva' | 'Devi' | 'Avatara'; label: string; order?: string[] }[] = [
   { kind: 'Deva', label: 'Devas' },
   { kind: 'Devi', label: 'Devis' },
-  { kind: 'Avatara', label: 'Avataras of Vishnu', order: ['matsya', 'kurma', 'varaha', 'narasimha', 'vamana', 'parashurama', 'rama', 'balarama', 'krishna', 'kalki'] },
+  { kind: 'Avatara', label: 'Avataras of Vishnu', order: ['matsya', 'kurma', 'varaha', 'narasimha', 'vamana', 'parashurama', 'rama', 'balarama', 'krishna', 'krishna-gita', 'krishna-forms', 'kalki'] },
 ];
 
 export default function Epithets({ route }: { route: Route }) {
