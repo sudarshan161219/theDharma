@@ -5,13 +5,13 @@ import type { Evidence } from './sources';
  * via its public API; false matches (e.g. "durga" meaning a fort) were left out.
  */
 export const ev = {
-  // ——— Inscriptions: the Goddess in stone ———
+  // ——— Inscriptions: Devi in stone ———
   pandurajja: {
     kind: 'Inscription',
     id: 652,
     title: 'Bhamodra Mohota Plate of Dronasimha',
     meta: 'Maitraka of Valabhi · 501 CE · Epigraphia Indica 16',
-    note: 'A king endows a village for the worship of the goddess Pandurajja: perfumes, incense, lamps, garlands and temple repair.',
+    note: 'A king endows a village for the worship of Devi Pandurajja: perfumes, incense, lamps, garlands and temple repair.',
   },
   mothers: {
     kind: 'Inscription',
@@ -25,7 +25,7 @@ export const ev = {
     id: 368,
     title: 'Dadhimati-mata Inscription of Dhruhlana',
     meta: '608 CE · Epigraphia Indica 11',
-    note: 'Records gifts to the temple of the goddess Dadhimati and quotes a well-known verse of the Devi Mahatmya. This is among the earliest dated evidence for that text.',
+    note: 'Records gifts to the temple of Devi Dadhimati and quotes a well-known verse of the Devi Mahatmya. This is among the earliest dated evidence for that text.',
   },
   navadurgaTemple: {
     kind: 'Inscription',
@@ -39,28 +39,28 @@ export const ev = {
     id: 387,
     title: 'Kinsariya Inscription of Dadhichika Chachcha',
     meta: 'Chahamana feudatory · 999 CE · Epigraphia Indica 12',
-    note: 'Opens by invoking Katyayani and Kali, and commemorates a temple of the goddess Bhavani built by Chachcha.',
+    note: 'Opens by invoking Katyayani and Kali, and commemorates a temple of Devi Bhavani built by Chachcha.',
   },
   mahalakshmiKolhapur: {
     kind: 'Inscription',
     id: 303,
     title: 'Kolhapur Inscription of the Shilahara Bhoja II',
     meta: 'Shilahara · 1190 CE · Epigraphia Indica 3',
-    note: 'A grant that provides for offerings to the goddess Mahalakshmi at Kolhapur, still one of the great seats of the Goddess.',
+    note: 'A grant that provides for offerings to Devi Mahalakshmi at Kolhapur, still one of the great seats of Devi.',
   },
   bhavaniBahal: {
     kind: 'Inscription',
     id: 289,
     title: 'Bahal Inscription of the Yadava King Singhana',
     meta: 'Yadava · 1222 CE · Epigraphia Indica 3',
-    note: 'Records the founding of a temple of the goddess Bhavani by the royal astrologer Anantadeva.',
+    note: 'Records the founding of a temple of Devi Bhavani by the royal astrologer Anantadeva.',
   },
   jvalamukhi: {
     kind: 'Inscription',
     id: 206,
     title: 'The Kangra Jvalamukhi Prashasti',
     meta: 'c. 1433–46 CE · Epigraphia Indica 1',
-    note: 'Found in the temple of Bhavani at Kangra, it contains a hymn to the goddess Jvalamukhi, she of the flaming mouth, whose seat is a Shakti-pitha.',
+    note: 'Found in the temple of Bhavani at Kangra, it contains a hymn to Devi Jvalamukhi, she of the flaming mouth, whose seat is a Shakti-pitha.',
   },
   kamakhya: {
     kind: 'Inscription',
@@ -74,7 +74,7 @@ export const ev = {
     id: 409,
     title: 'Dantewara Sanskrit Inscription of Dikpaladeva',
     meta: 'Kakatiya of Bastar · 1702 CE · Epigraphia Indica 12',
-    note: 'Records a royal family pilgrimage (kutumba-yatra) to the shrine of the goddess Dantavala (Danteshwari) at Dantewara.',
+    note: 'Records a royal family pilgrimage (kutumba-yatra) to the shrine of Devi Dantavala (Danteshwari) at Dantewara.',
   },
 
   // ——— Inscriptions at the Jyotirlingas and Pithas ———
@@ -171,14 +171,14 @@ export const ev = {
   tripurasundari: { kind: 'Manuscript', id: 'MS_0943', title: 'tripurasundarī', meta: 'Sanskrit · Tantra', note: 'A text on Tripurasundari (Shodashi / Lalita).' },
   rajarajeshvari: { kind: 'Manuscript', id: 'MS_1929', title: 'rājarājeśvarīmahātripurasundarī', meta: 'Sanskrit · Tantra', note: 'On Rajarajeshvari, “queen of kings”, a name of Maha-Tripurasundari.' },
   lalitaSahasranama: { kind: 'Manuscript', id: 'MS_1482', title: 'brahmāṇḍapurāṇe lalitāsahasranāmabhāskaraḥ', meta: 'Sanskrit · Tantra', note: 'The Lalita Sahasranama from the Brahmanda Purana, with the famous commentary by Bhaskararaya.' },
-  balaTripura: { kind: 'Manuscript', id: 'MS_1491', title: 'bālātripurapañcāṅgam', meta: 'Sanskrit · Tantra', note: 'Ritual handbook of Bala Tripurasundari, the Goddess as a young girl.' },
+  balaTripura: { kind: 'Manuscript', id: 'MS_1491', title: 'bālātripurapañcāṅgam', meta: 'Sanskrit · Tantra', note: 'Ritual handbook of Bala Tripurasundari, Devi as a young girl.' },
   bhuvaneshvari: { kind: 'Manuscript', id: 'MS_1546', title: 'bhuvaneśvarīrahasyam', meta: 'Sanskrit · Tantra', note: 'The “secret of Bhuvaneshvari”.' },
   bhuvaneshvariPanchanga: { kind: 'Manuscript', id: 'MS_1850', title: 'rudrayāmalatantre bhuvaneśvarīpañcāṅgam', meta: 'Sanskrit · Tantra', note: 'Bhuvaneshvari’s five-limbed ritual, from the Rudrayamala Tantra.' },
   tripuraBhairavi: { kind: 'Manuscript', id: 'MS_1841', title: 'rudrayāmalatantre tripurabhairavītantram', meta: 'Sanskrit · Tantra', note: 'Tripura Bhairavi’s tantra, from the Rudrayamala.' },
-  jvalamukhiPanchanga: { kind: 'Manuscript', id: 'MS_0638', title: 'jvālāmukhīpañcāṅgam', meta: 'Sanskrit · Tantra', note: 'Ritual handbook of the goddess Jvalamukhi.' },
+  jvalamukhiPanchanga: { kind: 'Manuscript', id: 'MS_0638', title: 'jvālāmukhīpañcāṅgam', meta: 'Sanskrit · Tantra', note: 'Ritual handbook of Devi Jvalamukhi.' },
   bhavaniPuja: { kind: 'Manuscript', id: 'MS_1854', title: 'rudrayāmalatantre bhavānīpūjāpaddhatiḥ', meta: 'Sanskrit · Tantra', note: 'Worship manual of Bhavani, from the Rudrayamala.' },
-  annapurna: { kind: 'Manuscript', id: 'MS_0047', title: 'annapūrṇāstotram', meta: 'Sanskrit · Stotra', note: 'Hymn to Annapurna, the Goddess who feeds the world (Kashi).' },
+  annapurna: { kind: 'Manuscript', id: 'MS_0047', title: 'annapūrṇāstotram', meta: 'Sanskrit · Stotra', note: 'Hymn to Annapurna, Devi who feeds the world (Kashi).' },
   kedaraKalpa: { kind: 'Manuscript', id: 'MS_0217', title: 'kedārakalpaḥ', meta: 'Sanskrit · Purana-mahatmya', note: 'A “Kedara-kalpa”, a mahatmya text on the sacred region of Kedara.' },
-  sharadaMahatmya: { kind: 'Manuscript', id: 'MS_2095', title: 'śāradāmāhātmyam', meta: 'Sanskrit · Tantra', note: 'The glory of Sharada, the goddess of the Sharada Peeth in Kashmir.' },
+  sharadaMahatmya: { kind: 'Manuscript', id: 'MS_2095', title: 'śāradāmāhātmyam', meta: 'Sanskrit · Tantra', note: 'The glory of Sharada, Devi of the Sharada Peeth in Kashmir.' },
   yoginihridaya: { kind: 'Manuscript', id: 'MS_1798', title: 'yoginīhṛdayadīpikā', meta: 'Sanskrit · Tantra', note: 'Commentary on the Yoginihridaya, a core Shri Vidya tantra.' },
 } satisfies Record<string, Evidence>;

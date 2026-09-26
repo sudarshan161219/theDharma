@@ -25,7 +25,7 @@ export const festivals: FestivalRule[] = [
   { id: 'ganesha', name: 'Ganesha Chaturthi', masa: 5, tithi: S(4), note: 'Bhadrapada Shukla 4: birth of Ganesha.' },
   { id: 'anant', name: 'Anant Chaturdashi', masa: 5, tithi: S(14), note: 'Bhadrapada Shukla 14: Ganesha images are immersed.' },
   { id: 'pitru', name: 'Mahalaya Amavasya', masa: 5, tithi: K(15), note: 'Last day of Pitru Paksha, the fortnight for the ancestors.' },
-  { id: 'navaratri', name: 'Sharad Navaratri begins', masa: 6, tithi: S(1), note: 'Ashvina Shukla 1: nine nights of the Goddess.' },
+  { id: 'navaratri', name: 'Sharad Navaratri begins', masa: 6, tithi: S(1), note: 'Ashvina Shukla 1: nine nights of Devi.' },
   { id: 'dussehra', name: 'Vijayadashami · Dussehra', masa: 6, tithi: S(10), note: 'Ashvina Shukla 10: Durga’s victory over Mahisha; Rama’s over Ravana.' },
   { id: 'sharad', name: 'Sharad Purnima', masa: 6, tithi: S(15), note: 'Ashvina Purnima: the harvest full moon; the Rasa-lila night.' },
   { id: 'karva', name: 'Karva Chauth', masa: 6, tithi: K(4), at: 'evening', note: 'Krishna 4 after Sharad Purnima: married women fast until moonrise.' },

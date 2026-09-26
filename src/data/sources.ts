@@ -220,7 +220,7 @@ export const src = {
   dmCanto87: { label: 'Markandeya Purana 87 — Devi Mahatmya: slaying of Chanda and Munda', url: `${WL}/hinduism/book/the-markandeya-purana/d/doc117166.html` },
   dmCanto88: { label: 'Markandeya Purana 88 — Devi Mahatmya: slaying of Raktabija', url: `${WL}/hinduism/book/the-markandeya-purana/d/doc117167.html` },
   dmCanto90: { label: 'Markandeya Purana 90 — Devi Mahatmya: slaying of Shumbha', url: `${WL}/hinduism/book/the-markandeya-purana/d/doc117170.html` },
-  dmCanto91: { label: 'Markandeya Purana 91 — Devi Mahatmya: eulogy of the Goddess & her future incarnations', url: `${WL}/hinduism/book/the-markandeya-purana/d/doc117171.html` },
+  dmCanto91: { label: 'Markandeya Purana 91 — Devi Mahatmya: eulogy of Devi & her future incarnations', url: `${WL}/hinduism/book/the-markandeya-purana/d/doc117171.html` },
   dmCanto93: { label: 'Markandeya Purana 93 — Devi Mahatmya concluded (Suratha & Samadhi)', url: `${WL}/hinduism/book/the-markandeya-purana/d/doc117175.html` },
   conceptDeviMahatmya: { label: 'Devi Mahatmya — concept', url: `${WL}/concept/devi-mahatmya-section` },
   defMahavidya: { label: 'Mahavidya — definitions', url: `${WL}/definition/mahavidya` },
@@ -230,7 +230,7 @@ export const src = {
   defNavaratri: { label: 'Navaratri — definitions', url: `${WL}/definition/navaratri` },
   defDurga: { label: 'Durga — definitions', url: `${WL}/definition/durga` },
   mbhKamakhya: {
-    label: 'Mahabhagavata Purana — Incarnation of the Goddess as Kamakhya',
+    label: 'Mahabhagavata Purana — Incarnation of Devi as Kamakhya',
     url: `${WL}/hinduism/book/mahabhagavata-purana-translation/d/doc1474220.html`,
   },
   mbhLalita: {
@@ -238,7 +238,7 @@ export const src = {
     url: `${WL}/hinduism/book/mahabhagavata-purana-translation/d/doc1474244.html`,
   },
   mbhIconography: {
-    label: 'Mahabhagavata study, Ch. VII — Iconography of the Mother Goddess (PDF)',
+    label: 'Mahabhagavata study, Ch. VII — Iconography of Devi as Mother (PDF)',
     url: `${WL}/uploads/ocr/essays/mahabhagavata-purana/12-chapter-7.pdf`,
   },
   shivaShatakshi: {
@@ -368,7 +368,7 @@ export const src = {
     url: `${WL}/hinduism/essay/shaiva-tantra-a-way-of-self-awareness/d/doc1460199.html`,
   },
   mbhSati: {
-    label: 'Mahabhagavata Purana — Incarnation of the Goddess as Sati',
+    label: 'Mahabhagavata Purana — Incarnation of Devi as Sati',
     url: `${WL}/hinduism/book/mahabhagavata-purana-translation/d/doc1474217.html`,
   },
   defPurnagiri: { label: 'Purnagiri — definitions', url: `${WL}/definition/purnagiri` },

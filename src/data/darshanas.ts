@@ -757,8 +757,8 @@ export const traditions: Tradition[] = [
     deity: 'The Devi, Shakti, as the supreme power',
     tone: 'gold',
     mark: 'bindu',
-    markLabel: 'A red dot or vertical line of kumkum, the Goddess’s mark',
-    inBrief: 'The Goddess is the Supreme: Shiva without Shakti is inert, “shava”, a corpse. Worship through mantra, yantra and the Tantras.',
+    markLabel: 'A red dot or vertical line of kumkum, Devi’s mark',
+    inBrief: 'Devi is the Supreme: Shiva without Shakti is inert, “shava”, a corpse. Worship through mantra, yantra and the Tantras.',
     scriptures: 'Devi Mahatmya (Markandeya Purana), Devi Bhagavata, Devi Upanishad, Lalita Sahasranama, the Shakta Tantras',
     sources: [src.shaktiAndShakta, src.dmCanto81, src.markandeya],
     sampradayas: [
@@ -773,7 +773,7 @@ export const traditions: Tradition[] = [
         texts: 'Lalita Sahasranama (Brahmanda Purana), Saundarya Lahari, Tripura Upanishad, Bhaskararaya’s Saubhagya-bhaskara',
         centres: 'Kanchipuram (Kamakshi), Sringeri, Kollur, Devipuram',
         practice: 'Worship of the Sri Chakra and the fifteen-syllable panchadashi mantra',
-        about: 'The Sri Chakra is nine interlocking triangles around a central point (bindu), where the Goddess sits. Worship is inward (samaya) or with outer ritual (kaula).',
+        about: 'The Sri Chakra is nine interlocking triangles around a central point (bindu), where Devi sits. Worship is inward (samaya) or with outer ritual (kaula).',
         sources: [defn('shrividya', 'Sri Vidya'), defn('shri-chakra', 'Sri Chakra'), defn('tripurasundari', 'Tripurasundari')],
       },
       {
@@ -786,7 +786,7 @@ export const traditions: Tradition[] = [
         darshana: 'Shakta non-dualism',
         texts: 'Devi Mahatmya, Kali Tantra, Kalika Purana, Mahanirvana Tantra',
         centres: 'Kalighat, Dakshineswar, Kamakhya, Tarapith',
-        practice: 'Worship of the Goddess as Mother; devotional song (Shyama-sangit) of Ramprasad Sen',
+        practice: 'Worship of Devi as Mother; devotional song (Shyama-sangit) of Ramprasad Sen',
         about: 'Ramakrishna Paramahamsa, the priest of Kali at Dakshineswar, made this Mother-devotion widely known.',
         sources: [src.shaktiAndShakta, defn('kalikula', 'Kalikula')],
       },

@@ -47,7 +47,7 @@ function Detail({ d }: { d: KulaDeity }) {
       </p>
       <p>{d.text}</p>
       <div className={styles.rootBox}>
-        <strong>Manifestation of {r.supreme === 'Devi' ? 'the Goddess (Devi)' : r.supreme}</strong>
+        <strong>Manifestation of {r.supreme === 'Devi' ? 'Devi' : r.supreme}</strong>
         <Chain id={d.id} />
         <small>
           Scriptural basis:{' '}
@@ -97,7 +97,7 @@ export default function Kuladevata({ route }: { route: Route }) {
       <PageHeader
         eyebrow="Kula-devata — the family deity"
         title="Kuladevi & Kuladevata"
-        sub="Every Hindu family traditionally has a guardian deity of its lineage, often a form of the Goddess, sometimes of Shiva, Vishnu or Skanda. It is honoured at weddings, at a child’s first haircut and before every new beginning. Here is what it is, how it differs from other personal deities, and how to find yours."
+        sub="Every Hindu family traditionally has a guardian deity of its lineage, often a form of Devi, sometimes of Shiva, Vishnu or Skanda. It is honoured at weddings, at a child’s first haircut and before every new beginning. Here is what it is, how it differs from other personal deities, and how to find yours."
       />
 
       <section className={styles.section}>
@@ -219,7 +219,7 @@ export default function Kuladevata({ route }: { route: Route }) {
           })}
         </div>
         <p className={styles.help}>
-          Where a deity has no dedicated Purana chapter (many regional goddesses), the scriptural basis given is for the general form, e.g. Durga in the Devi Mahatmya, and the
+          Where a deity has no dedicated Purana chapter (many regional devis), the scriptural basis given is for the general form, e.g. Durga in the Devi Mahatmya, and the
           local identification rests on living tradition and the shrine’s own sthala-purana.
         </p>
       </section>

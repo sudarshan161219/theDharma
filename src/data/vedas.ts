@@ -180,7 +180,7 @@ export const upanishads: Upanishad[] = [
     sanskrit: 'केन',
     veda: 'Sama',
     size: '4 parts, 35 verses',
-    teacher: 'Uma Haimavati (the Goddess)',
+    teacher: 'Uma Haimavati (Devi)',
     student: 'Indra and the devas',
     setting: 'The devas grow proud after a victory. A mysterious spirit (yaksha) appears; Agni cannot burn a blade of grass before it, Vayu cannot move it. Uma reveals it was Brahman.',
     teaching: 'Brahman is that by which the mind thinks and the eye sees, yet the mind and eye cannot grasp it.',

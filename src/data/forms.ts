@@ -35,7 +35,7 @@ const cma = (acc: string, title: string, date: string, place: string, medium: st
 export const art = {
   linga: met(37446, 'as/web-large/1987_142_331.jpg', 'Linga', '11th–12th century', 'Nepal, Kathmandu Valley', 'Bronze'),
   ekamukha: met(38250, 'as/web-large/DT6118.jpg', 'Linga with Face of Shiva (Ekamukhalinga)', '7th century', 'Kashmir', 'Stone'),
-  ganga: cma('1966.119', 'River Goddess Ganga', 'c. 700', 'Mathura, Uttar Pradesh', 'Sandstone'),
+  ganga: cma('1966.119', 'Ganga, the river Devi', 'c. 700', 'Mathura, Uttar Pradesh', 'Sandstone'),
   surya: met(38943, 'as/web-large/1987_142_334_F_sf.jpg', 'Surya with Attendants', 'c. 9th century', 'Bangladesh', 'Bronze'),
   govardhan: met(448183, 'is/web-large/DP231327.jpg', 'Krishna Holds Up Mount Govardhan, folio from a Harivamsha', 'c. 1590–95', 'Mughal court (present-day Pakistan)', 'Ink, opaque watercolour and gold on paper'),
   churning: met(37989, 'as/web-large/DP152318.jpg', 'The Churning of the Ocean of Milk', 'c. 1780–90', 'Mandi, Punjab Hills', 'Ink and opaque watercolour on paper'),
@@ -87,7 +87,7 @@ export const spectrum: { id: FormId; name: string; sanskrit: string; label: stri
     sanskrit: 'अव्यक्त · लिङ्ग',
     label: 'Aniconic',
     about:
-      'A symbol through which the deity is present without being pictured. The linga is Shiva as the boundless pillar of light; the black shaligrama stone from the Gandaki river is Vishnu; a filled water-pot (purna-kalasha) or a lamp holds the Goddess. The linga with a face bridges sign and likeness.',
+      'A symbol through which the deity is present without being pictured. The linga is Shiva as the boundless pillar of light; the black shaligrama stone from the Gandaki river is Vishnu; a filled water-pot (purna-kalasha) or a lamp holds Devi. The linga with a face bridges sign and likeness.',
     examples: ['Shiva linga and bana-linga', 'Shaligrama', 'Kalasha, lamp, pillar of light'],
     art: [art.linga, art.ekamukha],
     link: { to: '#/places?show=jyotirlinga', label: 'The 12 Jyotirlingas' },
@@ -98,7 +98,7 @@ export const spectrum: { id: FormId; name: string; sanskrit: string; label: stri
     sanskrit: 'नाद · यन्त्र',
     label: 'Mantra and yantra',
     about:
-      'The deity is present as sound (mantra, the “body” of the deity, with Om as the root of all sound: nada-brahman) and as sacred geometry (yantra, mandala). In Sri Vidya the Sri Chakra is the Goddess herself, and her fifteen-syllable mantra is her subtle form.',
+      'The deity is present as sound (mantra, the “body” of the deity, with Om as the root of all sound: nada-brahman) and as sacred geometry (yantra, mandala). In Sri Vidya the Sri Chakra is Devi herself, and her fifteen-syllable mantra is her subtle form.',
     examples: ['Om (pranava)', 'The Gayatri and other mantras', 'Sri Chakra and other yantras'],
     art: [],
     link: { to: '#/darshanas?t=shakta', label: 'Sri Vidya' },
@@ -109,7 +109,7 @@ export const spectrum: { id: FormId; name: string; sanskrit: string; label: stri
     sanskrit: 'प्रकृति',
     label: 'Rivers, sun, mountains, trees',
     about:
-      'The divine shows itself in nature. The Ganga is a goddess who descended from heaven; Surya is seen every morning; Krishna tells the cowherds to worship Mount Govardhana itself; the Arunachala hill is Shiva; tulasi and the peepal tree are worshipped daily.',
+      'The divine shows itself in nature. The Ganga is a devi who descended from heaven; Surya is seen every morning; Krishna tells the cowherds to worship Mount Govardhana itself; the Arunachala hill is Shiva; tulasi and the peepal tree are worshipped daily.',
     examples: ['Ganga, Yamuna, Narmada', 'Surya, Agni, Vayu', 'Govardhana, Arunachala, Kailasa', 'Tulasi, peepal, banyan'],
     art: [art.ganga, art.surya, art.govardhan],
   },

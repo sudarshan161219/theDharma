@@ -216,7 +216,7 @@ export const scriptures: Scripture[] = [
     narration: [
       { speaker: 'markandeya', listener: 'jaimini', context: 'Jaimini approaches Markandeya, who directs him to the birds.' },
       { speaker: 'birds', listener: 'jaimini', where: 'Vindhya hills', context: 'The four birds answer Jaimini’s doubts about the Mahabharata.' },
-      { speaker: 'medhas', listener: 'suratha', context: 'Devi Mahatmya: the sage tells the glory of the Goddess who slew Madhu-Kaitabha, Mahishasura and Shumbha-Nishumbha.' },
+      { speaker: 'medhas', listener: 'suratha', context: 'Devi Mahatmya: the sage tells the glory of Devi who slew Madhu-Kaitabha, Mahishasura and Shumbha-Nishumbha.' },
     ],
     highlights: ['Devi Mahatmya (700 verses)', 'Harishchandra', 'Manvantara account'],
     sources: [src.markandeya, src.dmCanto81, src.dmCanto91, src.wilsonReview(7, 'Markandeya Purana')],
@@ -302,7 +302,7 @@ export const scriptures: Scripture[] = [
     yuga: END_DVAPARA,
     manvantara: VAIVASVATA,
     summary: 'Having lifted the Earth from the cosmic waters, Varaha answers her questions about dharma, worship and holy places.',
-    narration: [{ speaker: 'varaha', listener: 'bhudevi', context: 'The boar-avatara teaches the Earth goddess.' }],
+    narration: [{ speaker: 'varaha', listener: 'bhudevi', context: 'The boar-avatara teaches Bhudevi, the Earth.' }],
     highlights: ['Mathura-mahatmya', 'Vratas'],
     sources: [src.wilsonReview(12, 'Varaha Purana')],
   },
@@ -444,20 +444,20 @@ export const scriptures: Scripture[] = [
     name: 'Devi Bhagavata Purana',
     sanskrit: 'देवी भागवत पुराण',
     category: 'Upapurana',
-    deity: 'Devi (the Goddess) as Supreme Brahman',
+    deity: 'Devi as Supreme Brahman',
     verses: 18000,
     note: 'Shaktas regard it as the true Mahapurana named “Bhagavata”; Vaishnavas give that place to the Bhagavata Purana and count this one as an Upapurana.',
     composer: VYASA,
     yuga: END_DVAPARA + ' (told after the Mahabharata war)',
     manvantara: VAIVASVATA,
     summary:
-      'The great scripture of Shakta devotion. It presents the Goddess as the source of Brahma, Vishnu and Shiva, retells the well-known myths with Devi at the centre, and describes her supreme abode, Manidvipa. Like the Bhagavata, it has 12 skandhas and 18,000 verses.',
+      'The great scripture of Shakta devotion. It presents Devi as the source of Brahma, Vishnu and Shiva, retells the well-known myths with Devi at the centre, and describes her supreme abode, Manidvipa. Like the Bhagavata, it has 12 skandhas and 18,000 verses.',
     structure: ['12 Skandhas', '318 chapters'],
     narration: [
       sutaFrame(),
       { speaker: 'vyasa', listener: 'janamejaya', context: 'After the snake sacrifice, Janamejaya is troubled by his father’s death; Vyasa tells him the Devi’s glory.' },
       { speaker: 'Narayana', listener: 'narada', context: 'Skandha 9: Narayana tells Narada of the forms of Prakriti — Durga, Lakshmi, Sarasvati, Savitri, Radha.' },
-      { speaker: 'Devi', listener: 'himavan', context: 'Devi Gita (Skandha 7): the Goddess herself teaches Himavan, king of the mountains.' },
+      { speaker: 'Devi', listener: 'himavan', context: 'Devi Gita (Skandha 7): Devi herself teaches Himavan, king of the mountains.' },
     ],
     highlights: ['Devi Gita', 'Manidvipa, the jewel-island', 'Story of Hayagriva', 'Gayatri & Bhuvaneshvari worship'],
     sources: [src.deviBhagavata, src.deviBhagavataBook7, src.upaDeviBhagavata, src.deviBhagavataReal],
@@ -475,7 +475,7 @@ export const scriptures: Scripture[] = [
       'The chief ritual authority of Shaktism, especially in Assam and Bengal. It tells of Sati’s self-immolation and the fall of her body parts that became the Shakti-pithas, and lays down the worship of Kamakhya.',
     structure: ['About 90 chapters'],
     narration: [
-      { speaker: 'markandeya', listener: 'The sages', context: 'Markandeya tells the sages the story of the Goddess.' },
+      { speaker: 'markandeya', listener: 'The sages', context: 'Markandeya tells the sages the story of Devi.' },
     ],
     highlights: ['Origin of the Shakti-pithas', 'Kamakhya worship', 'Rudhiradhyaya (on offerings)'],
     sources: [src.upaKalika, src.kalikaStudy],
@@ -573,7 +573,7 @@ export const scriptures: Scripture[] = [
     yuga: '—',
     manvantara: VAIVASVATA,
     summary:
-      'A Shakta Purana of 81 chapters, especially honoured in Bengal. It says Vyasa found it written on the thousand petals of the lotus beneath the Goddess’s feet. Its core is Shiva telling Narada the glory of Durga, including the stories of Sati and Parvati told with the Goddess as supreme.',
+      'A Shakta Purana of 81 chapters, especially honoured in Bengal. It says Vyasa found it written on the thousand petals of the lotus beneath Devi’s feet. Its core is Shiva telling Narada the glory of Durga, including the stories of Sati and Parvati told with Devi as supreme.',
     structure: ['81 chapters'],
     narration: [
       sutaFrame(),
@@ -593,7 +593,7 @@ export const scriptures: Scripture[] = [
     yuga: '—',
     manvantara: VAIVASVATA,
     summary:
-      'A Bengal Upapurana that sums up material from many major Puranas. It covers dharma, the social order, the glory of the Ganga and the Goddess, and gives its own lists of the Mahapuranas and Upapuranas.',
+      'A Bengal Upapurana that sums up material from many major Puranas. It covers dharma, the social order, the glory of the Ganga and Devi, and gives its own lists of the Mahapuranas and Upapuranas.',
     structure: ['Purva-khanda', 'Madhya-khanda', 'Uttara-khanda'],
     narration: [
       { speaker: 'suta', listener: 'naimisha-sages', where: 'Naimisharanya', context: 'The renowned Suta arrives at Naimisharanya and recites the Purana to the rishis.' },
@@ -612,12 +612,12 @@ export const scriptures: Scripture[] = [
     yuga: '—',
     manvantara: VAIVASVATA,
     summary:
-      'An early Shakta Upapurana, separate from the Devi Bhagavata. It describes the Goddess’s battles with demons, her worship and vows, and the Padamala-vidya (a Shakta-Shaiva yoga teaching).',
+      'An early Shakta Upapurana, separate from the Devi Bhagavata. It describes Devi’s battles with demons, her worship and vows, and the Padamala-vidya (a Shakta-Shaiva yoga teaching).',
     narration: [
       { speaker: 'sanatkumara', listener: 'narada', context: 'Narada receives the Padamala-vidya and Shaiva yoga from Sanatkumara, who had it from Nandikeshvara.' },
     ],
     lineage: ['nandi', 'sanatkumara', 'narada'],
-    highlights: ['Padamala-vidya', 'Worship and vows of the Goddess'],
+    highlights: ['Padamala-vidya', 'Worship and vows of Devi'],
     sources: [src.upaDeviPurana],
   },
   {

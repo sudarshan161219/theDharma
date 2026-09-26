@@ -1,11 +1,15 @@
 import { useState } from 'react';
-import { devaSources, dikpalas, godsCountdown, navagrahas, thirtyThree, trimurti, vedicGods } from '../data/devas';
+import { devaSources, dikpalas, godsCountdown, navagrahas, statusLabel, thirtyThree, trimurti, trimurtiViews, vedicGods, type TriStatus } from '../data/devas';
 import { src } from '../data/sources';
 import { PageHeader, Sources } from '../components/ui';
 import styles from './Devas.module.css';
 
 /** Compass positions for a 3 × 3 grid. */
 const AREA: Record<string, string> = { NW: 'nw', N: 'n', NE: 'ne', W: 'w', Centre: 'c', E: 'e', SW: 'sw', S: 's', SE: 'se' };
+
+function Status({ s }: { s: TriStatus }) {
+  return <span className={`${styles.status} ${styles['st_' + s]}`}>{statusLabel[s]}</span>;
+}
 
 function SourceLine({ items }: { items: { label: string; url: string }[] }) {
   return (
@@ -43,16 +47,18 @@ export default function Devas() {
       <section className={styles.section}>
         <h2>The Trimurti and their Shaktis</h2>
         <p className={styles.help}>
-          Three forms of the one Supreme for the three works of the cosmos. Each sampradaya sees its own deity as the Supreme above all three: see{' '}
-          <a href="#/darshanas?t=vaishnava">the sampradayas</a>. For the many shapes the deities take, from the linga to the lion-man, see{' '}
-          <a href="#/forms">How the Divine Appears</a>.
+          Three forms for the three works of the cosmos, each with his Shakti: creation, preservation and dissolution, matched to the three gunas. Who stands above them,
+          and whether one of them is himself the Supreme, is answered differently by each sampradaya: see below. For the many shapes the deities take, from the linga
+          to the lion-man, see <a href="#/forms">How the Divine Appears</a>.
         </p>
         <div className={styles.trimurti}>
           {trimurti.map((t, i) => (
             <article key={t.deva} className={`${styles.tm} ${styles['tm' + i]}`}>
-              <span className={styles.role}>{t.role}</span>
+              <span className={styles.role}>
+                {t.role} · {t.guna}
+              </span>
               <h3>{t.to ? <a href={t.to}>{t.deva}</a> : t.deva}</h3>
-              <p className={styles.shakti}>with {t.goddess}</p>
+              <p className={styles.shakti}>with {t.shakti}</p>
               <dl>
                 <div>
                   <dt>Vahana</dt>
@@ -68,6 +74,95 @@ export default function Devas() {
                 </div>
               </dl>
               <p>{t.note}</p>
+            </article>
+          ))}
+        </div>
+
+        <h3 className={styles.sub}>Who is supreme? The Trimurti in each sampradaya</h3>
+        <p className={styles.help}>
+          The same three names, seven readings. Some traditions place the Supreme above all three; others identify it with one of them. Tap a tradition’s name to read about
+          it on the Darshanas page.
+        </p>
+        <div className={styles.tableWrap}>
+          <table className={styles.triTable}>
+            <thead>
+              <tr>
+                <th scope="col">Sampradaya</th>
+                <th scope="col">The Supreme</th>
+                <th scope="col">Brahma</th>
+                <th scope="col">Vishnu</th>
+                <th scope="col">Shiva (Rudra)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {trimurtiViews.map((v) => (
+                <tr key={v.id}>
+                  <th scope="row">
+                    <a href={`#tv-${v.id}`} onClick={(e) => { e.preventDefault(); document.getElementById(`tv-${v.id}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>
+                      {v.tradition}
+                    </a>
+                    <small>{v.school}</small>
+                  </th>
+                  <td className={styles.supremeCell}>{v.supreme}</td>
+                  {(['brahma', 'vishnu', 'shiva'] as const).map((k) => (
+                    <td key={k}>
+                      <Status s={v[k]} />
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div className={styles.views}>
+          {trimurtiViews.map((v) => (
+            <article key={v.id} id={`tv-${v.id}`} className={styles.view}>
+              <header>
+                <h4>
+                  <a href={v.to}>{v.tradition}</a>
+                </h4>
+                <small>{v.school}</small>
+              </header>
+              <div className={styles.tree} aria-label={`${v.tradition}: the Supreme and the Trimurti`}>
+                {v.above && (
+                  <>
+                    <span className={styles.top}>{v.supreme}</span>
+                    <span className={styles.branch} />
+                  </>
+                )}
+                <div className={styles.three}>
+                  {(
+                    [
+                      ['Brahma', v.brahma],
+                      ['Vishnu', v.vishnu],
+                      ['Shiva', v.shiva],
+                    ] as [string, TriStatus][]
+                  ).map(([name, st]) => (
+                    <span key={name} className={`${styles.node} ${styles['st_' + st]}`}>
+                      <b>{name}</b>
+                      <small>{st === 'supreme' || st === 'self' ? `= ${v.supreme}` : statusLabel[st]}</small>
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <p>{v.summary}</p>
+              <blockquote className={styles.tvVerse}>
+                {v.verse.iast && <i>{v.verse.iast}</i>}
+                <span>{v.verse.paraphrase ? v.verse.meaning : `“${v.verse.meaning}”`}</span>
+                <cite>{v.verse.ref}</cite>
+              </blockquote>
+              <p className={styles.srcs}>
+                Source:{' '}
+                {v.sources.map((s, i) => (
+                  <span key={s.label}>
+                    {i > 0 && ' · '}
+                    <a href={s.url} target="_blank" rel="noreferrer">
+                      {s.label} ↗
+                    </a>
+                  </span>
+                ))}
+              </p>
             </article>
           ))}
         </div>

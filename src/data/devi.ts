@@ -24,7 +24,7 @@ export const charitas: { n: number; form: string; demon: string; cantos: string;
     form: 'Mahakali (Yoganidra)',
     demon: 'Madhu and Kaitabha',
     cantos: 'Markandeya Purana 81',
-    text: 'At the end of a kalpa, Vishnu sleeps on the cosmic ocean. Two demons born from the wax of his ears try to kill Brahma. Brahma praises the Goddess as Yoganidra, the sleep of Vishnu. She withdraws from Vishnu’s eyes, he wakes, and he slays the demons.',
+    text: 'At the end of a kalpa, Vishnu sleeps on the cosmic ocean. Two demons born from the wax of his ears try to kill Brahma. Brahma praises Devi as Yoganidra, the sleep of Vishnu. She withdraws from Vishnu’s eyes, he wakes, and he slays the demons.',
     sources: [src.dmCanto81],
   },
   {
@@ -32,7 +32,7 @@ export const charitas: { n: number; form: string; demon: string; cantos: string;
     form: 'Mahalakshmi (Chandika)',
     demon: 'Mahishasura',
     cantos: 'Markandeya Purana 82–84',
-    text: 'The buffalo-demon Mahisha drives the devas from heaven. From their blazing anger a single light arises and takes the form of the Goddess. Each deva gives her his weapon, and she rides her lion into battle and slays Mahisha. This is Durga as Mahishasuramardini.',
+    text: 'The buffalo-demon Mahisha drives the devas from heaven. From their blazing anger a single light arises and takes the form of Devi. Each deva gives her his weapon, and she rides her lion into battle and slays Mahisha. This is Durga as Mahishasuramardini.',
     sources: [src.dmCanto82, src.dmCanto83],
   },
   {
@@ -40,7 +40,7 @@ export const charitas: { n: number; form: string; demon: string; cantos: string;
     form: 'Mahasarasvati (Ambika / Kaushiki)',
     demon: 'Shumbha and Nishumbha',
     cantos: 'Markandeya Purana 85–92',
-    text: 'The Goddess emerges from Parvati’s body as Kaushiki. From her brow springs Kali, who slays Chanda and Munda and so is called Chamunda. The Matrikas join the battle against Raktabija, and Kali drinks his blood so that no new demons can rise from it. At last Ambika slays Nishumbha and Shumbha.',
+    text: 'Devi emerges from Parvati’s body as Kaushiki. From her brow springs Kali, who slays Chanda and Munda and so is called Chamunda. The Matrikas join the battle against Raktabija, and Kali drinks his blood so that no new demons can rise from it. At last Ambika slays Nishumbha and Shumbha.',
     sources: [src.dmCanto87, src.dmCanto88, src.dmCanto90],
   },
 ];
@@ -56,7 +56,7 @@ export const matrikas: { name: string; of: string; mount: string }[] = [
   { name: 'Aindri', of: 'Indra', mount: 'Elephant' },
 ];
 
-/** Incarnations the Goddess promises in the Devi Mahatmya's closing hymn (Markandeya Purana 91). */
+/** Incarnations Devi promises in the Devi Mahatmya's closing hymn (Markandeya Purana 91). */
 export const promisedIncarnations: { name: string; when: string; text: string }[] = [
   { name: 'Nanda / Vindhyavasini', when: 'In the 28th yuga of the Vaivasvata manvantara', text: 'Born to the cowherd Nanda and Yashoda, she will slay a second Shumbha and Nishumbha and dwell on the Vindhya mountains. This is the child exchanged for Krishna.' },
   { name: 'Raktadantika', when: 'Later', text: 'Taking a terrible form on earth, she will devour the demon descendants of Vipracitti, and her teeth will turn red as pomegranate flowers.' },
@@ -75,7 +75,7 @@ export const navadurga: DeviForm[] = [
     sanskrit: 'शैलपुत्री',
     meaning: 'Daughter of the mountain',
     form: 'Rides the bull Nandi; holds a trident and a lotus; crescent moon on her brow.',
-    story: 'Sati, reborn as Parvati, daughter of Himavan, after giving up her body at Daksha’s sacrifice. She is the Goddess’s first step back towards Shiva.',
+    story: 'Sati, reborn as Parvati, daughter of Himavan, after giving up her body at Daksha’s sacrifice. She is Devi’s first step back towards Shiva.',
     aside: 'Day 1 of Navaratri',
     sources: [defn('shailaputri', 'Shailaputri'), src.defNavadurga],
   },
@@ -95,7 +95,7 @@ export const navadurga: DeviForm[] = [
     sanskrit: 'चन्द्रघण्टा',
     meaning: 'She with a bell-shaped half-moon',
     form: 'A half-moon shaped like a bell on her forehead; ten arms bearing weapons; rides a tiger or lion.',
-    story: 'The Goddess as a warrior bride, ready for battle. The sound of her bell is said to drive away demons.',
+    story: 'Devi as a warrior bride, ready for battle. The sound of her bell is said to drive away demons.',
     aside: 'Day 3 of Navaratri',
     sources: [src.defNavadurga],
     evidence: [ev.chandraghanta],
@@ -137,7 +137,7 @@ export const navadurga: DeviForm[] = [
     sanskrit: 'कालरात्रि',
     meaning: 'Night of time: the dark night that ends all things',
     form: 'Dark as night, dishevelled hair, a necklace flashing like lightning; rides a donkey; holds a cleaver and an iron hook, while granting fearlessness.',
-    story: 'The most terrifying of the nine, who destroys ignorance and demons. She is linked to the Kali who drank Raktabija’s blood. In the Devi Mahatmya’s hymns the Goddess is praised as Kalaratri.',
+    story: 'The most terrifying of the nine, who destroys ignorance and demons. She is linked to the Kali who drank Raktabija’s blood. In the Devi Mahatmya’s hymns Devi is praised as Kalaratri.',
     aside: 'Day 7 of Navaratri',
     sources: [defn('kalaratri', 'Kalaratri'), src.dmCanto88],
   },
@@ -182,7 +182,7 @@ export const mahavidyas: DeviForm[] = [
     sanskrit: 'तारा',
     meaning: 'She who carries across (the ocean of existence); the star',
     form: 'Blue, short, pot-bellied, standing on a corpse; holds a sword, scissors, a skull-cup and a blue lotus.',
-    story: 'The saviour Goddess, closely related to Kali but more motherly. Legend says she nursed Shiva after he drank the poison from the churning of the ocean. Her great seat is Tarapith in Bengal.',
+    story: 'The saviour Devi, closely related to Kali but more motherly. Legend says she nursed Shiva after he drank the poison from the churning of the ocean. Her great seat is Tarapith in Bengal.',
     sources: [src.defMahavidya],
     evidence: [ev.taraRahasya, ev.taraSahasra, ev.ugratara],
   },
@@ -203,7 +203,7 @@ export const mahavidyas: DeviForm[] = [
     sanskrit: 'भुवनेश्वरी',
     meaning: 'Queen of the worlds',
     form: 'Radiant as the rising sun, three-eyed, crowned with the crescent moon; holds a noose and goad, while blessing and granting fearlessness.',
-    story: 'The Goddess as space itself, the field in which all worlds exist. The Devi Bhagavata’s Manidvipa, the island of jewels, is her abode.',
+    story: 'Devi as space itself, the field in which all worlds exist. The Devi Bhagavata’s Manidvipa, the island of jewels, is her abode.',
     sources: [src.defMahavidya, src.deviBhagavata],
     evidence: [ev.bhuvaneshvari, ev.bhuvaneshvariPanchanga],
   },
@@ -232,7 +232,7 @@ export const mahavidyas: DeviForm[] = [
     sanskrit: 'धूमावती',
     meaning: 'She who is made of smoke',
     form: 'An old widow, pale and ugly, in soiled white; sits in a horseless chariot bearing a crow banner; holds a winnowing basket.',
-    story: 'The Goddess of the void that remains after dissolution, of poverty, loss and disappointment, and so a teacher of detachment. In one legend she is Sati who swallowed Shiva out of hunger.',
+    story: 'Devi of the void that remains after dissolution, of poverty, loss and disappointment, and so a teacher of detachment. In one legend she is Sati who swallowed Shiva out of hunger.',
     sources: [src.defMahavidya, src.dhumavatiEssay],
   },
   {
@@ -250,7 +250,7 @@ export const mahavidyas: DeviForm[] = [
     sanskrit: 'मातङ्गी',
     meaning: 'Daughter of the sage Matanga; the outcaste',
     form: 'Emerald-green, playing a vina, with a parrot; accepts leftover food (ucchishta) as offering.',
-    story: 'A Tantric form of Sarasvati, goddess of speech, music and learning, who embraces what orthodox purity rejects.',
+    story: 'A Tantric form of Sarasvati, devi of speech, music and learning, who embraces what orthodox purity rejects.',
     sources: [src.defMahavidya],
   },
   {
@@ -265,7 +265,7 @@ export const mahavidyas: DeviForm[] = [
   },
 ];
 
-/** The Goddess in inscriptions, oldest first. */
+/** Devi in inscriptions, oldest first. */
 export const goddessInStone: Evidence[] = [
   ev.mothers,
   ev.pandurajja,

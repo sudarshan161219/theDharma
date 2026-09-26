@@ -26,7 +26,7 @@ export default function Avatars({ route }: { route: Route }) {
         title="Avatars"
         sub={
           <>
-            “Whenever dharma declines, I descend” (Gita 4.7). The descents of Vishnu, the incarnations of Shiva, and the forms of the Goddess: the Navadurga, the Mahavidyas and those of the Devi Mahatmya. <a href="#/glossary?t=avatara">What is an avatara?</a>
+            “Whenever dharma declines, I descend” (Gita 4.7). The descents of Vishnu, the incarnations of Shiva, and the forms of Devi: the Navadurga, the Mahavidyas and those of the Devi Mahatmya. <a href="#/glossary?t=avatara">What is an avatara?</a>
           </>
         }
       />
@@ -35,7 +35,7 @@ export default function Avatars({ route }: { route: Route }) {
         {[
           ['vishnu', 'Vishnu'],
           ['shiva', 'Shiva'],
-          ['devi', 'Devi (the Goddess)'],
+          ['devi', 'Devi'],
         ].map(([k, label]) => (
           <a key={k} href={`#/avatars?g=${k}`} className={group === k ? styles.tabOn : undefined} aria-current={group === k ? 'page' : undefined}>
             {label}

@@ -132,7 +132,7 @@ export default function Places({ route }: { route: Route }) {
       <PageHeader
         eyebrow="Tirtha — sacred geography"
         title="Sacred Places"
-        sub="The twelve places where Shiva manifests as a pillar of light, the seats where the Goddess abides, and the great pilgrimage circuits: Char Dham, the seven liberating cities, the Kumbh sites, Murugan’s six abodes and the five element temples. Tap a marker or a name."
+        sub="The twelve places where Shiva manifests as a pillar of light, the seats where Devi abides, and the great pilgrimage circuits: Char Dham, the seven liberating cities, the Kumbh sites, Murugan’s six abodes and the five element temples. Tap a marker or a name."
       />
 
       <div className={styles.controls} role="group" aria-label="Show on map">
@@ -193,7 +193,7 @@ export default function Places({ route }: { route: Route }) {
           <h2>Shakti Peethas</h2>
           <p className={styles.help}>
             Sati gave up her body at her father Daksha’s sacrifice (see <a href="#/avatars?g=devi&a=devi-mahavidya">the Mahavidyas</a>). Grief-stricken, Shiva wandered the
-            worlds carrying her. To end his grief, Vishnu’s discus cut the body, and wherever a part fell a seat of the Goddess (pitha) arose. Each is guarded by a form of
+            worlds carrying her. To end his grief, Vishnu’s discus cut the body, and wherever a part fell a seat of Devi (pitha) arose. Each is guarded by a form of
             Shiva as Bhairava. This dismemberment story is told in later Shakta texts such as the Kalika Purana, the Devi Bhagavata and the Mahabhagavata. The count varies:
             four, eighteen, fifty-one, fifty-two or 108.
           </p>

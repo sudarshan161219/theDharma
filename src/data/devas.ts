@@ -1,11 +1,12 @@
 import type { Source } from './types';
 import { defn, src } from './sources';
 
-export const trimurti: { role: string; deva: string; goddess: string; vahana: string; abode: string; emblems: string; note: string; to?: string }[] = [
+export const trimurti: { role: string; guna: string; deva: string; shakti: string; vahana: string; abode: string; emblems: string; note: string; to?: string }[] = [
   {
     role: 'Creation',
+    guna: 'Rajas (activity)',
     deva: 'Brahma',
-    goddess: 'Sarasvati: knowledge, speech, music',
+    shakti: 'Sarasvati: knowledge, speech, music',
     vahana: 'Hamsa (swan)',
     abode: 'Satyaloka',
     emblems: 'Four heads (the four Vedas), water-pot, rosary, book',
@@ -14,8 +15,9 @@ export const trimurti: { role: string; deva: string; goddess: string; vahana: st
   },
   {
     role: 'Preservation',
+    guna: 'Sattva (clarity)',
     deva: 'Vishnu',
-    goddess: 'Lakshmi: fortune, prosperity, grace',
+    shakti: 'Lakshmi: fortune, prosperity, grace',
     vahana: 'Garuda (eagle)',
     abode: 'Vaikuntha; sleeps on Ananta in the milk ocean',
     emblems: 'Conch, discus (Sudarshana), mace, lotus',
@@ -24,13 +26,154 @@ export const trimurti: { role: string; deva: string; goddess: string; vahana: st
   },
   {
     role: 'Dissolution',
+    guna: 'Tamas (inertia)',
     deva: 'Shiva',
-    goddess: 'Parvati: power, devotion; also Durga and Kali',
+    shakti: 'Parvati: power, devotion; also Durga and Kali',
     vahana: 'Nandi (bull)',
     abode: 'Kailasa',
     emblems: 'Trident, drum (damaru), crescent moon, the Ganga in his hair, third eye',
     note: 'Dissolves the world at the end of time so it can be made anew. Worshipped as the linga.',
     to: '#/places?show=jyotirlinga',
+  },
+];
+
+/* ——————————————————————— The Trimurti in each sampradaya ——————————————————————— */
+
+export type TriStatus = 'equal' | 'supreme' | 'self' | 'expansion' | 'jiva' | 'agent' | 'special' | 'form';
+
+export const statusLabel: Record<TriStatus, string> = {
+  equal: 'an equal form of Brahman',
+  supreme: 'the Supreme itself',
+  self: 'the Supreme’s own form',
+  expansion: 'an expansion of the Supreme',
+  jiva: 'an exalted soul (jiva) holding an office',
+  agent: 'an agent of the Supreme',
+  special: 'a unique category (shiva-tattva)',
+  form: 'a form of the Supreme',
+};
+
+export interface TrimurtiView {
+  id: string;
+  tradition: string;
+  school: string;
+  /** Link to the tradition on the Darshanas page. */
+  to: string;
+  supreme: string;
+  /** The Supreme stands above the three (false: one of the three is itself the Supreme, or all are equal). */
+  above: boolean;
+  brahma: TriStatus;
+  vishnu: TriStatus;
+  shiva: TriStatus;
+  summary: string;
+  /** `paraphrase`: a summary in our words, not a quotation. */
+  verse: { iast?: string; meaning: string; ref: string; paraphrase?: boolean };
+  sources: Source[];
+}
+
+export const trimurtiViews: TrimurtiView[] = [
+  {
+    id: 'smarta',
+    tradition: 'Smarta',
+    school: 'Advaita (Shankara)',
+    to: '#/darshanas?t=smarta',
+    supreme: 'Nirguna Brahman',
+    above: true,
+    brahma: 'equal',
+    vishnu: 'equal',
+    shiva: 'equal',
+    summary:
+      'The three are equal: saguna Brahman (Ishvara) acting through the three gunas, rajas as Brahma, sattva as Vishnu, tamas as Shiva. None is higher. Above them is Brahman without qualities, which is one’s own Self. Hence the Smarta worships five deities side by side (panchayatana) and sees Shiva and Vishnu as one (Harihara).',
+    verse: { meaning: 'Its part that is rajas is Brahma, its part that is sattva is Vishnu, its part that is tamas is Rudra.', ref: 'Maitri Upanishad 5.2, in summary', paraphrase: true },
+    sources: [src.conceptShanmata, src.brahmaSutraShankara, defn('trimurti', 'Trimurti')],
+  },
+  {
+    id: 'sri',
+    tradition: 'Sri Vaishnava',
+    school: 'Vishishtadvaita (Ramanuja)',
+    to: '#/darshanas?t=vaishnava',
+    supreme: 'Narayana with Sri',
+    above: false,
+    brahma: 'jiva',
+    vishnu: 'self',
+    shiva: 'jiva',
+    summary:
+      'Narayana is Para Brahman. Vishnu of the Trimurti is Narayana himself, come to preserve the world. Brahma is the highest of souls, born from the lotus of Narayana’s navel; Rudra is born from Brahma. Both are jivas who hold their offices for a kalpa, empowered by Narayana, and are themselves his devotees. The Vishnu Purana (1.2) says the one Janardana takes the names Brahma, Vishnu and Shiva.',
+    verse: { iast: 'eko ha vai nārāyaṇa āsīn na brahmā neśānaḥ', meaning: 'In the beginning Narayana alone was; there was neither Brahma nor Ishana (Shiva).', ref: 'Maha Upanishad 1.1, cited by Ramanuja' },
+    sources: [src.brahmaSutraRamanuja, src.dasgupta3, src.vishnuPurana],
+  },
+  {
+    id: 'madhva',
+    tradition: 'Madhva',
+    school: 'Dvaita (Madhva)',
+    to: '#/darshanas?t=vaishnava',
+    supreme: 'Vishnu (Narayana)',
+    above: false,
+    brahma: 'jiva',
+    vishnu: 'supreme',
+    shiva: 'jiva',
+    summary:
+      'Vishnu alone is independent (svatantra); everything else depends on him. Madhva ranks all beings in a gradation (taratamya): Vishnu, then Lakshmi, then Brahma and Vayu, the highest souls, then Sarasvati, then Garuda, Shesha and Rudra. Brahma and Shiva are great souls who serve Vishnu and will attain liberation by his grace.',
+    verse: { meaning: 'Vishnu is the highest (sarvottama); the jivas are graded, and differ even in liberation.', ref: 'Madhva’s doctrine of taratamya, in summary', paraphrase: true },
+    sources: [src.dasguptaMadhva, src.dasgupta4, defn('taratamya', 'Taratamya')],
+  },
+  {
+    id: 'gaudiya',
+    tradition: 'Gaudiya Vaishnava',
+    school: 'Achintya Bhedabheda (Chaitanya)',
+    to: '#/darshanas?t=vaishnava',
+    supreme: 'Krishna (svayam Bhagavan)',
+    above: true,
+    brahma: 'jiva',
+    vishnu: 'expansion',
+    shiva: 'special',
+    summary:
+      'Krishna is the source of all. Vishnu of the Trimurti is his expansion (Kshirodakashayi Vishnu), fully divine. Brahma is usually an empowered jiva. Shiva is in a class of his own: not an ordinary soul, yet not Vishnu; the Brahma Samhita (5.45) compares him to milk turned to curd, the same substance transformed for the work of dissolution.',
+    verse: { iast: 'kṛṣṇas tu bhagavān svayam', meaning: 'But Krishna is Bhagavan himself.', ref: 'Bhagavata Purana 1.3.28' },
+    sources: [src.historicalVaishnavism, src.chaitanyaBhagavata, defn('brahmasamhita', 'Brahma Samhita')],
+  },
+  {
+    id: 'shaiva',
+    tradition: 'Shaiva Siddhanta',
+    school: 'Shaiva (Agamic)',
+    to: '#/darshanas?t=shaiva',
+    supreme: 'Parashiva (Parameshvara)',
+    above: true,
+    brahma: 'agent',
+    vishnu: 'agent',
+    shiva: 'form',
+    summary:
+      'The Supreme Shiva is beyond the Trimurti and performs five acts (pancha-kritya): creation, preservation, dissolution, concealment and grace. Brahma, Vishnu and Rudra carry out the first three as his agents; Maheshvara conceals and Sadashiva grants grace. Rudra of the Trimurti is a lower form of Shiva, not Parashiva himself. Kashmir Shaivism likewise sees all as Shiva’s own self-expression.',
+    verse: { iast: 'eko hi rudro na dvitīyāya tasthuḥ', meaning: 'Rudra is one; they did not admit a second.', ref: 'Shvetashvatara Upanishad 3.2' },
+    sources: [src.dgShaivaSiddhanta, src.dgShivaPurana, defn('pancakritya', 'Pancha-kritya')],
+  },
+  {
+    id: 'shakta',
+    tradition: 'Shakta',
+    school: 'Shakta Advaita',
+    to: '#/darshanas?t=shakta',
+    supreme: 'Devi (Adi Parashakti)',
+    above: true,
+    brahma: 'agent',
+    vishnu: 'agent',
+    shiva: 'agent',
+    summary:
+      'Devi is the Supreme; the three act only through the Shaktis she gives them. In the Devi Bhagavata (Book 3) Brahma, Vishnu and Shiva are carried to her island of Manidvipa and, seeing her, praise her as their mother. Lalita is “seated on the five Brahmas” (pancha-brahmasana-sthita): Brahma, Vishnu, Rudra and Ishvara are the legs of her throne and Sadashiva its seat.',
+    verse: { iast: 'śivaḥ śaktyā yukto yadi bhavati śaktaḥ prabhavituṃ na ced evaṃ devo na khalu kuśalaḥ spanditum api', meaning: 'Only united with Shakti is Shiva able to create; otherwise the deva cannot even stir.', ref: 'Saundarya Lahari 1' },
+    sources: [src.deviBhagavata, src.upaDeviBhagavata, src.shaktiAndShakta, defn('saundaryalahari', 'Saundarya Lahari')],
+  },
+  {
+    id: 'ganapatya',
+    tradition: 'Ganapatya',
+    school: 'Ganesha as Brahman',
+    to: '#/darshanas?t=others',
+    supreme: 'Ganesha (Ganapati)',
+    above: true,
+    brahma: 'form',
+    vishnu: 'form',
+    shiva: 'form',
+    summary: 'Ganesha is Brahman itself, and the Trimurti are his forms. The Ganesha and Mudgala Puranas tell how he appeared before each of the three to grant them their powers.',
+    verse: { iast: 'tvaṃ brahmā tvaṃ viṣṇus tvaṃ rudraḥ', meaning: 'You are Brahma, you are Vishnu, you are Rudra.', ref: 'Ganapati Atharvashirsha' },
+    sources: [defn('ganapatya', 'Ganapatya'), src.defGaneshaPurana],
   },
 ];
 

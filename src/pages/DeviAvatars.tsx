@@ -48,7 +48,7 @@ export default function DeviAvatars({ focus }: { focus: string | null }) {
   return (
     <>
       <p className={styles.help}>
-        In Shakta scripture the Goddess (Devi, Shakti) is the supreme power, and she too “descends” whenever demons oppress the world. Her own promise is in the <a href={href('scriptures', 'markandeya-purana')}>Devi Mahatmya</a>:
+        In Shakta scripture Devi (Shakti) is the supreme power, and she too “descends” whenever demons oppress the world. Her own promise is in the <a href={href('scriptures', 'markandeya-purana')}>Devi Mahatmya</a>:
         “Whenever trouble arises from the demons, I shall become incarnate and destroy the foes” (Markandeya Purana 91).
       </p>
 
@@ -99,9 +99,9 @@ export default function DeviAvatars({ focus }: { focus: string | null }) {
       </section>
 
       <section className={styles.section} id="devi-promised">
-        <h2>Incarnations the Goddess promises</h2>
+        <h2>Incarnations Devi promises</h2>
         <p className={styles.help}>
-          At the close of the Devi Mahatmya the Goddess foretells her future descents. The first is set in <em>our own</em> time: the 28th yuga of the Vaivasvata manvantara (see{' '}
+          At the close of the Devi Mahatmya Devi foretells her future descents. The first is set in <em>our own</em> time: the 28th yuga of the Vaivasvata manvantara (see{' '}
           <a href="#/manvantaras?n=7">Manvantaras</a>).
         </p>
         <ol className={styles.promised}>
@@ -176,12 +176,12 @@ export default function DeviAvatars({ focus }: { focus: string | null }) {
       </section>
 
       <section className={styles.section} id="devi-stone">
-        <h2>The Goddess in stone: a timeline of inscriptions</h2>
+        <h2>Devi in stone: a timeline of inscriptions</h2>
         <p className={styles.help}>
           Scriptures tell us what was taught. Inscriptions show what people actually worshipped, and when. These records from MIDF’s Smriti catalogue run from about 500 CE to 1702 CE, oldest first.
         </p>
         <Evidence items={goddessInStone} title="Dated inscriptions" />
-        <Evidence items={[ev.jvalamukhiPanchanga, ev.bhavaniPuja, ev.annapurna]} title="More manuscripts of regional Goddesses" />
+        <Evidence items={[ev.jvalamukhiPanchanga, ev.bhavaniPuja, ev.annapurna]} title="More manuscripts of regional Devis" />
       </section>
 
       <Sources items={deviSources} />
