@@ -42,6 +42,38 @@
   color-scheme: light;
 }
 
+/* Paper ink: warm paper, ink-dark text, vermilion and indigo inks. */
+:root[data-theme='paper'] {
+  --bg: #f1e7d2;
+  --surface: #f7f0e0;
+  --surface-2: #eadcc1;
+  --text: #221a12;
+  --muted: #5e5242;
+  --line: #d2c09c;
+  --accent: #9b2b1a;
+  --accent-soft: #efd6c4;
+  --gold: #7a560d;
+  --gold-soft: #eadbb6;
+  --indigo: #213c75;
+  --indigo-soft: #dcdfea;
+  --jade: #2c6849;
+  --shadow: 0 1px 0 rgb(90 65 30 / 0.08), 0 6px 18px rgb(90 65 30 / 0.07);
+  color-scheme: light;
+}
+
+/* A faint paper grain behind everything. */
+:root[data-theme='paper'] body {
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgb(255 250 235 / 0.7), transparent 60%),
+    radial-gradient(ellipse at 90% 80%, rgb(200 170 120 / 0.18), transparent 55%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.26 0 0 0 0 0.14 0 0 0 0.07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+}
+
+:root[data-theme='paper'] ::selection {
+  background: #e7c9a8;
+}
+
 *,
 *::before,
 *::after {

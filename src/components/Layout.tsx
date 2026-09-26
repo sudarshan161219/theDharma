@@ -33,7 +33,14 @@ const NAV = [
   { key: "glossary", label: "Definitions" },
 ];
 
-type Theme = "light" | "dark";
+type Theme = "dark" | "light" | "paper";
+
+/** The toggle cycles through these, in order. */
+const THEMES: { id: Theme; icon: string; label: string }[] = [
+  { id: "dark", icon: "☾", label: "Dark" },
+  { id: "light", icon: "☀", label: "Light" },
+  { id: "paper", icon: "✒", label: "Paper ink" },
+];
 
 /**
  * Horizontally scrollable section nav: arrow buttons appear when there is more
@@ -152,10 +159,11 @@ function NavScroller({ active }: { active: string }) {
   );
 }
 
-/** Dark (pitch black) is the default; light is opt-in and remembered. */
+/** Dark (pitch black) is the default; light and paper ink are opt-in and remembered. */
 function readTheme(): Theme {
   try {
-    return localStorage.getItem("theme") === "light" ? "light" : "dark";
+    const t = localStorage.getItem("theme");
+    return t === "light" || t === "paper" ? t : "dark";
   } catch {
     return "dark";
   }
@@ -180,7 +188,8 @@ export default function Layout({
     }
   }, [theme]);
 
-  const isDark = theme === "dark";
+  const current = THEMES.findIndex((t) => t.id === theme);
+  const next = THEMES[(current + 1) % THEMES.length];
 
   const onSearch = (e: FormEvent) => {
     e.preventDefault();
@@ -210,10 +219,11 @@ export default function Layout({
           </form>
           <button
             className={styles.theme}
-            onClick={() => setTheme(isDark ? "light" : "dark")}
-            aria-label="Toggle colour theme"
+            onClick={() => setTheme(next.id)}
+            aria-label={`Theme: ${THEMES[current].label}. Switch to ${next.label}`}
+            title={`Theme: ${THEMES[current].label} — click for ${next.label}`}
           >
-            {isDark ? "☀" : "☾"}
+            {THEMES[current].icon}
           </button>
         </div>
         <NavScroller active={active} />
