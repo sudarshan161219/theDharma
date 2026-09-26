@@ -689,6 +689,7 @@ export const traditions: Tradition[] = [
         about:
           'Souls are bound by three impurities (malas): anava (innate limitation), karma, and maya. Shiva’s grace, given through the guru’s initiation, removes them; the freed soul becomes like Shiva but is not identical with him. The 63 Nayanar saints, such as Appar, Sambandar and Sundarar, are its heroes.',
         parampara: ['Shiva (Srikantha)', 'Nandi', 'Sanatkumara', 'Satyajnana Darshini', 'Paranjoti', 'Meykandar', 'Arulnandi', 'Umapati Shivacharya'],
+        more: { label: 'Shaiva Siddhanta in depth: Pati, pashu and pasha, the four paths, the Agamas and the Tirumurai', to: '#/siddhanta' },
         sources: [src.dgShaivaSiddhanta, src.conceptShaivaSiddhanta, src.dasgupta5],
       },
       {

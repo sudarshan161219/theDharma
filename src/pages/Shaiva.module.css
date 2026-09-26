@@ -426,7 +426,7 @@
 
 .malas {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
   gap: 10px;
 }
 
@@ -574,11 +574,11 @@
   text-transform: uppercase;
 }
 
-.table thead th:nth-child(2) {
+.compare thead th:nth-child(2) {
   color: var(--accent);
 }
 
-.table thead th:nth-child(3) {
+.compare thead th:nth-child(3) {
   color: var(--indigo);
 }
 
@@ -705,5 +705,442 @@
       'n name'
       'n what'
       'n note';
+  }
+}
+
+/* ——————————————— Shaiva Siddhanta ——————————————— */
+
+.triWrap {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+}
+
+.triFig {
+  width: 100%;
+  max-width: 220px;
+  margin: 0 auto;
+}
+
+.triFig text {
+  fill: var(--text);
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  text-anchor: middle;
+}
+
+.triFig .figSmall {
+  fill: var(--muted);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.figPati {
+  fill: var(--gold-soft);
+  stroke: var(--gold);
+  stroke-width: 2;
+}
+
+.figPashu {
+  fill: var(--indigo-soft);
+  stroke: var(--indigo);
+  stroke-width: 2;
+}
+
+.figGrace {
+  stroke: var(--gold);
+  stroke-width: 2;
+  stroke-dasharray: 4 4;
+}
+
+.figRope {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.triCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 10px;
+}
+
+.triCard {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--t);
+}
+
+.tri_pati {
+  --t: var(--gold);
+}
+
+.tri_pashu {
+  --t: var(--indigo);
+}
+
+.tri_pasha {
+  --t: var(--accent);
+}
+
+.triCard b {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+}
+
+.triCard b :global(.deva) {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--gold);
+}
+
+.triCard .level {
+  color: var(--t);
+}
+
+.triCard p {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+}
+
+.causes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.causes li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.causes b {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+}
+
+.causes b :global(.deva) {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--gold);
+}
+
+.causes small {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.extra {
+  opacity: 0.8;
+  border-style: dashed !important;
+}
+
+.journey {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.journey li {
+  position: relative;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--jade) 8%, var(--surface));
+  border: 1px solid var(--line);
+}
+
+.journey li:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  top: 50%;
+  right: -21px;
+  transform: translateY(-50%);
+  color: var(--jade);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.journey b {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+}
+
+.journey b :global(.deva) {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--gold);
+}
+
+.journey p {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+}
+
+.nataWrap {
+  display: grid;
+  grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.nataFig {
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+}
+
+.nataFig img {
+  display: block;
+  width: 100%;
+  height: 340px;
+  padding: 10px;
+  object-fit: contain;
+}
+
+.nataFig figcaption {
+  padding: 8px 12px 10px;
+  border-top: 1px solid var(--line);
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+
+.nataFig figcaption a {
+  text-decoration: none;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: s;
+}
+
+.steps li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 14px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--gold);
+  counter-increment: s;
+}
+
+.steps li::before {
+  content: counter(s);
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  margin-bottom: 4px;
+  border-radius: 50%;
+  background: var(--gold-soft);
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.steps b {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+}
+
+.steps :global(.deva) {
+  font-size: 0.85rem;
+  color: var(--gold);
+}
+
+.steps p {
+  margin: 4px 0 0;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+.bandBody {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.bigN {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--b);
+}
+
+.bandBody p {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.faces {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr));
+  gap: 8px;
+}
+
+.faces > div {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+}
+
+.faces b {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+}
+
+.faces b :global(.deva) {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--gold);
+}
+
+.faces ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.faces li {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  font-size: 0.8rem;
+}
+
+.padas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 8px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.padas li {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--surface-2);
+}
+
+.padas span {
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+.sutras {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: 10px;
+}
+
+.sutras > div {
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--indigo);
+}
+
+.sutras h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.sutras .level {
+  color: var(--indigo);
+}
+
+.sutras ol {
+  margin: 8px 0 0;
+  padding-left: 22px;
+  font-size: 0.88rem;
+}
+
+.sutras li + li {
+  margin-top: 6px;
+}
+
+.stream {
+  margin-left: 6px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--indigo);
+  color: var(--indigo);
+  font-size: 0.7rem;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.streamTamil {
+  border-color: var(--jade);
+  color: var(--jade);
+}
+
+.table3 tbody th {
+  width: 120px;
+}
+
+.compare thead th:nth-child(4) {
+  color: var(--jade);
+}
+
+@media (max-width: 760px) {
+  .triWrap,
+  .nataWrap {
+    grid-template-columns: 1fr;
+  }
+  .causes {
+    grid-template-columns: 1fr;
+  }
+  .journey {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .journey li:not(:last-child)::after {
+    content: '↓';
+    top: auto;
+    right: auto;
+    bottom: -21px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }

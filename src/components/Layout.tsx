@@ -27,6 +27,7 @@ const NAV = [
   { key: "acharyas", label: "Acharyas" },
   { key: "darshanas", label: "Darshanas" },
   { key: "trika", label: "Kashmir Shaivism" },
+  { key: "siddhanta", label: "Shaiva Siddhanta" },
   { key: "dharma", label: "Life & Dharma" },
   { key: "places", label: "Sacred Places" },
   { key: "kuladevata", label: "Kuladevata" },

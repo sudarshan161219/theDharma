@@ -2,6 +2,7 @@ import { manvantaras, vyasas, yugas } from '../data/cosmos';
 import { acharyas, darshanas } from '../data/acharyas';
 import { darshans, nastikas, traditions } from '../data/darshanas';
 import { ksSchools, ksTeachers, ksTexts, tattvaBands, trikaIdeas, upayas } from '../data/trika';
+import { agamasByFace, fourPaths, graceSteps, pashas, siddhantaTeachers, soulClasses, tirumurai, tripadartha } from '../data/siddhanta';
 import { dharmashastras, gitaChapters, upanishads, vedangas, vedas } from '../data/vedas';
 import { festivals } from '../data/calendar';
 import { dikpalas, navagrahas, trimurti, vedicGods } from '../data/devas';
@@ -335,6 +336,50 @@ const index: Entry[] = [
     subtitle: `${t.by} · ${t.about}`,
     to: '#/trika',
     haystack: [t.name, t.by, t.about, 'text scripture tantra kashmir shaivism'].join(' '),
+  })),
+  {
+    kind: 'Shaiva Siddhanta',
+    title: 'Shaiva Siddhanta',
+    subtitle: 'Shiva, souls and bonds: the Shaivism of the Agamas and the Tamil saints',
+    to: '#/siddhanta',
+    haystack: 'shaiva siddhanta saiva siddhantam pati pashu pasha tripadartha agama meykandar tirumurai nayanar tamil shaivism dualism nataraja',
+  },
+  ...[...tripadartha.map((x) => ({ ...x, about: `${x.meaning}. ${x.about}` })), ...pashas, ...soulClasses, ...graceSteps].map((x) => ({
+    kind: 'Shaiva Siddhanta',
+    title: x.name,
+    subtitle: x.about.slice(0, 100) + '…',
+    to: '#/siddhanta',
+    haystack: [x.name, x.about, 'shaiva siddhanta'].join(' '),
+  })),
+  ...fourPaths.map((p) => ({
+    kind: 'Shaiva Siddhanta',
+    title: `${p.pada} (${p.tamil})`,
+    subtitle: `${p.relation} · ${p.saint} · ${p.fruit}`,
+    to: '#/siddhanta',
+    haystack: [p.pada, p.tamil, p.relation, p.saint, p.practice, p.fruit, p.fruitMeaning, 'path pada marga shaiva siddhanta'].join(' '),
+  })),
+  ...agamasByFace.flatMap((f) =>
+    f.agamas.map((a) => ({
+      kind: 'Agama',
+      title: `${a} Agama`,
+      subtitle: `One of the 28 Shaiva Agamas · revealed from the ${f.face} face`,
+      to: '#/siddhanta',
+      haystack: [a, f.face, 'agama shaiva siddhanta scripture tantra'].join(' '),
+    })),
+  ),
+  ...tirumurai.map((t) => ({
+    kind: 'Tirumurai',
+    title: `${t.name} (Tirumurai ${t.books})`,
+    subtitle: `${t.by} · ${t.about}`,
+    to: '#/siddhanta',
+    haystack: [t.name, t.by, t.about, 'tirumurai tamil shaiva hymn'].join(' '),
+  })),
+  ...siddhantaTeachers.map((t) => ({
+    kind: 'Shaiva Siddhanta',
+    title: t.name,
+    subtitle: `${t.dates} · ${t.role}`,
+    to: '#/siddhanta',
+    haystack: [t.name, t.stream, t.role, t.works, 'teacher acharya saint shaiva siddhanta'].join(' '),
   })),
   ...darshanas.map((d) => ({
     kind: 'School',

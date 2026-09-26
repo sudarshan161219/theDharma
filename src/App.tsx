@@ -28,6 +28,7 @@ const Places = lazy(() => import('./pages/Places'));
 const ScriptureDetail = lazy(() => import('./pages/ScriptureDetail'));
 const Scriptures = lazy(() => import('./pages/Scriptures'));
 const Search = lazy(() => import('./pages/Search'));
+const Siddhanta = lazy(() => import('./pages/Siddhanta'));
 const Trika = lazy(() => import('./pages/Trika'));
 const Vedas = lazy(() => import('./pages/Vedas'));
 const Vyasas = lazy(() => import('./pages/Vyasas'));
@@ -61,6 +62,9 @@ export default function App() {
       break;
     case 'forms':
       page = <Forms />;
+      break;
+    case 'siddhanta':
+      page = <Siddhanta />;
       break;
     case 'trika':
       page = <Trika />;

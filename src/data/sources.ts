@@ -580,6 +580,19 @@ export const src = {
   ksShaktiSpanda: { label: 'Shakti in Kashmir Shaivism — Spanda', url: `${WL}/hinduism/essay/shakti-in-kashmir-shaivism-study/d/doc1597886.html` },
   ksPrakashaVimarsha: { label: 'Shaiva Tantra: a way of self-awareness — Light (prakasha) and thinking (vimarsha)', url: `${WL}/hinduism/essay/shaiva-tantra-a-way-of-self-awareness/d/doc1460204.html` },
   tantralokaSanskrit: { label: 'Tantraloka (Sanskrit text)', url: `${WL}/hinduism/book/tantraloka-sanskrit-text` },
+  // ——— Shaiva Siddhanta ———
+  defShaivaSiddhanta: { label: 'Shaiva Siddhanta — definitions', url: `${WL}/definition/shaiva-siddhanta` },
+  conceptPatiPashuPasha: { label: 'Pati, pashu, pasha — concept', url: `${WL}/concept/pati-pashu-pasha` },
+  tirumantiram115: { label: 'Tirumantiram 115 — Pati, pashu and pasha are eternal', url: `${WL}/hinduism/book/tirumantiram-by-tirumular-english-translation/d/doc1543731.html` },
+  tirumantiram: { label: 'Tirumantiram of Tirumular (English translation)', url: `${WL}/hinduism/book/tirumantiram-by-tirumular-english-translation` },
+  agamaTempleSiddhanta: { label: 'Temple worship as per the Shaiva Agamas — The Shaiva Siddhanta school', url: `${WL}/hinduism/essay/temple-worship-and-rituals-as-per-shaiva-agamas/d/doc1599055.html` },
+  agamaMeaning: { label: 'Temple worship as per the Shaiva Agamas — Agama: its meaning and philosophy', url: `${WL}/hinduism/essay/temple-worship-and-rituals-as-per-shaiva-agamas/d/doc1599056.html` },
+  agamaPractices: { label: 'Temple worship as per the Shaiva Agamas — Shaiva practices in general', url: `${WL}/hinduism/essay/temple-worship-and-rituals-as-per-shaiva-agamas/d/doc1599058.html` },
+  sivaprakasamGuru: { label: 'Sivaprakasam study — Dasha karya and the guru', url: `${WL}/hinduism/essay/sivaprakasam-study/d/doc1210762.html` },
+  sivaprakasamLiberation: { label: 'Sivaprakasam study — Liberation in Shivaprakasham and Sivajnanabodham', url: `${WL}/hinduism/essay/sivaprakasam-study/d/doc1210763.html` },
+  dgBhoja: { label: 'Dasgupta Vol. 5 — Shaiva philosophy according to Bhoja and his commentators', url: `${WL}/hinduism/book/a-history-of-indian-philosophy-volume-5/d/doc210073.html` },
+  tevaramStudy: { label: 'Tevaram: religion and philosophy (study)', url: `${WL}/hinduism/book/tevaram-religion-and-philosophy` },
+  cosmogonySiddhanta: { label: 'Cosmogony in Indian philosophy — A brief note on Shaiva Siddhanta', url: `${WL}/history/essay/cosmogony-in-indian-philosophy-study/d/doc1887290.html` },
   wilsonReview,
 } satisfies Record<string, Source | ((n: number, name: string) => Source)>;
 

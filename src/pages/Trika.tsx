@@ -16,7 +16,7 @@ import {
   vsAdvaita,
 } from '../data/trika';
 import { PageHeader, Sources } from '../components/ui';
-import styles from './Trika.module.css';
+import styles from './Shaiva.module.css';
 
 const TEXT_KINDS = ['Revealed', 'Philosophy', 'Manual', 'Hymn'] as const;
 const TEXT_KIND_LABEL: Record<(typeof TEXT_KINDS)[number], string> = {
@@ -253,7 +253,7 @@ export default function Trika() {
           Both say there is only one reality, and it is consciousness. They differ on whether that consciousness acts, and so on whether the world is real.
         </p>
         <div className={styles.tableWrap}>
-          <table className={styles.table}>
+          <table className={`${styles.table} ${styles.compare}`}>
             <thead>
               <tr>
                 <th scope="col" />
