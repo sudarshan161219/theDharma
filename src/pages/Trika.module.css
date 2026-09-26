@@ -1,0 +1,709 @@
+.section {
+  margin-bottom: 56px;
+}
+
+.help {
+  color: var(--muted);
+  max-width: 800px;
+}
+
+.h3 {
+  margin: 28px 0 4px;
+  font-size: 1.35rem;
+}
+
+.srcs {
+  margin: 10px 0 0;
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+
+.srcs a {
+  text-decoration: none;
+}
+
+.level {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ——— verses ——— */
+
+.verses {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+  gap: 10px;
+}
+
+.verse {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 16px 18px;
+  border-radius: var(--radius);
+  background: var(--gold-soft);
+  border-left: 3px solid var(--gold);
+}
+
+.verse :global(.deva) {
+  margin: 0 0 4px;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+.iast {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+}
+
+.meaning {
+  margin: 8px 0;
+  font-size: 0.95rem;
+}
+
+.verse cite {
+  margin-top: auto;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+.verse cite a {
+  text-decoration: none;
+  color: var(--gold);
+}
+
+/* ——— triads ——— */
+
+.triads {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  gap: 10px;
+}
+
+.triad {
+  position: relative;
+  padding: 16px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.triad svg {
+  display: block;
+  width: 120px;
+  height: 104px;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.triad polygon {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+  stroke-width: 1.5;
+}
+
+.triad circle {
+  fill: var(--accent);
+}
+
+.triad ol {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.triad li {
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.triad p {
+  margin: 8px 0 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ——— schools ——— */
+
+.schools {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 10px;
+}
+
+.school {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 18px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--indigo);
+}
+
+.schoolAll {
+  border-top-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 7%, var(--surface));
+}
+
+.school h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.school h3 :global(.deva),
+.band h3 :global(.deva) {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--gold);
+}
+
+.gloss {
+  margin: 0;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.school > p {
+  font-size: 0.92rem;
+}
+
+.school dl {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 4px 10px;
+  margin: auto 0 0;
+  font-size: 0.84rem;
+}
+
+.school dt {
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.school dd {
+  margin: 0;
+}
+
+/* ——— ideas ——— */
+
+.ideas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 10px;
+  margin: 0;
+}
+
+.ideas > div {
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--jade);
+}
+
+.ideas dt b {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+}
+
+.ideas dt :global(.deva) {
+  color: var(--gold);
+}
+
+.ideas dt small {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--jade);
+}
+
+.ideas dd {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+}
+
+/* ——— powers and acts ——— */
+
+.twoCol {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 12px;
+}
+
+.panel {
+  padding: 16px 18px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.panel h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.panel .help {
+  margin: 4px 0 12px;
+  font-size: 0.88rem;
+}
+
+.powers,
+.acts {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: n;
+}
+
+.powers li,
+.acts li {
+  display: grid;
+  grid-template-columns: 26px 110px minmax(0, 1fr);
+  grid-template-areas:
+    'n name what'
+    'n name note';
+  column-gap: 10px;
+  align-items: baseline;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: var(--surface-2);
+  counter-increment: n;
+}
+
+.powers li::before,
+.acts li::before {
+  content: counter(n);
+  grid-area: n;
+  align-self: center;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--gold-soft);
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.powers b,
+.acts b {
+  grid-area: name;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+}
+
+.powers b :global(.deva),
+.acts b :global(.deva) {
+  font-family: var(--font-deva);
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--gold);
+}
+
+.powers li > span,
+.acts li > span {
+  grid-area: what;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.powers small,
+.acts small {
+  grid-area: note;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+/* ——— tattvas ——— */
+
+.tattvas {
+  display: grid;
+  gap: 10px;
+}
+
+.band {
+  display: grid;
+  grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
+  gap: 16px;
+  padding: 16px 18px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--b) 9%, var(--surface));
+  border-left: 5px solid var(--b);
+}
+
+.band_shuddha {
+  --b: var(--gold);
+}
+
+.band_mishra {
+  --b: var(--indigo);
+}
+
+.band_ashuddha {
+  --b: var(--accent);
+}
+
+.band h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.band header p {
+  margin: 6px 0 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.band ol {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr));
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.band li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 8px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.tn {
+  grid-row: span 2;
+  align-self: center;
+  min-width: 34px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--b);
+  text-align: center;
+}
+
+.band li b {
+  font-size: 0.92rem;
+}
+
+.band li small {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.count {
+  margin: 4px 0 0;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* ——— malas and perceivers ——— */
+
+.malas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 10px;
+}
+
+.malas > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.malas b {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+}
+
+.malas b :global(.deva) {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--gold);
+}
+
+.malas p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.perceivers {
+  display: grid;
+  gap: 4px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.perceivers li {
+  display: grid;
+  grid-template-columns: minmax(0, 240px) minmax(0, 1fr) minmax(0, 200px);
+  gap: 10px;
+  align-items: baseline;
+  padding: 9px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--gold) calc(20% - var(--i) * 3%), var(--surface));
+  margin-left: calc(var(--i) * 2%);
+}
+
+.perceivers b :global(.deva) {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.perceivers span {
+  font-size: 0.88rem;
+}
+
+.perceivers small {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* ——— upayas ——— */
+
+.upayas {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.upayas li {
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--jade) calc(22% - var(--i) * 5%), var(--surface));
+  margin-left: calc(var(--i) * 3%);
+}
+
+.uHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+}
+
+.uHead b {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+}
+
+.uHead b :global(.deva) {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--gold);
+}
+
+.uHead .level {
+  color: var(--jade);
+}
+
+.upayas p {
+  margin: 4px 0 0;
+  font-size: 0.92rem;
+}
+
+.example {
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ——— table ——— */
+
+.tableWrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.table th,
+.table td {
+  padding: 10px 14px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+.table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+.table thead th {
+  background: var(--surface-2);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.table thead th:nth-child(2) {
+  color: var(--accent);
+}
+
+.table thead th:nth-child(3) {
+  color: var(--indigo);
+}
+
+.table tbody th {
+  width: 130px;
+  font-weight: 700;
+  background: var(--surface);
+}
+
+.table td {
+  background: var(--surface);
+}
+
+/* ——— teachers ——— */
+
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0 0 0 4px;
+  list-style: none;
+}
+
+.timeline li {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--line);
+}
+
+.dates {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--accent);
+}
+
+.timeline b {
+  font-size: 1.05rem;
+}
+
+.timeline b a {
+  text-decoration: none;
+}
+
+.timeline b :global(.deva) {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--gold);
+}
+
+.timeline p {
+  margin: 2px 0;
+  font-size: 0.9rem;
+}
+
+.timeline small {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* ——— texts ——— */
+
+.texts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 14px;
+}
+
+.texts h3 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+}
+
+.texts ul {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.texts li {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.texts li small {
+  display: block;
+  color: var(--gold);
+  font-size: 0.78rem;
+}
+
+.texts li p {
+  margin: 4px 0 0;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+@media (max-width: 760px) {
+  .band {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .perceivers li {
+    grid-template-columns: 1fr;
+    gap: 2px;
+    margin-left: 0;
+  }
+  .upayas li {
+    margin-left: 0;
+  }
+  .timeline li {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+  .powers li,
+  .acts li {
+    grid-template-columns: 26px minmax(0, 1fr);
+    grid-template-areas:
+      'n name'
+      'n what'
+      'n note';
+  }
+}

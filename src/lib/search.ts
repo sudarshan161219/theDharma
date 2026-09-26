@@ -1,6 +1,7 @@
 import { manvantaras, vyasas, yugas } from '../data/cosmos';
 import { acharyas, darshanas } from '../data/acharyas';
 import { darshans, nastikas, traditions } from '../data/darshanas';
+import { ksSchools, ksTeachers, ksTexts, tattvaBands, trikaIdeas, upayas } from '../data/trika';
 import { dharmashastras, gitaChapters, upanishads, vedangas, vedas } from '../data/vedas';
 import { festivals } from '../data/calendar';
 import { dikpalas, navagrahas, trimurti, vedicGods } from '../data/devas';
@@ -284,6 +285,57 @@ const index: Entry[] = [
       haystack: [s.name, s.founder, s.deity, s.darshana, s.texts, s.centres, s.practice, s.about, ...(s.parampara ?? []), 'sampradaya lineage parampara'].join(' '),
     })),
   ]),
+  {
+    kind: 'Kashmir Shaivism',
+    title: 'Kashmir Shaivism (Trika)',
+    subtitle: 'Non-dual Shaivism of Kashmir: Shiva as free, self-aware consciousness',
+    to: '#/trika',
+    haystack: 'kashmir shaivism trika pratyabhijna shaivadvaita non-dual shaiva monism recognition spanda krama kula abhinavagupta 36 tattvas malas kanchukas',
+  },
+  ...ksSchools.map((x) => ({
+    kind: 'Kashmir Shaivism',
+    title: `${x.name} school`,
+    subtitle: `${x.meaning} · ${x.founder}`,
+    to: '#/trika',
+    haystack: [x.name, x.meaning, x.founder, x.texts, x.about, 'kashmir shaivism school'].join(' '),
+  })),
+  ...trikaIdeas.map((x) => ({
+    kind: 'Kashmir Shaivism',
+    title: x.term,
+    subtitle: x.meaning,
+    to: '#/trika',
+    haystack: [x.term, x.meaning, x.about, 'kashmir shaivism trika concept'].join(' '),
+  })),
+  ...upayas.map((x) => ({
+    kind: 'Kashmir Shaivism',
+    title: x.name,
+    subtitle: `Upaya · ${x.power}`,
+    to: '#/trika',
+    haystack: [x.name, x.power, x.how, 'upaya means path kashmir shaivism'].join(' '),
+  })),
+  ...tattvaBands.flatMap((b) =>
+    b.tattvas.map((t) => ({
+      kind: 'Tattva',
+      title: `${t.name} (tattva ${t.n})`,
+      subtitle: `${b.name} · ${t.note}`,
+      to: '#/trika',
+      haystack: [t.name, t.note, b.name, 'tattva 36 tattvas kashmir shaivism kanchuka'].join(' '),
+    })),
+  ),
+  ...ksTeachers.map((t) => ({
+    kind: 'Kashmir Shaivism',
+    title: t.name,
+    subtitle: `${t.dates} · ${t.role}`,
+    to: '#/trika',
+    haystack: [t.name, t.role, t.works, 'teacher acharya kashmir shaivism'].join(' '),
+  })),
+  ...ksTexts.map((t) => ({
+    kind: 'Kashmir Shaivism',
+    title: t.name,
+    subtitle: `${t.by} · ${t.about}`,
+    to: '#/trika',
+    haystack: [t.name, t.by, t.about, 'text scripture tantra kashmir shaivism'].join(' '),
+  })),
   ...darshanas.map((d) => ({
     kind: 'School',
     title: d.name,

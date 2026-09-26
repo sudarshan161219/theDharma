@@ -42,6 +42,7 @@ const SECTIONS = [
   { key: 'avatars', title: 'Avatars', text: 'Vishnu’s Dashavatara, Shiva’s incarnations, and Devi: Navadurga, Mahavidyas and the Devi Mahatmya.' },
   { key: 'acharyas', title: 'Acharyas', text: 'Shankara, Ramanuja, Madhva, Nimbarka, Vallabha, Chaitanya… and how their schools differ.' },
   { key: 'darshanas', title: 'Darshanas & Sampradayas', text: 'The six schools of philosophy and the four that reject the Veda, the pramanas, and the living lineages: Vaishnava, Shaiva, Shakta, Smarta and more.' },
+  { key: 'trika', title: 'Kashmir Shaivism', text: 'The Trika: Shiva as free, self-aware consciousness, the 36 tattvas, the four ways of recognition, its teachers from Vasugupta to Abhinavagupta, and how it differs from Advaita.' },
   { key: 'dharma', title: 'Life & Dharma', text: 'The four aims and four stages of life, the sixteen samskaras from conception to cremation, and the five daily offerings.' },
   { key: 'places', title: 'Sacred Places', text: 'Jyotirlingas, Shakti Peethas, Char Dham, the seven liberating cities, the Kumbh sites and more, on a map.' },
   { key: 'gotra', title: 'Gotras', text: 'The rishi behind your gotra, its pravara, the eight founders, and a same-family check.' },

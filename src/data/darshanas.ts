@@ -483,6 +483,8 @@ export interface Sampradaya {
   about: string;
   /** Guru parampara, oldest first. */
   parampara?: string[];
+  /** A page of its own, for a lineage treated in depth. */
+  more?: { label: string; to: string };
   sources: Source[];
 }
 
@@ -704,6 +706,7 @@ export const traditions: Tradition[] = [
         practice: 'Recognising one’s own self as Shiva, by grace and by the four means (upayas)',
         about: 'Reality is Shiva’s own free, vibrant consciousness (spanda), which manifests as 36 tattvas. Unlike Advaita, the world is real, Shiva’s self-expression.',
         parampara: ['Shiva', 'Vasugupta', 'Kallata · Somananda', 'Utpaladeva', 'Lakshmanagupta', 'Abhinavagupta', 'Kshemaraja'],
+        more: { label: 'Kashmir Shaivism in depth: the 36 tattvas, the upayas, the schools and the texts', to: '#/trika' },
         sources: [defn('abhinavagupta', 'Abhinavagupta'), defn('pratyabhijna', 'Pratyabhijna'), src.dasgupta5],
       },
       {

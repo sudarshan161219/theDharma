@@ -427,6 +427,11 @@ function SampradayaCard({ s }: { s: Sampradaya }) {
           <Parampara chain={s.parampara} />
         </>
       )}
+      {s.more && (
+        <p className={styles.more}>
+          <a href={s.more.to}>{s.more.label} →</a>
+        </p>
+      )}
       {s.darshanaId && (
         <p className={styles.more}>
           <a href={`#/acharyas?d=${s.darshanaId}`}>Compare {darshanaById.get(s.darshanaId)?.name} with the other schools →</a>
