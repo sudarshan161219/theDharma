@@ -42,6 +42,7 @@ const SECTIONS = [
   { key: 'avatars', title: 'Avatars', text: 'Vishnu’s Dashavatara, Shiva’s incarnations, and Devi: Navadurga, Mahavidyas and the Devi Mahatmya.' },
   { key: 'acharyas', title: 'Acharyas', text: 'Shankara, Ramanuja, Madhva, Nimbarka, Vallabha, Chaitanya… and how their schools differ.' },
   { key: 'darshanas', title: 'Darshanas & Sampradayas', text: 'The six schools of philosophy and the four that reject the Veda, the pramanas, and the living lineages: Vaishnava, Shaiva, Shakta, Smarta and more.' },
+  { key: 'tattvas', title: 'The Tattvas', text: 'The principles of reality, from consciousness to earth: Samkhya’s 25 and the Shaiva 36 one by one, how each school counts, the three gunas and the five elements.' },
   { key: 'trika', title: 'Kashmir Shaivism', text: 'The Trika: Shiva as free, self-aware consciousness, the 36 tattvas, the four ways of recognition, its teachers from Vasugupta to Abhinavagupta, and how it differs from Advaita.' },
   { key: 'siddhanta', title: 'Shaiva Siddhanta', text: 'Pati, pashu and pasha: Shiva, souls and bonds, the dance of the five acts, the four paths, the 28 Agamas, the Tamil Tirumurai and Meykandar’s twelve sutras.' },
   { key: 'vishishtadvaita', title: 'Vishishtadvaita', text: 'Ramanuja’s qualified non-dualism: the world as the Lord’s body, the five forms of Narayana, bhakti and surrender, the Alvars, and the Vadakalai and Tenkalai schools.' },

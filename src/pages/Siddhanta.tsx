@@ -247,7 +247,7 @@ export default function Siddhanta() {
         <h2>The 36 tattvas, from maya</h2>
         <p className={styles.help}>
           The Siddhanta counts the same 36 tattvas as the Trika, but reads them differently: they are not Shiva unfolding, but products of maya, which Shiva sets in motion.{' '}
-          <a href="#/trika">Compare the Trika’s reading →</a>
+          <a href="#/trika">Compare the Trika’s reading →</a> · <a href="#/tattvas">Every tattva explained →</a>
         </p>
         <div className={styles.tattvas}>
           {siddhantaTattvas.map((t, i) => (

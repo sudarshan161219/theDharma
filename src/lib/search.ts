@@ -3,6 +3,7 @@ import { acharyas, darshanas } from '../data/acharyas';
 import { darshans, nastikas, traditions } from '../data/darshanas';
 import { ksSchools, ksTeachers, ksTexts, tattvaBands, trikaIdeas, upayas } from '../data/trika';
 import { hathaLadder, nathIdeas, nathLineage, nathSites, nathTexts, navnath } from '../data/nath';
+import { counts as tattvaCounts, fiveElements, gunas, tattvas } from '../data/tattvas';
 import { dvIdeas, dvTeachers, haridasas, nineTenets, panchaBheda } from '../data/dvaita';
 import { regions } from '../data/regions';
 import { alvars, fiveForms, kalais, rahasyaTraya, tattvaTraya, vaIdeas, vaPaths, vaTeachers } from '../data/vishishtadvaita';
@@ -505,6 +506,41 @@ const index: Entry[] = [
     to: '#/settings',
     haystack: 'settings preferences theme dark light paper midnight forest saffron high contrast font size text size bigger larger smaller font family typeface weight bold thickness line spacing accessibility',
   },
+  {
+    kind: 'Tattva',
+    title: 'The Tattvas',
+    subtitle: 'The principles of reality: Samkhya’s 25 and the Shaiva 36',
+    to: '#/tattvas',
+    haystack: 'tattva tattvas principles categories 25 36 twenty-five thirty-six samkhya shaiva prakriti purusha gunas elements mahabhuta tanmatra indriya',
+  },
+  ...tattvas.map((x) => ({
+    kind: 'Tattva',
+    title: `${x.name} (${x.shaiva} of 36)`,
+    subtitle: `${x.meaning} · ${x.about.slice(0, 80)}…`,
+    to: `#/tattvas?t=${x.id}`,
+    haystack: [x.name, x.meaning, x.about, 'tattva'].join(' '),
+  })),
+  ...gunas.map((g) => ({
+    kind: 'Tattva',
+    title: `${g.name} (guna)`,
+    subtitle: `${g.nature} · in us: ${g.inUs}`,
+    to: '#/tattvas',
+    haystack: [g.name, g.nature, g.inUs, 'guna gunas sattva rajas tamas'].join(' '),
+  })),
+  ...fiveElements.map((e) => ({
+    kind: 'Tattva',
+    title: `${e.english} (${e.name}), the element`,
+    subtitle: `${e.quality} · ${e.sense} · ${e.chakra} · ${e.dosha}`,
+    to: '#/tattvas',
+    haystack: [e.name, e.english, e.quality, e.sense, e.action, e.chakra, e.dosha, e.temple.name, 'element mahabhuta panchabhuta chakra dosha'].join(' '),
+  })),
+  ...tattvaCounts.map((c) => ({
+    kind: 'Tattva',
+    title: `${c.school}: ${c.count} ${c.count === '1' ? 'reality' : 'realities'}`,
+    subtitle: c.what,
+    to: '#/tattvas',
+    haystack: [c.school, c.what, 'how many tattvas categories padartha'].join(' '),
+  })),
   ...darshanas.map((d) => ({
     kind: 'School',
     title: d.name,

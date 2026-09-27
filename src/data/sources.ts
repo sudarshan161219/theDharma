@@ -580,6 +580,16 @@ export const src = {
   ksShaktiSpanda: { label: 'Shakti in Kashmir Shaivism — Spanda', url: `${WL}/hinduism/essay/shakti-in-kashmir-shaivism-study/d/doc1597886.html` },
   ksPrakashaVimarsha: { label: 'Shaiva Tantra: a way of self-awareness — Light (prakasha) and thinking (vimarsha)', url: `${WL}/hinduism/essay/shaiva-tantra-a-way-of-self-awareness/d/doc1460204.html` },
   tantralokaSanskrit: { label: 'Tantraloka (Sanskrit text)', url: `${WL}/hinduism/book/tantraloka-sanskrit-text` },
+  // ——— Tattvas ———
+  defTattva: { label: 'Tattva — definitions', url: `${WL}/definition/tattva` },
+  conceptTwentyFive: { label: 'Twenty-five tattvas — concept', url: `${WL}/concept/twenty-five-tattvas` },
+  samkhyaTwentyFive: { label: 'Samkhya thoughts in the Mahabharata — The twenty-five tattvas', url: `${WL}/hinduism/essay/samkhya-thoughts-in-the-mahabharata/d/doc1210345.html` },
+  samkhyaTwentyFour: { label: 'Samkhya thoughts in the Mahabharata — The twenty-four tattvas', url: `${WL}/hinduism/essay/samkhya-thoughts-in-the-mahabharata/d/doc1210344.html` },
+  samkhyaThirtyEight: { label: 'Samkhya thoughts in the Mahabharata — The thirty-eight tattvas', url: `${WL}/hinduism/essay/samkhya-thoughts-in-the-mahabharata/d/doc1210347.html` },
+  thirtySixCidvilasa: { label: 'Cidvilasastava — The thirty-six tattvas (appendix)', url: `${WL}/hinduism/book/cidvilasastava-by-amrtananda/d/doc1546857.html` },
+  taittiriya: { label: 'Taittiriya Upanishad (English translation)', url: `${WL}/hinduism/book/the-taittiriya-upanishad` },
+  taittiriyaVartika2_1: { label: 'Taittiriya Upanishad 2.1, with Sureshvara’s Vartika', url: `${WL}/hinduism/book/taittiriya-vartika/d/doc1204503.html` },
+  charakaCategories: { label: 'Philosophy of the Charaka Samhita — Fundamental categories (padartha or tattva)', url: `${WL}/hinduism/essay/philosophy-of-charaka-samhita/d/doc369659.html` },
   // ——— Nath yogis ———
   conceptNath: { label: 'Nath sampradaya — concept', url: `${WL}/concept/nath-sampradaya` },
   defNathaSampradaya: { label: 'Natha-sampradaya — definitions', url: `${WL}/definition/nathasampradaya` },

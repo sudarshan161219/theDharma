@@ -169,7 +169,7 @@ export default function Trika() {
         <p className={styles.help}>
           Samkhya counts 25 principles, from purusha down to earth. The Trika keeps all 25 and places 11 above them: how the one consciousness narrows itself into a
           limited subject facing a separate world.{' '}
-          <a href="#/darshanas?d=samkhya">Compare Samkhya’s 25 →</a>
+          <a href="#/darshanas?d=samkhya">Compare Samkhya’s 25 →</a> · <a href="#/tattvas">Every tattva explained →</a>
         </p>
         <div className={styles.tattvas}>
           {tattvaBands.map((b) => (
