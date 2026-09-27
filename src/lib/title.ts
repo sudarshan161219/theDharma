@@ -31,6 +31,7 @@ export const SECTION_TITLES: Record<string, string> = {
   chandas: 'Chandas',
   glossary: 'Definitions',
   search: 'Search',
+  settings: 'Settings',
 };
 
 /** Set the document title to “<title> · theDharma”, or the site name alone; `null` leaves it to a child page. */

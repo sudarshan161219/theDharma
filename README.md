@@ -54,6 +54,7 @@ Link previews use `public/og.png` (1200 × 630). Most crawlers want an absolute 
 | `src/data/regions.ts` | Seventeen regions, from Kashmir to Kerala: old names, philosophy, saints and scholars, texts, deities, traditions, languages, scripts and sacred sites with coordinates (linked to Sacred Places and Kuladevata where they overlap). Shown at `#/regions` with a map |
 | `src/data/chandas.ts` + `src/lib/prosody.ts` | The Anushtubh (shloka) metre: weight rules, the 4 × 8 template, ganas, examples; plus a scanner that syllabifies IAST or Devanagari, marks laghu/guru and checks the classical rules. Shown at `#/chandas` |
 | `src/lib/time.ts` | "Where are we now" maths (Kali and kalpa years elapsed) |
+| `src/lib/prefs.ts` | Reader settings: seven themes, text size, text/heading/Devanagari fonts, text and heading thickness, line spacing. Kept in localStorage, applied as `data-theme` and CSS variables on `<html>` (an inline script in `index.html` applies them before the first paint). Chosen at `#/settings` |
 
 ## Adding a scripture
 

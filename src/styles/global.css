@@ -61,6 +61,86 @@
   color-scheme: light;
 }
 
+/* Midnight: a deep blue night sky, with lamp-light amber. */
+:root[data-theme='midnight'] {
+  --bg: #0a0f1f;
+  --surface: #10172b;
+  --surface-2: #182141;
+  --text: #e6e9f5;
+  --muted: #9aa3c2;
+  --line: #232d4f;
+  --accent: #f2b35e;
+  --accent-soft: #2b2412;
+  --gold: #e8c46a;
+  --gold-soft: #262112;
+  --indigo: #a9b8ff;
+  --indigo-soft: #1a2350;
+  --jade: #62d1a8;
+  --shadow: none;
+  color-scheme: dark;
+}
+
+/* Forest: dark green, like a grove at dusk. */
+:root[data-theme='forest'] {
+  --bg: #0b130e;
+  --surface: #101a14;
+  --surface-2: #17261d;
+  --text: #e5ede3;
+  --muted: #9fb2a3;
+  --line: #22362a;
+  --accent: #e3a64f;
+  --accent-soft: #2a2010;
+  --gold: #d8c06a;
+  --gold-soft: #232010;
+  --indigo: #9fb8e8;
+  --indigo-soft: #172234;
+  --jade: #6fd49e;
+  --shadow: none;
+  color-scheme: dark;
+}
+
+/* Saffron: bright white with saffron and deep red. */
+:root[data-theme='saffron'] {
+  --bg: #fff8ee;
+  --surface: #ffffff;
+  --surface-2: #fdebd3;
+  --text: #2a170a;
+  --muted: #7a5a40;
+  --line: #f0d9bb;
+  --accent: #c2410c;
+  --accent-soft: #fde2cf;
+  --gold: #a16207;
+  --gold-soft: #fbefcf;
+  --indigo: #1e3a8a;
+  --indigo-soft: #e0e7fb;
+  --jade: #15803d;
+  --shadow: 0 1px 2px rgb(120 60 10 / 0.06), 0 6px 20px rgb(120 60 10 / 0.06);
+  color-scheme: light;
+}
+
+/* High contrast: white on black, yellow for links and highlights. */
+:root[data-theme='contrast'] {
+  --bg: #000000;
+  --surface: #0a0a0a;
+  --surface-2: #1a1a1a;
+  --text: #ffffff;
+  --muted: #d6d6d6;
+  --line: #6b6b6b;
+  --accent: #ffd400;
+  --accent-soft: #332b00;
+  --gold: #ffd400;
+  --gold-soft: #2b2400;
+  --indigo: #9ec1ff;
+  --indigo-soft: #0f1f3d;
+  --jade: #5cffa1;
+  --shadow: none;
+  color-scheme: dark;
+}
+
+:root[data-theme='contrast'] :focus-visible {
+  outline-width: 3px;
+}
+
 /* A faint paper grain behind everything. */
 :root[data-theme='paper'] body {
   background-image:
@@ -80,8 +160,10 @@
   box-sizing: border-box;
 }
 
+/* Text size, weight and line spacing come from the reader’s settings (see src/lib/prefs.ts). */
 html {
   -webkit-text-size-adjust: 100%;
+  font-size: calc(100% * var(--font-scale, 1));
 }
 
 body {
@@ -89,15 +171,16 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 1rem;
+  font-weight: var(--font-weight, 400);
+  line-height: var(--leading, 1.6);
 }
 
 h1,
 h2,
 h3 {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: var(--heading-weight, 600);
   line-height: 1.15;
   margin: 0 0 0.4em;
   text-wrap: balance;

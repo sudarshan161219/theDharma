@@ -498,6 +498,13 @@ const index: Entry[] = [
     to: `#/nath?p=${x.id}`,
     haystack: [x.name, x.state, x.note, 'nath math monastery shrine'].join(' '),
   })),
+  {
+    kind: 'Settings',
+    title: 'Settings: theme, text size and fonts',
+    subtitle: 'Seven themes, five text sizes, text, heading and Sanskrit fonts, thickness and line spacing',
+    to: '#/settings',
+    haystack: 'settings preferences theme dark light paper midnight forest saffron high contrast font size text size bigger larger smaller font family typeface weight bold thickness line spacing accessibility',
+  },
   ...darshanas.map((d) => ({
     kind: 'School',
     title: d.name,

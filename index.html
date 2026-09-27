@@ -32,6 +32,33 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=Noto+Serif+Devanagari:wght@500&display=swap"
       rel="stylesheet"
     />
+    <!-- Apply the reader's saved theme and text settings before the first paint (see src/lib/prefs.ts). -->
+    <script>
+      try {
+        var r = document.documentElement;
+        var a = JSON.parse(localStorage.getItem('prefs-applied') || 'null');
+        if (a) {
+          r.dataset.theme = a.theme;
+          r.dataset.scheme = a.scheme;
+          for (var k in a.vars) r.style.setProperty(k, a.vars[k]);
+          if (a.fonts) {
+            var l = document.createElement('link');
+            l.id = 'pref-fonts';
+            l.rel = 'stylesheet';
+            l.href = a.fonts;
+            document.head.appendChild(l);
+          }
+          var m = document.querySelector('meta[name="theme-color"]');
+          if (m && a.color) m.setAttribute('content', a.color);
+        } else {
+          var t = localStorage.getItem('theme');
+          if (t) {
+            r.dataset.theme = t;
+            r.dataset.scheme = t === 'dark' ? 'dark' : 'light';
+          }
+        }
+      } catch (e) {}
+    </script>
     <!-- Cloudflare Web Analytics -->
     <script
       type="module"

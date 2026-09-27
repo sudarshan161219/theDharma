@@ -8,6 +8,7 @@ import {
   type ReactNode,
 } from "react";
 import { href, navigate } from "../lib/router";
+import { setPrefs, THEMES, usePrefs } from "../lib/prefs";
 import styles from "./Layout.module.css";
 
 const NAV = [
@@ -68,6 +69,13 @@ const ICONS: Record<string, ReactNode> = {
       <path d="M16 14.2c2.8.4 5 2.8 5 5.8" />
     </>
   ),
+  gear: (
+    <>
+      <circle cx="12" cy="12" r="3.2" />
+      <path d="M12 2.8v2.6M12 18.6v2.6M21.2 12h-2.6M5.4 12H2.8M18.5 5.5l-1.8 1.8M7.3 16.7l-1.8 1.8M18.5 18.5l-1.8-1.8M7.3 7.3 5.5 5.5" />
+      <circle cx="12" cy="12" r="6.6" />
+    </>
+  ),
   pin: (
     <>
       <path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" />
@@ -96,14 +104,6 @@ const NAV_GROUPS: { label: string; icon: string; keys: string[] }[] = [
 
 const LABELS = Object.fromEntries(NAV.map((n) => [n.key, n.label]));
 
-type Theme = "dark" | "light" | "paper";
-
-/** The toggle cycles through these, in order. */
-const THEMES: { id: Theme; icon: string; label: string }[] = [
-  { id: "dark", icon: "☾", label: "Dark" },
-  { id: "light", icon: "☀", label: "Light" },
-  { id: "paper", icon: "✒", label: "Paper ink" },
-];
 
 /**
  * Horizontally scrollable section nav: arrow buttons appear when there is more
@@ -351,16 +351,6 @@ function readCollapsed(): boolean {
   }
 }
 
-/** Dark (pitch black) is the default; light and paper ink are opt-in and remembered. */
-function readTheme(): Theme {
-  try {
-    const t = localStorage.getItem("theme");
-    return t === "light" || t === "paper" ? t : "dark";
-  } catch {
-    return "dark";
-  }
-}
-
 export default function Layout({
   active,
   children,
@@ -369,7 +359,7 @@ export default function Layout({
   children: ReactNode;
 }) {
   const [q, setQ] = useState("");
-  const [theme, setTheme] = useState<Theme>(readTheme);
+  const { theme } = usePrefs();
   const [collapsed, setCollapsed] = useState(readCollapsed);
   const header = useRef<HTMLElement>(null);
   const shell = useRef<HTMLDivElement>(null);
@@ -382,15 +372,6 @@ export default function Layout({
     ro.observe(h);
     return () => ro.disconnect();
   }, []);
-
-  useEffect(() => {
-    document.documentElement.dataset.theme = theme;
-    try {
-      localStorage.setItem("theme", theme);
-    } catch {
-      /* storage unavailable */
-    }
-  }, [theme]);
 
   useEffect(() => {
     try {
@@ -432,12 +413,21 @@ export default function Layout({
           </form>
           <button
             className={styles.theme}
-            onClick={() => setTheme(next.id)}
+            onClick={() => setPrefs({ theme: next.id })}
             aria-label={`Theme: ${THEMES[current].label}. Switch to ${next.label}`}
             title={`Theme: ${THEMES[current].label} — click for ${next.label}`}
           >
             {THEMES[current].icon}
           </button>
+          <a
+            href={href("settings")}
+            className={`${styles.theme} ${styles.settings} ${active === "settings" ? styles.settingsOn : ""}`}
+            aria-label="Settings: theme, text size and fonts"
+            title="Settings: theme, text size and fonts"
+            aria-current={active === "settings" ? "page" : undefined}
+          >
+            <Icon name="gear" />
+          </a>
         </div>
         <NavScroller active={active} />
       </header>

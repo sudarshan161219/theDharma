@@ -36,8 +36,8 @@
   border-color: var(--line);
 }
 
-/* Dark theme: invert the light OSM tiles so the map sits in the black page. */
-:global(:root:not([data-theme='light']):not([data-theme='paper'])) .map :global(.leaflet-tile-pane) {
+/* Dark themes: invert the light OSM tiles so the map sits in the dark page. */
+:global(:root:not([data-scheme='light'])) .map :global(.leaflet-tile-pane) {
   filter: invert(1) hue-rotate(180deg) brightness(0.85) contrast(0.9) saturate(0.6);
 }
 

@@ -78,6 +78,23 @@
   cursor: pointer;
 }
 
+.settings {
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+}
+
+.settings:hover,
+.settingsOn {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.settings .icon {
+  width: 19px;
+  height: 19px;
+}
+
 .navWrap {
   position: relative;
   max-width: var(--max);
@@ -224,8 +241,11 @@
     flex-basis: 100%;
     max-width: none;
   }
-  .theme {
+  .theme:not(.settings) {
     margin-left: auto;
+  }
+  .bar {
+    gap: 10px 12px;
   }
 }
 

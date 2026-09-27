@@ -31,6 +31,7 @@ const Places = lazy(() => import('./pages/Places'));
 const ScriptureDetail = lazy(() => import('./pages/ScriptureDetail'));
 const Scriptures = lazy(() => import('./pages/Scriptures'));
 const Search = lazy(() => import('./pages/Search'));
+const Settings = lazy(() => import('./pages/Settings'));
 const Siddhanta = lazy(() => import('./pages/Siddhanta'));
 const Trika = lazy(() => import('./pages/Trika'));
 const Vishishtadvaita = lazy(() => import('./pages/Vishishtadvaita'));
@@ -72,6 +73,9 @@ export default function App() {
       break;
     case 'vishishtadvaita':
       page = <Vishishtadvaita />;
+      break;
+    case 'settings':
+      page = <Settings />;
       break;
     case 'nath':
       page = <Nath route={route} />;
