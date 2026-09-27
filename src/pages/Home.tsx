@@ -46,6 +46,7 @@ const SECTIONS = [
   { key: 'siddhanta', title: 'Shaiva Siddhanta', text: 'Pati, pashu and pasha: Shiva, souls and bonds, the dance of the five acts, the four paths, the 28 Agamas, the Tamil Tirumurai and Meykandar’s twelve sutras.' },
   { key: 'vishishtadvaita', title: 'Vishishtadvaita', text: 'Ramanuja’s qualified non-dualism: the world as the Lord’s body, the five forms of Narayana, bhakti and surrender, the Alvars, and the Vadakalai and Tenkalai schools.' },
   { key: 'dvaita', title: 'Dvaita', text: 'Madhva’s Tattvavada: Vishnu alone independent, the five real differences, the gradation of souls, devotion and grace, Udupi and the Haridasas.' },
+  { key: 'nath', title: 'The Nath Yogis', text: 'Matsyendranath and Gorakhnath, the nine Naths, the body as the path, hatha yoga step by step, the split-ear yogis’ marks, and their monasteries on a map.' },
   { key: 'dharma', title: 'Life & Dharma', text: 'The four aims and four stages of life, the sixteen samskaras from conception to cremation, and the five daily offerings.' },
   { key: 'places', title: 'Sacred Places', text: 'Jyotirlingas, Shakti Peethas, Char Dham, the seven liberating cities, the Kumbh sites and more, on a map.' },
   { key: 'regions', title: 'Regions of Dharma', text: 'Kashmir to Kerala: what each region gave in philosophy, saints, scriptures, deities, festivals, languages and scripts, with its sacred sites on a map.' },

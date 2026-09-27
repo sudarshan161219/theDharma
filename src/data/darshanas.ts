@@ -738,6 +738,7 @@ export const traditions: Tradition[] = [
         centres: 'Gorakhpur, Nepal, Rajasthan',
         practice: 'Hatha yoga; yogis wear large earrings through split ears (Kanphata)',
         about: 'The nine Naths and 84 Siddhas are the founders of hatha yoga as a system.',
+        more: { label: 'The Nath yogis in depth: the nine Naths, the teaching, hatha yoga and the monasteries', to: '#/nath' },
         sources: [defn('gorakhnath', 'Gorakhnath'), defn('natha', 'Natha')],
       },
       {

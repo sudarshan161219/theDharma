@@ -30,6 +30,7 @@ const NAV = [
   { key: "siddhanta", label: "Shaiva Siddhanta" },
   { key: "vishishtadvaita", label: "Vishishtadvaita" },
   { key: "dvaita", label: "Dvaita" },
+  { key: "nath", label: "Nath Yogis" },
   { key: "dharma", label: "Life & Dharma" },
   { key: "places", label: "Sacred Places" },
   { key: "regions", label: "Regions" },
@@ -88,7 +89,7 @@ const NAV_GROUPS: { label: string; icon: string; keys: string[] }[] = [
   { label: "Texts", icon: "book", keys: ["scriptures", "vedas", "chandas", "glossary"] },
   { label: "Time", icon: "clock", keys: ["time", "calendar", "manvantaras", "dynasties", "vyasas"] },
   { label: "The Divine", icon: "flame", keys: ["devas", "forms", "epithets", "avatars"] },
-  { label: "Philosophy", icon: "eye", keys: ["darshanas", "trika", "siddhanta", "vishishtadvaita", "dvaita"] },
+  { label: "Philosophy", icon: "eye", keys: ["darshanas", "trika", "siddhanta", "vishishtadvaita", "dvaita", "nath"] },
   { label: "People & lineage", icon: "people", keys: ["people", "acharyas", "gotra", "kuladevata"] },
   { label: "Life & places", icon: "pin", keys: ["dharma", "places", "regions"] },
 ];

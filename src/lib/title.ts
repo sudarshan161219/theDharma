@@ -23,6 +23,7 @@ export const SECTION_TITLES: Record<string, string> = {
   siddhanta: 'Shaiva Siddhanta',
   vishishtadvaita: 'Vishishtadvaita',
   dvaita: 'Dvaita',
+  nath: 'The Nath Yogis',
   regions: 'Regions of Dharma',
   dharma: 'Life & Dharma',
   places: 'Sacred Places',

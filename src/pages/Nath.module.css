@@ -1,0 +1,242 @@
+/* The Nath page uses Theology.module.css for most of its look; these are its own pieces. */
+
+.lineage {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lineage li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 14px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--accent) calc(16% - var(--i, 0) * 1%), var(--surface));
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+}
+
+.lineage li:first-child {
+  border-top-color: var(--gold);
+  background: var(--gold-soft);
+}
+
+.lineage li:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  top: 50%;
+  right: -19px;
+  transform: translateY(-50%);
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.lineage b {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+.lineage :global(.deva) {
+  font-size: 0.85rem;
+  color: var(--gold);
+}
+
+.lineage small {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.stories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 12px;
+}
+
+.stories article {
+  padding: 16px 18px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--gold);
+}
+
+.stories h3 {
+  margin: 0 0 6px;
+  font-size: 1.2rem;
+}
+
+.stories p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.mapRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  scroll-margin-top: 124px;
+}
+
+.siteList {
+  position: relative;
+  display: grid;
+  gap: 4px;
+  max-height: min(62vh, 560px);
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.siteList a {
+  display: flex;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.siteList a:hover {
+  border-color: var(--jade);
+}
+
+.siteList a.on {
+  border-color: var(--jade);
+  background: color-mix(in srgb, var(--jade) 12%, var(--surface));
+}
+
+.n {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--jade);
+  color: var(--bg);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.siteList a > span:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.siteList b {
+  font-size: 0.92rem;
+}
+
+.siteList small {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.siteList em {
+  margin-top: 4px;
+  font-style: normal;
+  font-size: 0.86rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+  gap: 12px;
+}
+
+.art {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+}
+
+.frame {
+  display: block;
+  height: 240px;
+  padding: 8px;
+  background: radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--gold) 8%, var(--surface-2)), var(--surface-2) 70%);
+}
+
+.frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.art figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px 12px;
+  border-top: 1px solid var(--line);
+}
+
+.art figcaption b {
+  font-size: 0.88rem;
+  line-height: 1.3;
+}
+
+.art figcaption span {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--gold);
+}
+
+.art figcaption small {
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+
+.art figcaption a {
+  text-decoration: none;
+}
+
+@media (max-width: 1200px) {
+  .lineage {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .lineage li:nth-child(3)::after {
+    content: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .mapRow {
+    grid-template-columns: 1fr;
+  }
+  .siteList {
+    max-height: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .lineage {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .lineage li:not(:last-child)::after,
+  .lineage li:nth-child(3)::after {
+    content: '↓';
+    top: auto;
+    right: auto;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

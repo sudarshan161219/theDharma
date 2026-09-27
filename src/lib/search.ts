@@ -2,6 +2,7 @@ import { manvantaras, vyasas, yugas } from '../data/cosmos';
 import { acharyas, darshanas } from '../data/acharyas';
 import { darshans, nastikas, traditions } from '../data/darshanas';
 import { ksSchools, ksTeachers, ksTexts, tattvaBands, trikaIdeas, upayas } from '../data/trika';
+import { hathaLadder, nathIdeas, nathLineage, nathSites, nathTexts, navnath } from '../data/nath';
 import { dvIdeas, dvTeachers, haridasas, nineTenets, panchaBheda } from '../data/dvaita';
 import { regions } from '../data/regions';
 import { alvars, fiveForms, kalais, rahasyaTraya, tattvaTraya, vaIdeas, vaPaths, vaTeachers } from '../data/vishishtadvaita';
@@ -470,6 +471,33 @@ const index: Entry[] = [
       haystack: [st.name, st.note, r.name, 'site temple shrine place'].join(' '),
     })),
   ]),
+  {
+    kind: 'Nath yogis',
+    title: 'The Nath Yogis',
+    subtitle: 'The Shaiva yogi order of Matsyendranath and Gorakhnath, founders of hatha yoga',
+    to: '#/nath',
+    haystack: 'nath natha yogi jogi kanphata siddha gorakhnath gorakshanatha matsyendranath machhindranath navnath nine naths hatha yoga kundalini adesh',
+  },
+  ...[
+    ...nathLineage.map((x) => ({ name: x.name, about: x.note })),
+    ...navnath.map((x) => ({ name: x.name, about: `${x.also} · one of the nine Naths · ${x.note}` })),
+    ...nathIdeas.map((x) => ({ name: x.term, about: `${x.meaning}. ${x.about}` })),
+    ...hathaLadder.map((x) => ({ name: x.name, about: `${x.about} ${(x.items ?? []).join(', ')}` })),
+    ...nathTexts.map((x) => ({ name: x.name, about: x.about })),
+  ].map((x) => ({
+    kind: 'Nath yogis',
+    title: x.name,
+    subtitle: x.about.slice(0, 110),
+    to: '#/nath',
+    haystack: [x.name, x.about, 'nath yogi hatha'].join(' '),
+  })),
+  ...nathSites.map((x) => ({
+    kind: 'Nath yogis',
+    title: x.name,
+    subtitle: `${x.state} · ${x.note}`,
+    to: `#/nath?p=${x.id}`,
+    haystack: [x.name, x.state, x.note, 'nath math monastery shrine'].join(' '),
+  })),
   ...darshanas.map((d) => ({
     kind: 'School',
     title: d.name,

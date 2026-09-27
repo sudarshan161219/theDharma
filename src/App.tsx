@@ -22,6 +22,7 @@ const Glossary = lazy(() => import('./pages/Glossary'));
 const Gotra = lazy(() => import('./pages/Gotra'));
 const Kuladevata = lazy(() => import('./pages/Kuladevata'));
 const Dvaita = lazy(() => import('./pages/Dvaita'));
+const Nath = lazy(() => import('./pages/Nath'));
 const Regions = lazy(() => import('./pages/Regions'));
 const Manvantaras = lazy(() => import('./pages/Manvantaras'));
 const People = lazy(() => import('./pages/People'));
@@ -71,6 +72,9 @@ export default function App() {
       break;
     case 'vishishtadvaita':
       page = <Vishishtadvaita />;
+      break;
+    case 'nath':
+      page = <Nath route={route} />;
       break;
     case 'dvaita':
       page = <Dvaita />;
