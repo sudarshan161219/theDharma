@@ -1,6 +1,58 @@
+/* The hero: text on the left, Shiva on the right, fading into the page on every side. */
 .hero {
-  max-width: 780px;
+  position: relative;
+  isolation: isolate;
+  min-height: 440px;
   margin: 16px 0 48px;
+  padding-right: min(34%, 380px);
+}
+
+.hero > :not(.heroArt) {
+  position: relative;
+  max-width: 780px;
+}
+
+.heroArt {
+  position: absolute;
+  z-index: -1;
+  top: -48px;
+  right: -16px;
+  bottom: -40px;
+  width: min(52%, 560px);
+  background-position: 50% 18%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Soft edges: fully visible around the face, gone at the borders, and fading out towards the text. */
+  -webkit-mask-image:
+    radial-gradient(ellipse 62% 66% at 58% 40%, #000 38%, transparent 76%),
+    linear-gradient(to right, transparent, #000 38%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    radial-gradient(ellipse 62% 66% at 58% 40%, #000 38%, transparent 76%),
+    linear-gradient(to right, transparent, #000 38%);
+  mask-composite: intersect;
+  opacity: 0.92;
+  animation: heroArtIn 1.4s ease-out both;
+}
+
+/* On the light themes it reads as a faint sepia print instead of a dark photograph. */
+:global(:root[data-scheme='light']) .heroArt {
+  opacity: 0.3;
+  filter: sepia(0.5) contrast(1.15);
+  mix-blend-mode: multiply;
+}
+
+@keyframes heroArtIn {
+  from {
+    opacity: 0;
+    transform: scale(1.03);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroArt {
+    animation: none;
+  }
 }
 
 .hero h1 {
@@ -152,6 +204,22 @@
 }
 
 @media (max-width: 860px) {
+  .hero {
+    min-height: 0;
+    padding-right: 0;
+  }
+  /* On narrow screens Shiva sits behind the text as a quiet backdrop. */
+  .heroArt {
+    top: -40px;
+    right: -16px;
+    bottom: auto;
+    width: 78%;
+    height: 420px;
+    opacity: 0.3;
+  }
+  :global(:root[data-scheme='light']) .heroArt {
+    opacity: 0.16;
+  }
   .steps {
     grid-template-columns: 1fr;
   }

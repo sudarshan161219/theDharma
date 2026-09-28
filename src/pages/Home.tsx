@@ -3,6 +3,7 @@ import { NEXT_VYASA } from '../data/cosmos';
 import { href } from '../lib/router';
 import { fmt, kaliElapsed, kalpaElapsed } from '../lib/time';
 import styles from './Home.module.css';
+import shiva from '../assets/shiva.webp';
 
 const QUICK: { q: string; a: string; to: string }[] = [
   { q: 'Who composed the Shiva Purana?', a: 'Krishna Dvaipayana Vyasa, abridging a 1,00,000-verse original to 24,000 verses in 7 samhitas.', to: href('scriptures', 'shiva-purana') },
@@ -70,6 +71,7 @@ export default function Home() {
   return (
     <>
       <section className={styles.hero}>
+        <div className={styles.heroArt} style={{ backgroundImage: `url(${shiva})` }} aria-hidden="true" />
         <p className={styles.eyebrow}>Hindu scriptures, made easy to grasp</p>
         <h1>
           Who wrote it, who is <em>telling</em>, who is <em>listening</em> — and when are we?
