@@ -6,7 +6,7 @@ import { Chip, Evidence, PageHeader, Sources } from '../components/ui';
 import PlacesMap from '../components/PlacesMap';
 import styles from './Places.module.css';
 
-type Show = 'all' | 'jyotirlinga' | 'shakti' | 'tirtha';
+type Show = 'all' | 'jyotirlinga' | 'shakti' | 'tirtha' | 'abroad';
 
 const kindLabel = (p: Place) => (p.kind === 'jyotirlinga' ? 'Jyotirlinga' : p.kind === 'shakti' ? 'Shakti Peetha' : 'Tirtha');
 const itemTone = (p: Place) => (p.kind === 'jyotirlinga' ? 'itemJ' : p.kind === 'shakti' ? 'itemS' : 'itemT');
@@ -44,6 +44,18 @@ function Detail({ p }: { p: Place }) {
           <div>
             <dt>Part of Sati (per tradition)</dt>
             <dd>{p.bodyPart}</dd>
+          </div>
+        )}
+        {p.bhairava && (
+          <div>
+            <dt>Devi and her Bhairava</dt>
+            <dd>{p.bhairava}</dd>
+          </div>
+        )}
+        {p.country && (
+          <div>
+            <dt>Country today</dt>
+            <dd>{p.country}</dd>
           </div>
         )}
       </dl>
@@ -88,13 +100,13 @@ function Detail({ p }: { p: Place }) {
   );
 }
 
-function PlaceList({ items, selected }: { items: Place[]; selected: string | null }) {
+function PlaceList({ items, selected, show }: { items: Place[]; selected: string | null; show?: Show }) {
   return (
     <ol className={styles.list}>
       {items.map((p) => (
         <li key={p.id}>
           <a
-            href={`#/places?p=${p.id}`}
+            href={`#/places?${show && show !== 'all' ? `show=${show}&` : ''}p=${p.id}`}
             className={`${styles.item} ${styles[itemTone(p)]} ${selected === p.id ? styles.itemOn : ''}`}
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
@@ -113,6 +125,38 @@ function PlaceList({ items, selected }: { items: Place[]; selected: string | nul
   );
 }
 
+/** Shakti Peethas that lie outside present-day India, grouped by the country they are in today. */
+const abroad = [...shaktiPeethas, ...otherPeethas].filter((p) => p.country);
+const COUNTRIES = ['Pakistan', 'Pakistan-administered Kashmir', 'Nepal', 'Tibet (China)', 'Bangladesh', 'Sri Lanka'];
+
+function Abroad({ selected, show }: { selected: string | null; show: Show }) {
+  return (
+    <>
+      <h3 className={styles.sub} id="beyond-india">
+        Beyond today’s India
+      </h3>
+      <p className={styles.help}>
+        The pithas were named long before today’s borders, across the whole of old Bharatavarsha. {abroad.length} of the seats here lie outside present-day India, from
+        Hinglaj in Balochistan to Manasarovar in Tibet and Nainativu in Sri Lanka. Several are hard to reach, and a few identifications are traditional or disputed; the
+        Devi and Bhairava named are those of the common 51-pitha list.
+      </p>
+      <div className={styles.abroad}>
+        {COUNTRIES.map((c) => {
+          const items = abroad.filter((p) => p.country === c);
+          return items.length ? (
+            <div key={c}>
+              <h4>
+                {c} <span>{items.length}</span>
+              </h4>
+              <PlaceList items={items} selected={selected} show={show} />
+            </div>
+          ) : null;
+        })}
+      </div>
+    </>
+  );
+}
+
 export default function Places({ route }: { route: Route }) {
   const show = (route.query.get('show') as Show) || 'all';
   const selected = route.query.get('p');
@@ -122,6 +166,7 @@ export default function Places({ route }: { route: Route }) {
     if (show === 'jyotirlinga') return jyotirlingas;
     if (show === 'shakti') return [...shaktiPeethas, ...otherPeethas];
     if (show === 'tirtha') return tirthas;
+    if (show === 'abroad') return abroad;
     return [...jyotirlingas, ...shaktiPeethas, ...otherPeethas, ...tirthas];
   }, [show]);
 
@@ -142,6 +187,7 @@ export default function Places({ route }: { route: Route }) {
             ['jyotirlinga', '12 Jyotirlingas'],
             ['shakti', 'Shakti Peethas'],
             ['tirtha', 'Pilgrimage circuits'],
+            ['abroad', 'Pithas beyond India'],
           ] as [Show, string][]
         ).map(([k, label]) => (
           <button key={k} onClick={() => setShow(k)} className={show === k ? styles.on : undefined} aria-pressed={show === k}>
@@ -203,10 +249,12 @@ export default function Places({ route }: { route: Route }) {
             From the Ashtadasha Shakti Peetha Stotra, attributed to Adi Shankaracharya: “Lanke Shankari devi, Kamakshi Kanchika pure…”. The body parts follow popular
             tradition, and sources differ.
           </p>
-          <PlaceList items={shaktiPeethas} selected={selected} />
+          <PlaceList items={shaktiPeethas} selected={selected} show={show} />
 
           <h3 className={styles.sub}>Other great seats from the 51-pitha lists</h3>
-          <PlaceList items={otherPeethas} selected={selected} />
+          <PlaceList items={otherPeethas.filter((p) => !p.country)} selected={selected} show={show} />
+
+          <Abroad selected={selected} show={show} />
 
           <h3 className={styles.sub}>The four primary pithas (Kalika Purana & Kaula tradition)</h3>
           <ul className={styles.kaula}>
@@ -218,6 +266,16 @@ export default function Places({ route }: { route: Route }) {
               </li>
             ))}
           </ul>
+        </section>
+      )}
+
+      {show === 'abroad' && (
+        <section className={styles.section}>
+          <h2>Shakti Peethas beyond India</h2>
+          <Abroad selected={selected} show={show} />
+          <p className={styles.help}>
+            <a href="#/places?show=shakti">All the Shakti Peethas →</a>
+          </p>
         </section>
       )}
 
