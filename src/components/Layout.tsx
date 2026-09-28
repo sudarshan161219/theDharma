@@ -25,6 +25,7 @@ const NAV = [
   { key: "epithets", label: "Epithets" },
   { key: "gotra", label: "Gotras" },
   { key: "avatars", label: "Avatars" },
+  { key: "yoginis", label: "Yoginis" },
   { key: "acharyas", label: "Acharyas" },
   { key: "darshanas", label: "Darshanas" },
   { key: "tattvas", label: "Tattvas" },
@@ -97,7 +98,7 @@ function Icon({ name }: { name: string }) {
 const NAV_GROUPS: { label: string; icon: string; keys: string[] }[] = [
   { label: "Texts", icon: "book", keys: ["scriptures", "vedas", "chandas", "glossary"] },
   { label: "Time", icon: "clock", keys: ["time", "calendar", "manvantaras", "dynasties", "vyasas"] },
-  { label: "The Divine", icon: "flame", keys: ["devas", "forms", "epithets", "avatars"] },
+  { label: "The Divine", icon: "flame", keys: ["devas", "forms", "epithets", "avatars", "yoginis"] },
   { label: "Philosophy", icon: "eye", keys: ["darshanas", "tattvas", "trika", "siddhanta", "vishishtadvaita", "dvaita", "nath"] },
   { label: "People & lineage", icon: "people", keys: ["people", "acharyas", "gotra", "kuladevata"] },
   { label: "Life & places", icon: "pin", keys: ["dharma", "places", "regions"] },

@@ -19,9 +19,6 @@
   right: -16px;
   bottom: -40px;
   width: min(52%, 560px);
-  background-position: 50% 18%;
-  background-repeat: no-repeat;
-  background-size: cover;
   /* Soft edges: fully visible around the face, gone at the borders, and fading out towards the text. */
   -webkit-mask-image:
     radial-gradient(ellipse 62% 66% at 58% 40%, #000 38%, transparent 76%),
@@ -42,6 +39,25 @@
   mix-blend-mode: multiply;
 }
 
+/*
+ * Each image is a layer. The new one fades in on top; the old one waits
+ * until it is covered before fading out, so the hero never dips to dark.
+ */
+.heroLayer {
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 1s linear 3s;
+}
+
+.heroLayerOn {
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 3s ease-in-out;
+}
+
 @keyframes heroArtIn {
   from {
     opacity: 0;
@@ -52,6 +68,9 @@
 @media (prefers-reduced-motion: reduce) {
   .heroArt {
     animation: none;
+  }
+  .heroLayer {
+    transition: none;
   }
 }
 

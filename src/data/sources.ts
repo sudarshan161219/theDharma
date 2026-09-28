@@ -580,6 +580,14 @@ export const src = {
   ksShaktiSpanda: { label: 'Shakti in Kashmir Shaivism — Spanda', url: `${WL}/hinduism/essay/shakti-in-kashmir-shaivism-study/d/doc1597886.html` },
   ksPrakashaVimarsha: { label: 'Shaiva Tantra: a way of self-awareness — Light (prakasha) and thinking (vimarsha)', url: `${WL}/hinduism/essay/shaiva-tantra-a-way-of-self-awareness/d/doc1460204.html` },
   tantralokaSanskrit: { label: 'Tantraloka (Sanskrit text)', url: `${WL}/hinduism/book/tantraloka-sanskrit-text` },
+  // ——— Yoginis ———
+  skandaYoginis: { label: 'Skanda Purana, Kashi Khanda 45 — The arrival of the sixty-four Yoginis', url: `${WL}/hinduism/book/the-skanda-purana/d/doc423783.html` },
+  yoginisAppendix: { label: 'Devi: tantra, mantra and yantra (study) — The sixty-four Yoginis', url: `${WL}/hinduism/essay/devi-tantra-mantra-yantra-study/d/doc1474199.html` },
+  yoginisWorship: { label: 'Devi: tantra, mantra and yantra (study) — Description and worship of the Yoginis', url: `${WL}/hinduism/essay/devi-tantra-mantra-yantra-study/d/doc1474166.html` },
+  defYogini: { label: 'Yogini — definitions', url: `${WL}/definition/yogini` },
+  defYoginidasha: { label: 'Yoginidasha — definitions', url: `${WL}/definition/yoginidasha` },
+  defCatuhshashti: { label: 'Catuhshashti (“sixty-four”) — definitions', url: `${WL}/definition/catuhshashti` },
+  conceptHypaethral: { label: 'Hypaethral temple — concept', url: `${WL}/concept/hypaethral-temple` },
   // ——— Tattvas ———
   defTattva: { label: 'Tattva — definitions', url: `${WL}/definition/tattva` },
   conceptTwentyFive: { label: 'Twenty-five tattvas — concept', url: `${WL}/concept/twenty-five-tattvas` },

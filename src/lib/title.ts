@@ -20,6 +20,7 @@ export const SECTION_TITLES: Record<string, string> = {
   acharyas: 'Acharyas',
   darshanas: 'Darshanas & Sampradayas',
   tattvas: 'The Tattvas',
+  yoginis: 'The Yoginis',
   trika: 'Kashmir Shaivism',
   siddhanta: 'Shaiva Siddhanta',
   vishishtadvaita: 'Vishishtadvaita',

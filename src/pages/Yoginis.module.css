@@ -1,0 +1,514 @@
+.section {
+  margin-bottom: 56px;
+  scroll-margin-top: 124px;
+}
+
+.help {
+  color: var(--muted);
+  max-width: 820px;
+}
+
+.help a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 12px;
+}
+
+.panel {
+  padding: 16px 18px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.panel h3 {
+  margin: 0 0 6px;
+  font-size: 1.35rem;
+}
+
+.panel p {
+  font-size: 0.94rem;
+}
+
+/* kinds of name: animal, fierce, gentle */
+.k_animal {
+  --k: var(--gold);
+}
+
+.k_fierce {
+  --k: var(--accent);
+}
+
+.k_gentle {
+  --k: var(--jade);
+}
+
+/* ——— gallery ——— */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.art {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+}
+
+.frame {
+  display: block;
+  height: 260px;
+  padding: 10px;
+  background: radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--gold) 8%, var(--surface-2)), var(--surface-2) 70%);
+}
+
+.frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.art figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 12px 12px;
+  border-top: 1px solid var(--line);
+}
+
+.art figcaption b {
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.art figcaption span {
+  font-size: 0.78rem;
+  color: var(--gold);
+}
+
+.art figcaption p {
+  margin: 4px 0;
+  font-size: 0.84rem;
+}
+
+.art figcaption small {
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.art figcaption a {
+  text-decoration: none;
+}
+
+/* ——— the sixty-four ——— */
+
+.story {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 880px;
+  margin-bottom: 16px;
+  padding: 16px 18px;
+  border-radius: var(--radius);
+  background: var(--gold-soft);
+  border-left: 3px solid var(--gold);
+}
+
+.story p {
+  margin: 0;
+}
+
+.story a {
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--gold);
+}
+
+.kinds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.kinds button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 13px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.kinds button:hover {
+  border-color: var(--k, var(--accent));
+}
+
+.kinds button.on {
+  border-color: var(--k, var(--accent));
+  background: color-mix(in srgb, var(--k, var(--accent)) 14%, var(--surface));
+}
+
+.swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--k);
+}
+
+.circleRow {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.ring {
+  width: 100%;
+  max-width: 360px;
+}
+
+.ringLine {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 1.5;
+}
+
+.ringInner {
+  fill: color-mix(in srgb, var(--accent) 6%, transparent);
+  stroke: color-mix(in srgb, var(--accent) 35%, transparent);
+  stroke-dasharray: 3 5;
+}
+
+.dot {
+  fill: var(--k);
+  stroke: var(--bg);
+  stroke-width: 1.5;
+  cursor: pointer;
+  transition:
+    r 0.15s,
+    opacity 0.15s;
+}
+
+.dot:hover {
+  r: 8;
+}
+
+.dotOn {
+  stroke: var(--text);
+  stroke-width: 2;
+}
+
+.dim {
+  opacity: 0.2;
+}
+
+.centre {
+  fill: var(--text);
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  text-anchor: middle;
+}
+
+.centreSmall {
+  fill: var(--muted);
+  font-size: 11px;
+  font-style: italic;
+  text-anchor: middle;
+}
+
+.chosen {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 20px 22px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--k);
+}
+
+.num {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--k);
+}
+
+.chosen b {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+}
+
+.chosen i {
+  font-family: var(--font-display);
+  color: var(--muted);
+}
+
+.chosen p {
+  margin: 8px 0 2px;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.chosen small {
+  color: var(--muted);
+}
+
+.step {
+  display: flex;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.step button {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  padding: 0 0 3px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.step button:hover {
+  border-color: var(--k);
+  color: var(--k);
+}
+
+.names {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 190px), 1fr));
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.names button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--k);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.names button:hover {
+  border-color: var(--k);
+}
+
+.names button.on {
+  background: color-mix(in srgb, var(--k) 16%, var(--surface));
+  border-color: var(--k);
+}
+
+.names .n {
+  min-width: 22px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--k);
+  text-align: right;
+}
+
+.names button > span:last-child {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.names b {
+  font-size: 0.86rem;
+}
+
+.names small {
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+
+/* ——— temples ——— */
+
+.mapRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  scroll-margin-top: 124px;
+}
+
+.temples {
+  display: grid;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.temples a {
+  display: flex;
+  gap: 10px;
+  padding: 9px 11px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.temples a:hover,
+.temples a.on {
+  border-color: var(--accent);
+}
+
+.temples a.on {
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface));
+}
+
+.tn {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.temples a > span:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.temples b {
+  font-size: 0.94rem;
+}
+
+.temples small {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.temples em {
+  margin-top: 5px;
+  font-style: normal;
+  font-size: 0.86rem;
+}
+
+/* ——— Sri Chakra and dasha ——— */
+
+.chakra {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chakra li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2px 12px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--accent) calc(4% + var(--i) * 2.5%), var(--surface-2));
+  margin-left: calc(var(--i) * 6px);
+  font-size: 0.86rem;
+}
+
+.chakra span {
+  color: var(--muted);
+}
+
+.dasha {
+  display: grid;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dasha li {
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  font-size: 0.86rem;
+}
+
+.bar {
+  display: block;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--surface-2);
+}
+
+.bar i {
+  display: block;
+  width: var(--w);
+  height: 100%;
+  border-radius: 999px;
+  background: var(--indigo);
+}
+
+.dasha small {
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .mapRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .circleRow {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .chosen {
+    width: 100%;
+  }
+  .chakra li {
+    margin-left: 0;
+  }
+}

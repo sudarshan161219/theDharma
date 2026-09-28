@@ -3,6 +3,7 @@ import { acharyas, darshanas } from '../data/acharyas';
 import { darshans, nastikas, traditions } from '../data/darshanas';
 import { ksSchools, ksTeachers, ksTexts, tattvaBands, trikaIdeas, upayas } from '../data/trika';
 import { hathaLadder, nathIdeas, nathLineage, nathSites, nathTexts, navnath } from '../data/nath';
+import { sixtyFour, yoginiTemples } from '../data/yoginis';
 import { counts as tattvaCounts, fiveElements, gunas, tattvas } from '../data/tattvas';
 import { dvIdeas, dvTeachers, haridasas, nineTenets, panchaBheda } from '../data/dvaita';
 import { regions } from '../data/regions';
@@ -540,6 +541,27 @@ const index: Entry[] = [
     subtitle: c.what,
     to: '#/tattvas',
     haystack: [c.school, c.what, 'how many tattvas categories padartha'].join(' '),
+  })),
+  {
+    kind: 'Yoginis',
+    title: 'The Yoginis',
+    subtitle: 'The sixty-four goddesses of the Tantric circle, and their roofless temples',
+    to: '#/yoginis',
+    haystack: 'yogini yoginis sixty-four 64 chausath chausathi chaunsath yogini temple hirapur bhedaghat mitaoli matrika tantra kaula sri chakra yogini dasha ekadashi',
+  },
+  ...sixtyFour.map((x, i) => ({
+    kind: 'Yogini',
+    title: `${x.name} (yogini ${i + 1} of 64)`,
+    subtitle: x.meaning,
+    to: '#/yoginis',
+    haystack: [x.name, x.iast, x.meaning, 'yogini skanda purana kashi'].join(' '),
+  })),
+  ...yoginiTemples.map((t) => ({
+    kind: 'Yoginis',
+    title: `Yogini temple, ${t.name}`,
+    subtitle: `${t.state} · ${t.date} · ${t.plan}`,
+    to: `#/yoginis?p=${t.id}`,
+    haystack: [t.name, t.state, t.note, 'chausath yogini temple'].join(' '),
   })),
   ...darshanas.map((d) => ({
     kind: 'School',

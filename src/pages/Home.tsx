@@ -1,9 +1,18 @@
-import type { CSSProperties } from 'react';
+import { useEffect, useState, type CSSProperties } from 'react';
 import { NEXT_VYASA } from '../data/cosmos';
 import { href } from '../lib/router';
 import { fmt, kaliElapsed, kalpaElapsed } from '../lib/time';
 import styles from './Home.module.css';
-import shiva from '../assets/shiva.webp';
+import shiva from '../assets/hero/01-shiva.webp';
+import bhairava from '../assets/hero/02-bhairava.webp';
+import tara from '../assets/hero/03-tara.webp';
+import vishnu from '../assets/hero/04-vishnu.webp';
+import virabhadra from '../assets/hero/05-virabhadra.webp';
+import chamunda from '../assets/hero/06-chamunda.webp';
+import krishna from '../assets/hero/07-krishna.webp';
+import venkateshvara from '../assets/hero/08-venkateshvara.webp';
+import ramaLakshmana from '../assets/hero/09-rama-lakshmana.webp';
+import ravana from '../assets/hero/10-ravana.webp';
 
 const QUICK: { q: string; a: string; to: string }[] = [
   { q: 'Who composed the Shiva Purana?', a: 'Krishna Dvaipayana Vyasa, abridging a 1,00,000-verse original to 24,000 verses in 7 samhitas.', to: href('scriptures', 'shiva-purana') },
@@ -41,6 +50,7 @@ const SECTIONS = [
   { key: 'forms', title: 'How the Divine Appears', text: 'Formless, aniconic, animal, part-animal, human, many-armed and cosmic forms, with museum sculptures and paintings.' },
   { key: 'epithets', title: 'Epithets', text: 'Madhusudana, Nilakantha, Aparna, Ekadanta… the names of the devas and devis, what they mean and why they were given.' },
   { key: 'avatars', title: 'Avatars', text: 'Vishnu’s Dashavatara, Shiva’s incarnations, and Devi: Navadurga, Mahavidyas and the Devi Mahatmya.' },
+  { key: 'yoginis', title: 'The Yoginis', text: 'The sixty-four goddesses of the Tantric circle: their names from the Skanda Purana, the roofless round temples on a map, the Sri Chakra and Yogini dasha.' },
   { key: 'acharyas', title: 'Acharyas', text: 'Shankara, Ramanuja, Madhva, Nimbarka, Vallabha, Chaitanya… and how their schools differ.' },
   { key: 'darshanas', title: 'Darshanas & Sampradayas', text: 'The six schools of philosophy and the four that reject the Veda, the pramanas, and the living lineages: Vaishnava, Shaiva, Shakta, Smarta and more.' },
   { key: 'tattvas', title: 'The Tattvas', text: 'The principles of reality, from consciousness to earth: Samkhya’s 25 and the Shaiva 36 one by one, how each school counts, the three gunas and the five elements.' },
@@ -58,6 +68,45 @@ const SECTIONS = [
   { key: 'glossary', title: 'Definitions', text: 'Purana, Upapurana, Itihasa, pancha-lakshana, manvantara, rishi… explained with sources.' },
 ];
 
+/** The images behind the hero, each framed on its face, shown one at a time. */
+const HERO_ART: { src: string; pos: string }[] = [
+  { src: shiva, pos: '50% 18%' },
+  { src: bhairava, pos: '50% 30%' },
+  { src: tara, pos: '50% 42%' },
+  { src: vishnu, pos: '50% 28%' },
+  { src: virabhadra, pos: '45% 22%' },
+  { src: chamunda, pos: '45% 30%' },
+  { src: krishna, pos: '62% 28%' },
+  { src: venkateshvara, pos: '50% 62%' },
+  { src: ramaLakshmana, pos: '50% 22%' },
+  { src: ravana, pos: '50% 74%' },
+];
+
+/** How long each image stays before the next fades in. */
+const HERO_INTERVAL = 60_000;
+
+/** A slow slideshow: only the current image and its neighbours are loaded, so the rest cost nothing until their turn. */
+function HeroArt() {
+  const [i, setI] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setI((n) => (n + 1) % HERO_ART.length), HERO_INTERVAL);
+    return () => clearInterval(t);
+  }, []);
+  const n = HERO_ART.length;
+  const near = new Set([i, (i + 1) % n, (i + n - 1) % n]);
+  return (
+    <div className={styles.heroArt} aria-hidden="true">
+      {HERO_ART.map((a, k) => (
+        <div
+          key={a.src}
+          className={`${styles.heroLayer} ${k === i ? styles.heroLayerOn : ''}`}
+          style={near.has(k) ? { backgroundImage: `url(${a.src})`, backgroundPosition: a.pos } : undefined}
+        />
+      ))}
+    </div>
+  );
+}
+
 export default function Home() {
   const kalpaYears = kalpaElapsed();
   const steps = [
@@ -71,7 +120,7 @@ export default function Home() {
   return (
     <>
       <section className={styles.hero}>
-        <div className={styles.heroArt} style={{ backgroundImage: `url(${shiva})` }} aria-hidden="true" />
+        <HeroArt />
         <p className={styles.eyebrow}>Hindu scriptures, made easy to grasp</p>
         <h1>
           Who wrote it, who is <em>telling</em>, who is <em>listening</em> — and when are we?

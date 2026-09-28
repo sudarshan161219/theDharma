@@ -35,6 +35,7 @@ const Settings = lazy(() => import('./pages/Settings'));
 const Siddhanta = lazy(() => import('./pages/Siddhanta'));
 const Trika = lazy(() => import('./pages/Trika'));
 const Tattvas = lazy(() => import('./pages/Tattvas'));
+const Yoginis = lazy(() => import('./pages/Yoginis'));
 const Vishishtadvaita = lazy(() => import('./pages/Vishishtadvaita'));
 const Vedas = lazy(() => import('./pages/Vedas'));
 const Vyasas = lazy(() => import('./pages/Vyasas'));
@@ -86,6 +87,9 @@ export default function App() {
       break;
     case 'regions':
       page = <Regions route={route} />;
+      break;
+    case 'yoginis':
+      page = <Yoginis route={route} />;
       break;
     case 'tattvas':
       page = <Tattvas route={route} />;
