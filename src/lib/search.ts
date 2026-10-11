@@ -1,4 +1,5 @@
 import { manvantaras, vyasas, yugas } from '../data/cosmos';
+import { deviVyasas, lingaVyasas } from '../data/vyasas';
 import { acharyas, darshanas } from '../data/acharyas';
 import { darshans, nastikas, traditions } from '../data/darshanas';
 import { ksSchools, ksTeachers, ksTexts, tattvaBands, trikaIdeas, upayas } from '../data/trika';
@@ -9,6 +10,7 @@ import { dvIdeas, dvTeachers, haridasas, nineTenets, panchaBheda } from '../data
 import { regions } from '../data/regions';
 import { alvars, fiveForms, kalais, rahasyaTraya, tattvaTraya, vaIdeas, vaPaths, vaTeachers } from '../data/vishishtadvaita';
 import { agamasByFace, fourPaths, graceSteps, pashas, siddhantaTeachers, soulClasses, tirumurai, tripadartha } from '../data/siddhanta';
+
 import { dharmashastras, gitaChapters, upanishads, vedangas, vedas } from '../data/vedas';
 import { festivals } from '../data/calendar';
 import { dikpalas, navagrahas, trimurti, vedicGods } from '../data/devas';
@@ -25,6 +27,13 @@ import { glossary } from '../data/glossary';
 import { people } from '../data/people';
 import { scriptures } from '../data/scriptures';
 import { href } from './router';
+
+/** 1st, 2nd, 3rd, 4th … 21st, 22nd. */
+function ordinal(n: number): string {
+  const t = n % 100;
+  if (t >= 11 && t <= 13) return `${n}th`;
+  return n + (['th', 'st', 'nd', 'rd'][n % 10] ?? 'th');
+}
 
 export interface Hit {
   kind: string;
@@ -71,12 +80,19 @@ const index: Entry[] = [
     to: href('manvantaras') + `?n=${m.n}`,
     haystack: [m.manu, m.indra, ...m.saptarishi, m.avatara ?? '', m.note ?? '', 'manu manvantara'].join(' '),
   })),
-  ...vyasas.map((v) => ({
+  ...vyasas.map((v, i) => ({
     kind: 'Vyasa',
     title: `${v.n}. ${v.name}`,
-    subtitle: `Vyasa of the ${v.n}th Dvapara`,
+    subtitle: `Vyasa of the ${ordinal(v.n)} Dvapara`,
     to: href('vyasas'),
-    haystack: `${v.name} ${v.note ?? ''} vyasa`,
+    haystack: `${v.name} ${v.note ?? ''} ${deviVyasas[i].name} ${lingaVyasas[i].name} vyasa dvapara`,
+  })),
+  ...lingaVyasas.map((v) => ({
+    kind: 'Yogacharya',
+    title: `${v.shiva}`,
+    subtitle: `Shiva in the ${ordinal(v.n)} Dvapara, Linga Purana`,
+    to: href('vyasas') + '?t=linga',
+    haystack: `${v.shiva} ${v.disciples.join(' ')} yogacharya shiva incarnation`,
   })),
   ...yugas.map((y) => ({
     kind: 'Yuga',

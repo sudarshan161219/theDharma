@@ -35,7 +35,7 @@ const SECTIONS = [
   { key: 'calendar', title: 'Hindu Calendar', text: 'Today’s tithi, nakshatra, month and samvatsara, worked out live, with the coming festivals.' },
   { key: 'dynasties', title: 'Dynasties', text: 'The Solar and Lunar royal lines as a family tree: from the Sun and Moon to Rama, Krishna and the Pandavas.' },
   { key: 'manvantaras', title: 'Manvantaras', text: 'The 14 Manus of this kalpa, with their Indras, Saptarishis and avataras.' },
-  { key: 'vyasas', title: 'Vyasas', text: 'The 28 Vyasas who arranged the Veda, one in each Dvapara — and the next one.' },
+  { key: 'vyasas', title: 'Vyasas', text: 'The 28 Vyasas who arranged the Veda, one in each Dvapara, as three Puranas list them — and the next one.' },
   { key: 'people', title: 'Rishis & narrators', text: 'Sages, and every text in which each one speaks or listens.' },
   { key: 'devas', title: 'Devas', text: 'The Trimurti, the 33 devas of the Veda, the Navagrahas and the guardians of the eight directions.' },
   { key: 'forms', title: 'How the Divine Appears', text: 'Formless, aniconic, animal, part-animal, human, many-armed and cosmic forms, with museum sculptures and paintings.' },

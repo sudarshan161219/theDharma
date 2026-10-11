@@ -103,11 +103,11 @@ export const vyasas: Vyasa[] = [
   { n: 11, name: 'Trishikha (Trivrishan)' },
   { n: 12, name: 'Bharadvaja' },
   { n: 13, name: 'Antariksha' },
-  { n: 14, name: 'Vapra (Varni)' },
+  { n: 14, name: 'Vapra' },
   { n: 15, name: 'Trayyaruna' },
   { n: 16, name: 'Dhananjaya' },
   { n: 17, name: 'Kritanjaya' },
-  { n: 18, name: 'Rinajyeshtha (Rina)' },
+  { n: 18, name: 'Rina' },
   { n: 19, name: 'Bharadvaja' },
   { n: 20, name: 'Gautama' },
   { n: 21, name: 'Uttama (Haryatma)' },
@@ -116,7 +116,7 @@ export const vyasas: Vyasa[] = [
   { n: 24, name: 'Riksha (Valmiki)', note: 'Identified with Valmiki, the poet of the Ramayana.' },
   { n: 25, name: 'Shakti', note: 'Son of Vasishtha.' },
   { n: 26, name: 'Parashara', note: 'Son of Shakti; narrator of the Vishnu Purana.' },
-  { n: 27, name: 'Jatukarna' },
+  { n: 27, name: 'Jatukarna', note: 'Wilson’s translation reads Jaratkaru.' },
   { n: 28, name: 'Krishna Dvaipayana', note: 'Son of Parashara — the Vyasa of our age.' },
 ];
 

@@ -37,6 +37,14 @@ export const src = {
     label: 'Vishnu Purana 3.3 — The twenty-eight Vyasas',
     url: `${VPW}/d/doc115980.html`,
   },
+  dbVyasas: {
+    label: 'Devi Bhagavata Purana 1.3 — Each Vyasa of every Dvapara Yuga',
+    url: `${WL}/hinduism/book/devi-bhagavata-purana/d/doc57102.html`,
+  },
+  lingaVyasas: {
+    label: 'Linga Purana 1.7 — The Vyasas and Yogacharyas',
+    url: `${WL}/hinduism/book/the-linga-purana/d/doc1195220.html`,
+  },
   vpVedaDivision: {
     label: 'Vishnu Purana 3.4 — Division of the Veda by Krishna Dvaipayana',
     url: `${VPW}/d/doc115981.html`,

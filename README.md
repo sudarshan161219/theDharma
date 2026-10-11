@@ -29,6 +29,7 @@ Link previews use `public/og.png` (1200 × 630). Most crawlers want an absolute 
 | `src/data/glossary.ts` | Definitions (Shruti, Purana, Upapurana, pancha-lakshana, manvantara, rishi…), each with sources. Shown at `#/glossary` |
 | `src/data/people.ts` | Rishis, narrators and listeners. Entries with `about` get a full profile card |
 | `src/data/cosmos.ts` | Yugas, manvantaras (Manu, Indra, Saptarishis), Vyasas, time units |
+| `src/data/vyasas.ts` | The 28 Vyasas as the Devi Bhagavata (1.3) and Linga Purana (1.24) list them, with Shiva’s Yogacharya form and four disciples in each Dvapara, compared with the Vishnu Purana at `#/vyasas` |
 | `src/data/sources.ts` | wisdomlib chapter URLs, plus Bibek Debroy's Penguin translations (`debroyBooks`) |
 | `src/data/avatars.ts` | Dashavatara, Bhagavata 1.3 avataras, Shiva's incarnations (Shatarudra-samhita). Shown at `#/avatars` |
 | `src/data/acharyas.ts` | Vedanta schools compared, the four Vaishnava sampradayas, and 13 acharyas from Gaudapada to Chaitanya. Shown at `#/acharyas` |

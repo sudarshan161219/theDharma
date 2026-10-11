@@ -110,7 +110,7 @@ export default function App() {
       page = <Dynasties route={route} />;
       break;
     case 'vyasas':
-      page = <Vyasas />;
+      page = <Vyasas route={route} />;
       break;
     case 'people':
       page = id ? <PersonDetail id={id} /> : <People />;
